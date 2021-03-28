@@ -1,6 +1,7 @@
-// 1.0	30 marzo 2020
+// Lower level functions
 class Svg{
 
+	// Centered in (0,0) also known as the origin
 	constructor(svgId, maxx, maxy){
 		this.svgId = svgId;
 		this.svgCanvas = document.getElementById(svgId);
@@ -32,7 +33,7 @@ class Svg{
 		}
 	}
 
-	// Remove all, event the backgrodund
+	// Remove all, even the backgrodund
 	clearAll(){
 		for (var i=this.svgCanvas.childElementCount; i>=0; i--){
 			this.svgCanvas.removeChild(this.svgCanvas.childNodes[i]);
@@ -40,6 +41,7 @@ class Svg{
 		this.nBgNodes = 0;
 	}
 
+	// Add generic item
 	add(item, itemId){
 		var el = document.createElementNS("http://www.w3.org/2000/svg", item);
 		el.setAttributeNS(null, "id", itemId);
@@ -47,6 +49,7 @@ class Svg{
 		return el;
 	}
 
+	// Add line
 	addLine(lineId, x0, y0, x1, y1, color, width){
 		var line = this.add("line", lineId);
 		line.setAttributeNS(null, "x1", this.px(x0));
@@ -58,6 +61,7 @@ class Svg{
 		return line;
 	}
 
+	// Add circle
 	addCircle(circleId, cx, cy, r, fillColor, strokeWidth = 0, strokeColor = null){
 		var circle = this.add("circle", circleId);
 		circle.setAttributeNS(null, "cx", this.px(cx));
