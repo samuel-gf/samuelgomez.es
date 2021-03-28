@@ -1,0 +1,795 @@
+\include{tmpl/header_general1}
+\include{tmpl/header_a4}
+\title{Tratado de álgebra}
+
+%\renewcommand\vec{\mathbf}
+%index{término para el índice}
+\renewcommand\vec{\overline}
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+%==========================================
+\chapter{Espacios vectoriales}
+Sea un conjunto de elementos denominados vectores y otro conjunto de elementos denominados
+escalares donde los primeros tienen una operación interna y otra externa tal que cumplen
+
+\paragraph{Ley interna +} configura la estructura $(V,+)$ como grupo abeliano y por lo tanto
+cumple las propiedades $AesC$
+\begin{propiedades}
+\item Asociativa $\forall\vec{x},\vec{y},\vec{z}\in
+	V(k)\Rightarrow(\vec{x}+\vec{y})+\vec{z}=\vec{x}+(\vec{y}+\vec{z})$
+\item Elemento neutro $\forall\vec{x}\in V(k), \exists\vec{0}\in V(k) /  \Rightarrow
+	\vec{x}+\vec{0}=\vec{x}$
+\item Simetrizable $\forall \vec{x}\in V(k), \exists(-\vec{x})\in V(k) \Rightarrow
+	\vec{x}+(-\vec{x})=\vec{0}$
+\item Conmutativa $\forall\vec{x},\vec{y}\in V(k)\Rightarrow\vec{x}+\vec{y}=\vec{y}+\vec{x}$
+\end{propiedades}
+
+\paragraph{Ley externa $\cdot$} denominada producto por un escalar que asocia a cada vector un
+escalar de los conjuntos antes mencionados de la siguiente manera $\lambda\vec{x}=\vec{x}\lambda$
+y cumple las propiedades. $AeD^+_vD^+_c$
+
+\begin{propiedades}
+\item Asociativa mixta $\alpha(\beta\vec{x})=(\alpha\beta)\vec{x}$
+\item Elemento neutro Si $1$ es el elemento neutro de la ley externa $1\cdot\vec{x}=\vec{x}$
+\item Distributiva respecto de la suma de vectores
+	$\lambda(\vec{x}+\vec{y})=\lambda\vec{x}+\lambda\vec{y}$
+\item Distributiva respecto de la suma de escalares
+	$(\alpha+\beta)\vec{x}=\alpha\vec{x}+\beta+\vec{x}$
+\end{propiedades}
+
+\section{Ejemplos de espacios vectoriales}
+\begin{enumerate}
+	\item Vectores libres tridimensionales sobre el cuerpo $\mathbb{R}$, con las operaciones:
+		\paragraph{Suma} Aplicando la regla del paralelogramo $\vec{x}+\vec{y}$.
+		\paragraph{Producto por un número real} El producto de un número real $\lambda$ por un
+		vector $\vec{x}$ es otro vector $\lambda\vec{x}$, cuyo módulo se obtiene multiplicando por
+		$|\lambda|$ el módulo de $\vec{x}$, su dirección es la de $\vec{x}$, y su sentido coincide
+		con el de $\vec{x}$ cuando $\lambda$ es positivo, y el contrario cuando es negativo.
+	\item El conjunto $\mathbb{R}(\mathbb{R})$
+		\paragraph{Suma} Estos vectores unidimensionales son fáciles de operar
+		$\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ puesto que solo tienen un componente. Por
+		ejemplo $\vec{3}+\vec{5}=\vec{8}$
+	\item Producto por un escalar $\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$. Por ejemplo
+		$3\cdot\vec{5}=\vec{15}$.
+\end{enumerate}
+
+\section{Propiedades que se deducen de los axiomas}
+\begin{enumerate}
+	\item $\forall \lambda\in\mathbb{K}, \lambda\vec{0}=\vec{0}$ \\
+		Demostración
+		$\lambda\vec{x}=\lambda\cdot(\vec{x}+\vec{0})=\lambda\vec{x}+\lambda\vec{0} \Rightarrow
+		\lambda\vec{0}=\vec{0}$
+	\item $\forall \vec{x}\in V(\mathbb{K}), 0\vec{x}=\vec{0}$ \\
+		Demostración
+		$\vec{x}=\vec{x}(1+0)=\vec{x}+0\vec{x}\Rightarrow 0\vec{x}=\vec{0}$
+	\item Si $\lambda\vec{x}=\vec{0}\Rightarrow\lambda=0 \lor \vec{x}=\vec{0}$ \\
+		Para su demostración hay dos posibilidades:
+		
+		Primera posibilidad $\lambda\neq 0 \Rightarrow \exists\lambda^{-1}$ porque $\lambda\in\mathbb{K}$ y
+		podemos escribor $\vec{x}=\lambda^{-1}(\lambda\vec{x})$ sustituyendo con el antecedente 
+		$\lambda^{-1}\vec{0} \Rightarrow (\lambda^{-1}\lambda)\vec{x}=\vec{0}$ y como lo que está
+		entre paréntesis es $1$, nos queda que $1\vec{x}=\vec{0}$, es decir $\vec{x}=\vec{0}$.\\
+		
+		Segunda posibilidad $\lambda=0$ ya demostado en $0\vec{x}=\vec{0}$.
+
+	% En Palacios hay tres propiedades más en la página 293
+
+\end{enumerate}
+% ================================= SUBESPACIOS VECTORIALES ================================
+\chapter{Subespacios vectoriales}
+\section{Propiedades útiles de subespacios vectoriales}
+\begin{propiedades}
+	\item $\lambda F=F$ Siendo $F$ un subespacio vectorial y $\lambda$ un escalar perteneciente a un
+		$\mathbb{K}$. La demostración queda expresada en el ejercicio \thesection.\ref{20200413a}.
+	\item $\mathbb{K}(\lambda F)=\mathbb{K}(F)$
+		Queda demostrado en el ejercicio \thesection.\ref{20200414a}
+	\item $\mathbb{K}\vec{u} \subseteq F \iff \vec{u} \in F$
+		Demostración en \ref{20200414b}
+\end{propiedades}
+
+\section{Dimensiones}
+Es el número de vectores de la base. También se corresponde con el el número de parámetros 
+del sistema como por ejemplo en ${(x,y,z)=\lambda(2,-1,0)+\mu(3,0,-1)}$ donde la dimensión sería 2.
+
+\section{Suma de subespacios vectoriales}
+
+Sean $A$ y $B$ dos subconjuntos no vacíos de $E$ se define $A+B$ como el conjunto formado por la
+suma de todos los vectores pertenecientes a $A$ con todos los pertenecientes a $B$, es decir
+
+$$A+B = \{\vec{x}+\vec{y}/\vec{x}\in A, \vec{y}\in B\}$$
+
+\paragraph{Subespacios lineales independientes} si todo vector $\vec{v}$ se puede escribir de manera
+única como $\vec{v}=\vec{v}_1+\vec{v}_2+ ... +\vec{v}_n$ con $\vec{v}_1\in F_1, \vec{v}_2\in F_2,
+..., \vec{v}_n\in F_n$. O visto del modo de Kostrikin\footnote{\cite[p60]{kostrikin}},
+si $\vec{v}_1\cap\vec{v}_2\cap...\vec{v}_n=\emptyset$.
+
+\paragraph{Suma directa} Si $n$ subespacios vectoriales son independientes, su suma se llama suma
+directa y la denotamos como $\oplus$, como por ejemplo $F_1 \oplus F_2 \oplus F_3$.
+
+\paragraph{Espacios vectoriales suplementarios} Si dos subespacios vectoriales son independientes y
+su suma directa es $E$, es decir $F\oplus G = E$
+
+% ====================================== HOMOMORFISMOS ======================================
+\chapter{Homomorfismo entre espacios vectoriales}
+Sean $V(k)$ y $W(k)$ dos espacios vectoriales definidos sobre el mismo cuerpo $k$ de operadores, y
+sea $f$ una aplicación de $V$ en $W$. Diremos que $f$ es un \textbf{homomorfismo o aplicación
+lineal}, si se cumplen las dos condiciones:
+
+$f(\vec{x}+\vec{y})=f(\vec{x})+f(\vec{y})$
+
+$f(\lambda\vec{x}) = \lambda f(\vec{x})$
+
+\section{Imagen de un homomorfismo}
+Conjunto formado por 
+$$Im(f)=\{\vec{y}\in W/\exists \vec{x}\in V, \vec{y}=f(\vec{x})\}$$
+
+\section{Núcleo de un homomorfismo}
+Dado un Homomorfismo $f$ de $V(k)$ en $W(k)$, se denomina núcleo al conjunto de 
+todos los vectores de $V$ cuya imagen es el vector nulo de $W$.
+
+$$N(f)=\{\vec{x}\in V/f(\vec{x})=\vec{0}_w\}$$
+
+% ======================= PROBLEMAS DE ESPACIOS VECTORIALES==================================
+\chapter{Problemas}
+
+\section{Problemas de espacios vectoriales}
+
+% ========================== 90 p 140
+\begin{problema}{\cite[90p140]{prieto2000}}{
+	Sean $\vec{u}$ y $\vec{v}$ dos vectores de un espacio vectorial $E$ sobre un cuerpo
+	$\mathbb{K}$, y sea $\mathbb{K}^*=\mathbb{K}-\{0\}$. Desmostrar la equivalencia
+	$$(\mathbb{K}\vec{u}=\mathbb{K}\vec{v}) \iff
+	(\exists\lambda\in\mathbb{K}^*,\vec{u}=\lambda\vec{v})$$
+	}
+	Si $\vec{u}$ y $\vec{v}$ son nulos es trivial. Para el resto de casos:
+
+	Si $\mathbb{K}\vec{u}=\mathbb{K}\vec{v}$ es $\forall a,b \in \mathbb{K}, a\vec{u}=b\vec{v}$ es
+	decir $\vec{u}=\frac{b}{a}\vec{v}=\lambda\vec{v}$.
+
+	Otra forma de ver esto mismo es $\mathbb{K}\vec{u}=\mathbb{K}\vec{v}$ implica que $\mathbb{K}\vec{u}\subseteq
+	\mathbb{K}\vec{v}$ y por lo tanto $\vec{u}\in\mathbb{K}\vec{u}\subseteq\mathbb{K}\vec{v}$ para
+	dar lugar a $\vec{u}\in\mathbb{K}\vec{v}$ lo cual implica que hay algún valor $\lambda$ tal que
+	$\vec{u}=\lambda\vec{v}$.
+
+	Por otra parte, si $\exists\lambda\in\mathbb{K}^*, \vec{u}=\lambda\vec{v}$ significa que 
+	para la segunda parte, si
+	$\vec{u}=\lambda\vec{v}\Rightarrow(\mathbb{K}\vec{u}=\mathbb{K}\vec{v})$ 
+	podemos sustituir $\vec{u}=\lambda\vec{v}$ y obtenemos
+	$\mathbb{K}\vec{u}=\mathbb{K}\lambda\vec{u}=\mathbb{K}(\lambda\vec{u})=\mathbb{K}\vec{v}\;\blacksquare$
+\end{problema}
+
+% ================ 3p334
+\begin{problema}{\cite[3p334]{palacios}}{
+	En $\mathbb{R}^4(\mathbb{R})$ se considera el sistema de vectores
+	$$s=\{(17,8,9,12),(0,0,1,5),(0,2,1,1)\}$$
+	Averiguar si es un sistema libre
+	}
+	$$Rango\begin{pmatrix}
+		17 & 8 & 9 & 12 \\
+		0 & 0 & 1 & 5 \\
+		0 & 2&1&1
+	\end{pmatrix}=3 \ne 0$$
+	Luego las tres son linealmente independientes y sí es un sistema libre
+\end{problema}
+
+%================= PROBLEMAS DE SUBESPACIOS VECTORIALES =========================================
+\section{Problemas de subespacios vectoriales}
+% ==== 87p139
+\begin{problema}{\cite[87p139]{prieto2000}}{\label{20200413a}
+	Considerése un subespacio vectorial $F$ de un espacio vectorial $E$, y sea $\lambda$ un escalar.
+	Designemos por $\lambda F$ el siguiente conjunto:
+	$$\lambda F=\{\lambda\vec{x}/\vec{x}\in F\}$$
+	Desmostrar que si $\lambda$ es no nulo, entonces $\lambda F=F$
+	}
+	Este problema es muy interesante porque permite emplear una herramienta muy potente al igualar
+	los conjuntos $\lambda F = F$ para posteriores ejercicios.
+	
+	La igualdad implica $\lambda F\subseteq F \land F\subseteq \lambda F$. Atacamos el ejercicio por
+	partes.
+	\paragraph{Parte 1} $\lambda F\subseteq F \Rightarrow \lambda F = \{\lambda \vec{x}/\vec{x}\in
+	F\} \subseteq F$ Como $F$ es un subespacio vectorial cumple siempre $\forall \lambda \in
+	\mathbb{K}$ por lo tanto, el conjunto $\lambda F$ está incluido en $F$.
+
+	\paragraph{Parte 2} $\forall \vec{x}\in F, \vec{x}=\lambda(\lambda^{-1}\vec{x})=\lambda\vec{y}$
+	donde el vector $\vec{y}$ pertenece a $F$, es decir $\vec{y}\in F$  por lo que $\lambda\vec{y}\in \lambda
+	F$ y como podemos sustituir $\vec{x}=\lambda\vec{y}\in \lambda F$ es decir $F \subseteq \lambda
+	F$ porque $\vec{x}$ representa todos los vectores de $F$ como indicamos al principio del
+	párrafo. $\blacksquare$
+
+	\paragraph{Conclusión} $\lambda F = F$ está formado por los representantes de clase y $\lambda$
+	solo está dando como resultado vectores simplificados o aumentados.
+\end{problema}
+
+% ========================== 92 p 141
+\begin{problema}{\cite[92p141]{prieto2000}}{\label{20200414b}
+	Considérese un subespacio vectorial $F$ de un espacio vectorial $E$ sobre un cuerpo
+	$\mathbb{K}$, y sea $\vec{u}$ un vector de $E$. Demostrar se verifica:
+	\begin{enumerate}
+		\item El subespacio vectorial $\mathbb{K}\vec{u}$ está contenido en $F$ si y solo si
+			$\vec{u}\in F$ en símbolos: $\mathbb{K}\vec{u}\subseteq F \iff \vec{u}\in F$
+		\item Si $\vec{u}\not\in F$, entonces $\mathbb{K}\vec{u} \cap F = \{\vec{0}\}$
+	\end{enumerate}
+	}
+	\paragraph{a.} Si $\mathbb{K}\vec{u}\subseteq F \Rightarrow \vec{u}\in F$ podemos deducir que
+	$1\cdot\vec{u}=\vec{u}\in F$ que es lo que buscábamos. Por otra parte, para $\vec{u}\in F$
+	podemos ver que como $F$ es subespacio, por su definición se cumple.
+
+	\paragraph{b.} Si $\vec{u}\not\in F \Rightarrow \mathbb{K}\vec{u}\cap F=\{\vec{0}\}$ supongamos
+	$\vec{u}\not\in F$. Entonces, quiera que sea el escalar $\lambda$ no nulo, se tiene que
+	$\lambda\vec{u}\not\in F$, pues en caso contrario, al ser $F$ subespacio vevtorial de $E$, se
+	deduciría la pertenencia a $F$ del vector $\vec{u}=\lambda^{-1}(\lambda\vec{u})$. En consecuencia, el
+	único vector que pertenece simultaneamente a $\mathbb{K}\vec{u}$ y a $F$ es el $\vec{0}$.
+\end{problema}
+% =========================== 88 p 139
+\begin{problema}{\cite[88p139]{prieto2000}}{\label{20200414a}
+	Si $\vec{v}$ es un vector de un espacio vectorial $E$ sobre un cuerpo $\mathbb{K}$, y $\lambda$ es
+	un escalar, demostrar que le conjunto $\lambda\mathbb{K}\vec{v}$ es igual al subespacio
+	vectorial $\mathbb{K}(\lambda\vec{v})$. Si $\lambda$ es no nulo, deducir la igualdad:
+	$\mathbb{K}(\lambda\vec{v})=\mathbb{K}\vec{v}$.
+	}
+	\paragraph{Parte 1} Tenemos 
+	$\lambda\mathbb{K}\vec{v}=\{\lambda\vec{x}/\vec{x}\in\mathbb{K}\vec{v}\}
+		=\{\lambda(\mu\vec{v})/\mu\in\mathbb{K}\}=\{\mu(\lambda\vec{v}/\mu\in\mathbb{K}\}
+		=\mathbb{K}(\lambda\vec{v}) \; \blacksquare$
+	
+	\paragraph{Parte 2} Si $\lambda\neq0$ podemos emplear lo demostrado en el ejercicio
+	\thesection.\ref{2020041304a} para escribir
+	$\mathbb{K}(\lambda\vec{v})=\lambda\mathbb{K}\vec{v}=\mathbb{K}\vec{v}$.
+
+	Hemos aprovechado que $\mathbb{K}$ cumple la propiedad conmutativa de la segunda ley.
+\end{problema}
+\begin{problema}{\cite[4p335]{palacios}}{
+	En el espacio vectorial $\mathbb{R}^3(\mathbb{R})$ se considera el subconjunto
+	$$S=\{(x,y,z)\in \mathbb{R}^3 / x+2y+3z=0\}$$
+	\begin{enumerate}
+		\item Demostrar que $S$ es subespacio de $\mathbb{R}^3$
+		\item Determinar una base para el subespacio
+		\item Expresar el vector $\vec{a}=(-21,3,5)$ con dicha base
+	\end{enumerate}
+	}
+	\paragraph{a. Demostrar que $S$ es subespacio} Cumple las tres condiciones
+	\paragraph{b. Determinar una base} Tenemos una ecuación implícita para un total de 
+	tres componentes, luego necesito
+	dos parámetro, o lo que es lo mismo, una base con dos vectores.
+
+	Busco dos vectores linealmente independientes que cumplan le ecuación implícita
+	$\vec{e_1}=(2,-1,0)$ y $\vec{e_2}=(3,0,-1)$
+
+	\paragraph{c. Expresar el vector $\vec{a}=(-21,3,5)$ con dicha base}
+
+	$$(-21,3,5)=a(2,-1,0)+b(3,0,-1)$$
+
+	$$\begin{cases}
+		-21 &=2a+3b \\
+		\phantom{-2}  3 &=-a \\
+		\phantom{-2}  5 &=-b
+	\end{cases}$$
+
+	Obtenemos los valores $a=-3$ y $b=-5$ y por lo tanto $\vec{a}=-3\vec{e}_1-5\vec{e}_2$
+\end{problema}
+
+% =======================================================
+\begin{problema}{\cite[5p336]{palacios}}{
+	Determinar una base del subespacio vectorial $\mathbb{R}^3(\mathbb{R})$ cuyos elementos son
+	la solución de la ecuación $2x-y+z=0$
+	}
+	\begin{center}
+		Dim espacio vectorial\footnote[1]{Número de componentes} 3 = 1 ec. implícita + 2 Dim
+		subespacio
+		parámetros\footnote[2]{Número de vectores de la base o número de parámetros}
+	\end{center}
+	Dos vectores que cumplen la ecuación implícita y que son linealmente independientes 
+	para la base son $B=\{(0,1,1),(1,0,-2)\}$
+\end{problema}
+
+% ===============================================
+\begin{problema}{\cite[6p338]{palacios}}{
+	En el espacio vectorial $\mathbb{R}^4(\mathbb{R})$ se tiene el sistema de vectores
+	${S=\{(1,0,0,0),(1,1,0,0),(0,2,1,0)\}}$ y el subespacio
+	${W=\{(x_1,x_2,x_3,x_4)\in\mathbb{R}^4/x_1+x_2=0\}}$
+	\begin{enumerate}
+		\item Hallar una base para $W$
+		\item Ecuaciones paramétricas de $L(S)$
+		\item Obtener una base de $\mathbb{R}^4(\mathbb{R})$ completando la base
+			${\{(1,0,0,0),(1,1,0,0),(0,2,1,0)\}}$
+		\item Hallar una base para el subespacio $W\cap L(S)$
+	\end{enumerate}
+	}
+	\paragraph{a. Hallar una base para $W$} Un subespacio vectorial está sujeto a las restriccione
+	del espacio vectorial al cual pertenece. Los tres vectores de ·S· son linealmente independientes 
+	y cumplan la ecuación implícita de $W$, por lo tanto son la respuesta.
+	\begin{center}
+		Dim espacio vectorial 4 = 1 ec. implícita + 3 Dim subespacio
+	\end{center}
+
+	\paragraph{b. Ecuaciones paramétricas} $(x,y,z,t)=\lambda(1,0,0,0)+\beta(1,1,0,0)+\gamma(0,2,1,0)$
+	Paramétricamente queda
+	$$\begin{cases}
+		x &= \lambda+\beta \\
+		y &= \beta+2\gamma \\
+		z &= \gamma \\
+		t &= 0
+	\end{cases}$$
+	Solo necesito una única ecuación implícita puesto que tengo ya los tres parámetros que implica que la
+	base tiene tres vectores. Así que me quedo con $t=0$
+
+	\paragraph{c. Obtener una base} Para completar en $\mathbb{R}^4(\mathbb{R})$ la base
+	${B=\{(1,0,0,0),(1,1,0,0),(0,2,1,0)\}}$ solo necesito un vector que será
+	$(0,0,0,1)$
+
+	\paragraph{d.} Una base para el subespacio $W\cap L(S)$ se puede obtener de la interección de las ecuaciones
+	implícitas de $W$ y $L(S)$.
+	$$\begin{cases}
+		x_1+x_2 &= 0 \\
+		x_4 &= 0
+	\end{cases}$$
+	\begin{center}
+		Dim espacio vectorial 4 = 2 ec. implícitas + 3 Dim subespacio
+	\end{center}
+	Necesito dos vectores linealmente independientes que cumplan las ecuaciones implícitas
+	$$B(W\cap L(S))=\{(1,-1,0,0),(0,0,1,0)\}$$
+\end{problema}
+
+% ===================================
+\begin{problema}{\cite[8p342]{palacios}}{
+	En $\mathbb{R}^5(\mathbb{R})$ se define el subespacio $W$ por sus ecuaciones implícitas
+	$$\begin{cases}
+		5x_1+x_3-3x_4-x_5 &= 0 \\
+		2x_1+2x_2-3x_4 &= 0
+	\end{cases}$$
+	Determinar su dimensión, unas ecuaciones paramétricas y una base.
+	}
+	\paragraph{Dimensión} El subespacio es de dimensión 3
+	\begin{center}
+		Dim espacio vectorial 5 = 2 ec. implícitas + 3 Dim subespacio
+	\end{center}
+
+	\paragraph{Ecuaciones paramétricas} Necesitaremos tres parámetros porque el subespacio es de
+	dimensión 3. Elijo libremente asociar tres incógnitas a tres parámetros, así $x_3=a$,
+	$x_4=b$ y $x_5=c$ quedando
+	$$\begin{cases}
+		5x_1 &= -x_3+3x_4+x_5 \\
+		2x_1+2x_2 &= 3x_4
+	\end{cases}
+	\;\;\Rightarrow\;\;
+	\begin{cases}
+		x_1 &= \frac{1}{5}(-a+3b+c) \\
+		x_2 &= \frac{1}{10}(2a+9b-2c)
+	\end{cases}$$
+
+	\paragraph{Base} Como tengo tres parámetros debo encontrar tres vectores. Voy a activarlos
+	asignando valores $0$ y $1$ secuencialmente primero para $a$, luego para $b$ y finalmente para
+	$c$. 
+	\begin{center}
+		%\setlength\extrarowheight{5pt}
+		\begin{tabular}{ccc|c}
+			\hline
+			\textbf{a} & \textbf{b} & \textbf{c} & \textbf{vector} \\
+			\hline
+			1 & 0 & 0 & $\left(-\frac{1}{5},\frac{1}{5}, 1, 0, 0\right)$ \\[5pt]
+			0 & 1 & 0 & $\left(\frac{3}{5},\frac{9}{10}, 0, 1, 0\right)$ \\[5pt]
+			0 & 0 & 1 & $\left(\frac{1}{5},-\frac{1}{5}, 0, 0, 1\right)$ \\[5pt]
+			\hline
+		\end{tabular}
+	\end{center}
+\end{problema}
+
+% =========================================================
+\begin{problema}{\cite[8p345]{palacios}}{
+	En un espacio vectorial $V^3(\mathbb{R})$ se tienen dos bases ligadas por la relación matricial
+	$$\begin{pmatrix}
+		\vec{e'}_1 \\
+		\vec{e'}_2 \\
+		\vec{e'}_3 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		1 & 3 & 3 \\
+		1 & 4 & 3 \\
+		1 & 3 & 4
+	\end{pmatrix}
+	\begin{pmatrix}
+		\vec{e}_1 \\
+		\vec{e}_2 \\
+		\vec{e}_3 \\
+	\end{pmatrix}
+	$$
+	\begin{enumerate}
+		\item Expresar las coordenadas del vector genérico $\vec{x}$ en la nueva base
+			$$\vec{x}=x_1\vec{e}_1+x_2\vec{e}_2+x_3\vec{e}_3$$
+		\item Cambiar de base el vector $\vec{a}=3\vec{e'}_1-2\vec{e'}_2+\vec{e'}_3$
+	\end{enumerate}
+	}
+	\paragraph{a. Expresar coordenadas en la nueva base} Operando puedo entender mejor 
+	la información que me están ofreciendo. Me quedo con las
+	igualdades del primer y último miembro de la expresión
+	$$\begin{pmatrix}
+		\vec{e'}_1 \\
+		\vec{e'}_2 \\
+		\vec{e'}_3 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		1 & 3 & 3 \\
+		1 & 4 & 3 \\
+		1 & 3 & 4
+	\end{pmatrix}
+	\begin{pmatrix}
+		\vec{e}_1 \\
+		\vec{e}_2 \\
+		\vec{e}_3 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\vec{e}_1+3\vec{e}_2+3\vec{e}_3 \\
+		\vec{e}_1+4\vec{e}_2+3\vec{e}_3 \\
+		\vec{e}_1+3\vec{e}_2+4\vec{e}_3
+	\end{pmatrix}
+	$$
+	En otras palabras, puedo decir que
+	$$
+	\begin{cases}
+		\vec{e'}_1=(1,3,3) \\
+		\vec{e'}_2=(1,4,3) \\
+		\vec{e'}_3=(1,3,4)
+	\end{cases}
+	$$
+	Por otro lado, la inversa de la matriz de cambio es
+	$$A^{-1}=
+	\begin{pmatrix}
+		\phantom{-}7 & -3 & -3 \\
+		-1 & \phantom{-}1 & \phantom{-}0 \\
+		-1 & \phantom{-}0 & \phantom{-}1
+	\end{pmatrix}
+	$$
+	Y el cambio para el vector $(a,b,c)$ para obtener un nuevo vector $(x,y,z)$ con el cambio de
+	base se realiza así
+	$$
+	(x,y,z)=(a,b,c)\cdot A^{-1}=
+	(a,b,c) \cdot
+	\begin{pmatrix}
+		\phantom{-}7 & -3 & -3 \\
+		-1 & \phantom{-}1 & \phantom{-}0 \\
+		-1 & \phantom{-}0 & \phantom{-}1
+	\end{pmatrix}
+	$$
+	$$(x,y,z)=(7a-b-c, -3a+b, -3a+c)$$
+	O en paramétricas
+	$$
+	\begin{cases}
+		x &= 7a-b-c\\
+		y &= -3a+b\\
+		z &= -3a+c
+	\end{cases}
+	$$
+	Que son las coordenadas genéricas del vector $\vec{x}=(a,b,c)$ que me pedían
+
+	\paragraph{b. Cambiar de base el vector} Cambiaré de base 
+	a $\vec{a}=3\vec{e'}_1-2\vec{e'}_2+\vec{e'}_3$ pero cuidado que
+	en este enunciado no me piden que emplee la fórmula del cambio obtenido en el anterior apartado. 
+	Resolveré sustituyendo $\vec{e'}_i$
+	$$\vec{a}=3\vec{e'}_1-2\vec{e'}_2+\vec{e'}_3=3(1,3,3)-2(1,4,3)+(1,3,4)=(2,4,7)$$
+	Este es el vector cambiado de base.
+
+\end{problema}
+
+% ======= PROBLEMAS HOMOMORFISMOS ============================================
+\section{Problemas de homomorfismos}
+\begin{problema}{\cite[10p346]{palacios}}{
+	Se define la aplicación $f:\mathbb{R}^3\rightarrow\mathbb{R}^3$ dada por
+	$f(x_1,x_2,x_3)=(x_1,0,x_1+x_2)$ referida a la base canónica.
+	Se pide:
+	\begin{enumerate}
+	\item Demostrar que $f$ es un homomorfismo
+	\item Matriz del homomorfismo
+	\item Ecuaciones y dimensiones de $N(f)$
+	\item Ecuaciones y dimensiones de $Im(f)$
+	\end{enumerate}
+	}
+	\paragraph{a. Demostrar que es un homomorfismo} Debe cumplir las dos propiedade
+
+	\paragraph{I. Imagen de la suma} Debe cumplir $f(x+y)=f(x)+f(y)$ 
+	\begin{align*}
+		f[x_1,x_2,x_3)+(y_1,y_2,y_3)] &=f(x_1+y_1,x_2+y_2,x_3+y_3)\\
+		&=(x_1+y_1,0,x_1+y_1+x_2+y_2)\\
+		&=(x_1,0,x_1+x_2)+(y_1,0,y_1+y_2)\\
+		&=f(x_1,x_2,x_3)+f(y_1,y_2,y_3)
+	\end{align*}
+
+	\paragraph{II. Imagen del producto por un escalar} Debe cumplir $f(\lambda x)=\lambda f(x)$ 
+	\begin{align*}
+		f[\lambda(x_1,x_2,x_3)] &= f(\lambda x_1, \lambda x_2, \lambda x_3) \\
+		&= (\lambda x_1, 0, \lambda x_1 + \lambda x_2) \\
+		&= \lambda(x_1, 0, x_1+x_2) \\
+		&= \lambda f(x_1, x_2, x_3)
+	\end{align*}
+
+	Luego $f$ es un homomorfismo.
+
+	\paragraph{b. Matriz del homomorfismo} Es la que permite transformar un vector del conjunto
+	origen en uno del conjunto imagen. En este caso, la aplicación indica que el vector
+	$(x_1,x_2,x_3)
+	\rightarrow(x_1,0,x_1+x_2)$. Esto se consigue con la siguiente igualdad
+
+	$$(x_1,x_2,x_3)
+	\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 0 & 0 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	=(x_1, 0, x_1+x_2)$$
+	
+	Luego la matriz del homomorfismo o de transformación es
+
+	$$T=\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 0 & 0 \\
+		0 & 0 & 0
+	\end{pmatrix}$$
+
+	\paragraph{c. Ecuaciones y dimensiones del núcleo del homomorfismo} También indicado con $N(f)$,
+	es la matriz que nos da el vector nulo
+
+	$$(x_1,x_2,x_3)\cdot
+	\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 0 & 1 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	=(0,0,0)
+	$$
+
+	Se consigue desarrollando el producto de matrices e igualando
+
+	$$(x_1,0,x_1+x_2)=(0,0,0)$$
+	Haciendo corresponder componente a componente obtengo las ecuaciones implícitas del núcleo
+	$$
+	\begin{cases}
+		x_1 &=0 \\
+		x_1+x_2 &= 0
+	\end{cases}
+	\quad\Rightarrow\quad
+	x_1=x_2=0
+	$$
+	
+	Tengo dos ecuaciones implícitas en un espacio vectorial de dimensión 3. Este valor 3 es la suma
+	de las dimensiones del núcleo y de la imagen.\\
+	\begin{align*}
+		dim(\mathbb{R}^3) &= dim[N(f)]+dim[Im(f)] \quad \scriptstyle{\text{sustituyendo}}\\
+		3 &= dim[N(f)] + 2
+	\end{align*}
+	Donde el primer miembro es la dimensión del conjunto origen y $dim[Im(f)]=Rango(T)=2$. Por lo tanto la dimensión 
+	del núcleo del homomorfismo es 1 y el conjunto buscado es
+	$N(f)=\{(0,0,\lambda) / \lambda \in \mathbb{R}\}$ y su base está formada por un único vector
+	$B_N=\{(0,0,1)\}$.
+
+	\paragraph{d. Ecuación y dimensiones de $Im(f)$} Podemos ver que la expresión
+	$f(x_1,x_2,x_3)=(x_1,0,x_1+x_2)$ implica que
+	$$
+	\begin{cases}
+		y_1 = x_1		& \text{paramétrica} \\
+		y_2 = 0 		& \text{implícita} \\
+		y_3 = x_1+x_2 	& \text{paramétrica}
+	\end{cases}
+	$$
+
+	Estas son las ecuaciones paramétricas de $Im(f)$, siendo $y_2=0$ su única ecuación implícita.
+	En cuanto a su dimensión, tal y como hemos visto en el anterior, tenemos que 
+	$dim[Im(f)]=Rango(T)=2$.
+
+	$$Im(f)=\{(\alpha, 0, \beta) / \alpha,\beta \in \mathbb{R}\}$$
+
+	Y su base tendría dos vectores que son dos vectores libres de $T$ tal como
+	$B_I=\{(1,0,1),(0,0,1)\}$ que permiten obtener todos los resultados posibles del vector 
+	$(y_1,y_2,y_3)$ mediante combinación lineal.
+\end{problema}
+
+% =======================================
+\begin{problema}{\cite[11p347]{palacios}}{
+	En $V^3(\mathbb{R})$ se tiene la base $B_1=\{\vec{e}_1,\vec{e}_2,\vec{e}_3\}$ y en
+	$V^2(\mathbb{R})$ la base $B_2=\{\vec{u}_1,\vec{u}_2\}$. Se define la aplicación lineal:
+	$$
+	\begin{cases}
+		f(\vec{e}_1) = \vec{u}_1 + \vec{u}_2 \\
+		f(\vec{e}_2) = \vec{u}_1 - \vec{u}_2 \\
+		f(\vec{e}_3) = 2\vec{u}_1
+	\end{cases}
+	$$
+	Se pide
+	\begin{enumerate}
+	\item Expresión matricial del homomorfismo
+	\item Ecuación y dimensiones de $N(f)$ y de $Im(f)$
+	\item Estudiar de que tipo es la aplicación lineal dada
+	\end{enumerate}
+	}
+
+	\paragraph{a. Expresión matricial del homomorfismo} Es la matriz de transformación. 
+	Lo obtenemos a partir del vector del conjunto origen
+	$(x_1,x_2,x_3)=x_1\vec{e}_1+x_2\vec{e}_2+x_3\vec{e}_3$ y su transformación:
+
+	\begin{align*}
+		f(x_1,x_2,x_3) 	&= f(x_1\vec{e}_1+x_2\vec{e}_2+x_3\vec{e}_3) \\
+						&= f(x_1\vec{e}_1)_+f(x_2\vec{e}_2)+f(x_3\vec{e}_3) \\
+						&= x_1 f(\vec{e}_1)_+x_2 f(\vec{e}_2)+x_3 f(\vec{e}_3)
+						\qquad\scriptstyle{sustituyo}\ f(\vec{e}_i)\\
+						&= x_1 (\vec{u}_1+\vec{u}_2)+x_2(\vec{u}_1-\vec{u}_2)+x_3(2\vec{u}_1)
+	\end{align*}
+
+	Agrupo por los vectores de la base imagen $\vec{u}_1$ y $\vec{u}_2$
+	$$(y_1,y_2)=\vec{u}_1(x_1+x_2+2x_3)+\vec{u}_2(x_1-x_2) \Rightarrow
+	\begin{cases}
+		y_1=x_1+x_2+2x_3 \\
+		y_2=x_1-x_2
+	\end{cases}$$
+
+	Así que las ecuaciones implícitas del nucleo son
+	$$\begin{cases}
+		x_1+x_2+2x_3=0 \\
+		x_1-x_2=0
+	\end{cases}$$
+
+	Y la matriz que buscamos viene dada por
+
+	$$(x_1,x_2,x_3)
+	\begin{pmatrix}
+		1 & \phantom{-}1 \\
+		1 & -1\\
+		2 & \phantom{-}0
+	\end{pmatrix}
+	=(x_1+x_2+2x_3,\ x_1-x_2)=(y_1, y_2)$$
+	
+	La respuesta es
+	
+	$$T=\begin{pmatrix}
+		1 & \phantom{-}1 \\
+		1 & -1\\
+		2 & \phantom{-}0
+	\end{pmatrix}$$
+
+	\paragraph{b. Ecuación y dimensiones de $N(f)$ y de $Im(f)$} El núcleo del homomorfismo se obtiene de
+	$$(x_1,x_2,x_3)
+	\begin{pmatrix}
+		1 & \phantom{-}1 \\
+		1 & -1\\
+		2 & \phantom{-}0
+	\end{pmatrix}=(0,0,0)$$
+	Que da lugar a
+	$$
+	\begin{cases}
+		x_1+x_2+2x_3=0 \\
+		x_1-x_2=0
+	\end{cases}
+	\xrightarrow{\scriptstyle{x_2\ \text{como parámetro}}}
+	\begin{cases}
+		x_1+2x_3=-x_2=-\lambda \\
+		x_1=x_2=\lambda
+	\end{cases}$$
+	Obtenemos $N(f)=\{(\lambda,\lambda,-\lambda)/\lambda\in\mathbb{R}\}$, y la base 
+	de dicho núcleo esta formado por un único vector $B_N=\{(1,1,-1)\}$ quedando así claro que será 
+	de dimensión 1. Vamos a comprobarlo
+	\begin{align*}
+		dim(\mathbb{R}^3) &= dim[N(f)]+dim[Im(f)] \quad \scriptstyle{\text{sustituyendo}}\\
+		3 &= dim[N(f)] + 2
+	\end{align*}
+	Donde el primer miembro es la dimensión del conjunto origen y $dim[Im(f)]=Rango(T)=2$, con lo
+	cual tenemos $dim[N(f)]=1$.
+
+	\paragraph{Ecuaciones de $Im(f)$} Su dimensión y la del espacio vectorial que lo
+	contiene, $\mathbb{R}^2$, son iguales, con lo cual, no está sujeto a ninguna ecuación implícita.
+
+	\paragraph{c. Tipo de aplicación lineal} La aplicación es un homomorfismo de $V^3(\mathbb{R}^3)$ sobre
+	$V^2(\mathbb{R})$, es decir, se trata de un epimorfismo.
+\end{problema}
+
+% ====================================================
+\begin{problema}{\cite[12p349]{palacios}}{
+	Mediante la matriz
+	$T=\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 1 \\
+		1 & 1 & 0 \\
+		1 & 1 & 1
+	\end{pmatrix}$
+	se establece un homomorfismo entre $V^4(\mathbb{R})$ y $W^3(\mathbb{R}^3)$. La matriz $T$ está
+	referida a las bases $B_1=\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\}$ y
+	$B_2=\{\vec{u}_1,\vec{u}_2,\vec{u}_3\}$.
+
+	Se pide
+
+	\begin{enumerate}
+		\item Ecuación matricial del homomorfismo
+		\item Bases y dimensiones de $N(f)$ y de $Im(f)$
+		\item Naturaleza del homomorfismo
+	\end{enumerate}
+	}
+	\paragraph{a. Ecuación matricial} Es simplemente
+	$$(x_1,x_2,x_3,x_4)
+	\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 1 \\
+		1 & 1 & 0 \\
+		1 & 1 & 1
+	\end{pmatrix}
+	=(y_1, y_2, y_3)
+	\Rightarrow
+	\begin{cases}
+		y_1=x_1+x_3+x_4 \\
+		y_2=x_2+x_3+x_4 \\
+		y_3=x_2+x_4
+	\end{cases}
+	$$
+
+	\paragraph{b. Bases y dimensiones del núcleo y la imagen} Para el núcleo igualamos $(y_1, y_2,
+	y_3)=(0,0,0)$ en la expresión del apartado anterior. 
+
+	$$(x_1,x_2,x_3,x_4)
+	\begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 1 \\
+		1 & 1 & 0 \\
+		1 & 1 & 1
+	\end{pmatrix}
+	=(0,0,0)$$
+
+	Desarrollamos el producto de matrices y como tenemos cuatro incógnitas y tres
+	ecuaciones trataremos $x_4$ como si fuese un parámetro y obtenemos
+
+	$$
+	\begin{cases}
+		x_1+x_3+x_4=0 \\
+		x_2+x_3+x_4=0 \\
+		x_2+x_4=0
+	\end{cases}
+	\xrightarrow{\scriptstyle{x_4=\lambda}}
+	\begin{cases}
+		x_1=x_2=x_4=-\lambda \\
+		x_3=0
+	\end{cases}
+	$$
+
+	Entonces el núcleo es $N(f)=\{(\lambda,\lambda,0,\lambda)/\lambda\in\mathbb{R}\}$ y su base
+	tiene un único vector $B_N=\{(1,1,0,1)\}$. Su dimensión es 1.
+
+	En cuanto a su imagen tendrá dimensión 3 puesto que $Rango(T)=dim[Im(f)]=3$. Queda confirmado por el hecho
+	de que 
+	\begin{align*}
+		dim(\mathbb{R}^3) &= dim[N(f)]+dim[Im(f)] \quad \scriptstyle{\text{sustituyendo}}\\
+		4 &= 1 + dim[Im(f)]
+	\end{align*}
+
+	Así pues, debemos buscar los tres vectores que formen la base de $Im(f)$ para poder formar todos
+	los vectores $(y_1,y_2,y_3)$ mediante combinación lineal. Los hallaremos entre los vectores
+	de la matriz de transformación $T$ que sean independientes, por ejemplo, los tres primeros.
+
+	$$B_I=\{(1,0,0), (0,1,1), (1,1,0)\}$$
+
+	\paragraph{c. Naturaleza del homomorfismo} Se trata de un epimorfismo, es decir, un homorfismo
+	de $V^4(\mathbb{R})$ sobre $W^3(\mathbb{R})$, ya que la dimensión del subespacio $Im(f)$
+	coincide con la del espacio de llegada $W^3(\mathbb{R})$.
+\end{problema}
+
+
+% ================================
+
+\begin{problema}{\cite[89p139]{prieto2000}}{
+	Sea $\vec{w}$ un vector de un espacio vectorial $E$ sobre un cuerpo $\mathbb{K}$. Demostrar
+	la siguiente equivalencia:
+	$$\mathbb{K}\vec{w}=\{0\} \iff \vec{w}=\vec{0}$$
+	}
+	Ambos conjunto son iguales. Sabemos que para el primer conjunto se cumple
+	$1\cdot\vec{w}\in\mathbb{K}\vec{w}=\{\vec{0}\}$ luego $1\vec{w}=\vec{0}$ esto solo ocurrirá
+	cuando $\vec{w}=\vec{0}$. 
+
+	Por otra parte si $\vec{w}=\vec{0} \Rightarrow \mathbb{K}\vec{w}=\{\vec{0}\}$ sustituyendo
+	tenemos
+	$\mathbb{K}\cdot\vec{0}=\{\lambda\cdot\vec{0}/\lambda\in\mathbb{K}\}=\{\vec{0}\}\;\blacksquare$
+\end{problema}
+
+
+\printbibliography
+
+\include{tmpl/foot}

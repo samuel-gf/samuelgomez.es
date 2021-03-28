@@ -1,0 +1,140 @@
+%\documentclass[12pt,monochrome]{book}
+\documentclass[12pt]{book}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}                         % UNICODE
+\usepackage[T1]{fontenc}                            % Permite copiar caractéres unicode desde el PDF al portapapeles
+\usepackage{amsmath,amsthm}                         % Matemáticas American Mathematical Society
+\usepackage{amssymb}                                % Math symbols
+\usepackage{graphicx}                               % Insertar gráficos
+\usepackage[ddmmyyyy]{datetime}                     %
+\usepackage[spanish, es-nodecimaldot]{babel}        % Corte de las palabras en español
+\usepackage{tikz}
+\usetikzlibrary{babel}								% Imprescindible para que tikz funcione con babel
+\usetikzlibrary{mindmap,trees}
+\usepackage{enumitem}
+\setenumerate[0]{label=\alph*)}
+\usepackage[hidelinks]{hyperref}                    % Enlaces sin apariencia fea
+\usepackage{gensymb}                                % Símbolos de grado
+\usepackage[pscoord]{eso-pic}                       % Overlay text. The zero point of the coordinate system is the lower left corner of the page (the default).
+\usepackage{xcolor}                                 % Texto con diferentes colores
+%\selectcolormodel{gray}
+\usepackage{siunitx} \sisetup{ output-decimal-marker={,}, quotient-mode=fraction}   % Sistema internacional para unidades con separador decimal
+\usepackage{relsize}								% Integrales grandes
+\usepackage{qrcode}
+\usepackage{sectsty}								% Estilo para las secciones
+\usepackage{empheq}									% Ecuaciones en cajas
+\usepackage[pagestyles,innermarks]{titlesec}		% Configuración de títulos
+\usepackage{float}									% Posición figuras con [H]
+%\usepackage{chngcntr}								% Resetea contador de ecuaciones
+%\usepackage{xpatch}
+%\usepackage{everyshi}								% Contador se incrementa al cambiar de página
+\usepackage{imakeidx}
+\makeindex
+
+% == Data of the document ==
+\date{\today}
+\author{Samuel Gómez Fernández}
+
+% == Teoremas ==
+\newtheoremstyle{named}{\topsep}{\topsep}{\itshape}{}{\bfseries}{.}{.5em}{\thmname{#1}
+	\roman{chapter}\thmnumber{#2} \thmnote{#3}}
+\theoremstyle{named}
+\theoremstyle{plain}
+	\newtheorem{propo}{Proposición}[section]
+	\newtheorem{teor}[propo]{Teorema}
+	\newtheorem{coro}[propo]{Corolario}
+	\newtheorem{lema}[propo]{Lema}
+\theoremstyle{definition}
+	\newtheorem{defi}{Definición}[chapter]
+	\newtheorem{ejem}{Ejemplo}
+	\newtheorem{ejer}{Ejercicio}
+\theoremstyle{remark}
+	\newtheorem*{nota}{Nota}
+	\newtheorem*{notac}{Notación}
+
+% Cabecera ===========================================
+\newpagestyle{DocumentoGeneral}{
+	\headrule
+	\sethead{
+		\ifnum\value{chapter}>0
+			Capítulo \roman{chapter} 
+		\else
+		\fi
+		\hfill \MakeUppercase{\chaptertitle}
+		}{}{}
+	\footrule\setfoot{}{\usepage{}}{}
+	}
+
+
+% Redefino nombre y número de figura ==================
+\renewcommand\thefigure{\roman{chapter}.\arabic{figure}}
+%\counterwithin{equation}{section}
+
+% Bibliografía ========================================
+\usepackage[backend=biber,style=alphabetic,sorting=nty,citestyle=alphabetic]{biblatex}
+\bibliography{bib/matematicas.bib}{}
+\setlength\bibitemsep{1.5\itemsep}
+\DefaultInheritance{all=true}
+%\setlength\bibitemsep{\baselineskip}
+\usepackage{authblk}	% Multiple authors
+
+% Entorno problema ========================================
+\newcounter{problema}[section]
+\newenvironment{problema}[2]
+{\refstepcounter{problema} \noindent\textbf{Problema \thesection.\theproblema} \hspace{0.5cm} #2 
+	\begin{flushright}\textit{#1}\end{flushright} 
+	\paragraph{Solución}}
+{\vspace{1cm}}
+
+% Fórmulas enfatizadas ======================================
+\definecolor{formulaFondo}{HTML}{e0e0ff}
+\newcommand*\formulaBox[1]{\colorbox{formulaFondo}{\hspace{1em}#1\hspace{1em}}}
+
+% Entorno lista de propiedades =================================
+\newlist{propiedades}{enumerate}{2}
+\setlist[propiedades]{label=Propiedad \arabic*.,itemindent=*}
+
+% Formato de capítulos =========================================
+\definecolor{tituloColor}{HTML}{006aff}
+%\newcommand{\chapterbreak}{\clearpage}
+
+\newcommand{\chapterFormato}[1]{
+	\huge\textcolor{tituloColor}{#1}\\
+	\vspace{1cm}
+	\color{tituloColor}\titlerule[1pt]
+}
+\titleformat{\chapter}[display]{\filright\normalfont\bfseries}
+	{\textcolor{tituloColor}{	% El número de la sección
+		Capítulo \roman{chapter}}\;\;
+		\color{tituloColor}\titlerule[1pt]
+		%\setcounter{pageInChapter}{1}
+	}	
+	{0em}	% Distancia entre número y texto de título de sección
+	{\chapterFormato}	% El texto de la sección
+
+
+% Formato de secciones =========================================
+\newcommand{\sectionFormato}[1]{
+	\large\textcolor{tituloColor}{#1}
+}
+\titleformat{\section}[hang]{\normalfont\bfseries}
+	{\textcolor{tituloColor}{	% El número de la sección
+		\Large\thesection.}
+	}	
+	{0em}	% Distancia entre número y texto de título de sección
+	{\sectionFormato}	% El texto de la sección
+\renewcommand{\thesection}{\arabic{section}}
+
+% Formato de subsecciones =========================================
+\newcommand{\subsectionFormato}[1]{
+	\large\textcolor{black}{#1}
+}
+\titleformat{\subsection}[hang]{\normalfont\bfseries}
+	{\textcolor{black}{	% El número de la sección
+		\large\thesubsection.}
+	}	
+	{0em}	% Distancia entre número y texto de título de sección
+	{\subsectionFormato}	% El texto de la sección
+% QR CODE ===========================================
+\qrset{height=2cm,padding}
+

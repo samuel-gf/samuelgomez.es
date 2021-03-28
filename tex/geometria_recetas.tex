@@ -1,0 +1,397 @@
+\include{tmpl/header_general1}
+\include{tmpl/header_a4}
+\title{Recetas para tener éxito en geometría}
+
+%index{término para el índice}
+%\renewcommand\vec{\overline}
+\setenumerate[1]{label=\arabic*.-}
+
+\begin{document}
+
+%\maketitle
+\tableofcontents
+\pagestyle{DocumentoGeneral}
+
+%================================ CONCEPTOS GENERALES =====================================
+
+\chapter{Conceptos generales}
+\section{Punto}
+Un elemento definido con coordenadas. Suelen recibir nombres como $P$ o $A$, 
+y si queremos ser un poco más concretos, nombres más elaborados como $P_r$. 
+
+En el plano tienen dos coordenadas $x$ e $y$ y en el espacio
+tienen tres $x$, $y$ y $z$.
+
+Para asociar las coordenadas al punto se suele escribir cosas como $\color{red}A(x,y,z)$ o
+$\color{blue}P(x_2, y_2, z_2)$ y
+así sabemos que $\color{red}x$ es la coordenada del punto $\color{red}A$ pero que $\color{blue}x_2$
+es la coordenada del punto $\color{blue}P$.
+
+Existe un punto especial llamado \textbf{origen} que tiene por coordenadas $(0,0)$ en el plano y
+$(0,0,0)$ en el espacio.
+
+%=== RECTA ===
+\section{Rectas}
+
+Es un conjunto infinito de puntos alineados. Hay varias formas de representarla analíticamente. Es evidente
+que una recta $r$ puede ser recorrida en los dos sentidos opuestos.
+
+\subsection{Ecuación vectorial en el espacio}
+La forma vectorial de la recta presenta este aspecto
+\begin{empheq}[box=\formulaBox]{equation}
+	(x,y,z)=(x_0, y_0, z_0)+\lambda(a, b, c)
+\end{empheq}
+
+de es ta forma de la recta conocemos un punto $P(x_0,y_0,z_0)$ y su vector director $\vec{U}=(a,b,c)$
+
+\subsection{Ecuación paramétrica de la recta en el espacio}
+
+Conocemos las coordenadas de un punto $\color{red}P(x_0, y_0, z_0)$ que pertenece
+a la recta. El vector
+$\color{blue}\vec{u}=(a,b,c)$ indica hacia donde apunta la recta a partir del punto. Su ecuación es de la forma:
+
+\begin{empheq}[box=\formulaBox]{equation}
+	\begin{cases}
+		x &= \color{red}x_0 \color{black}+ \color{blue}a \lambda \\
+		y &= \color{red}y_0 \color{black}+ \color{blue}b \lambda \\
+		z &= \color{red}z_0 \color{black}+ \color{blue}c \lambda \\
+	\end{cases}
+\end{empheq}
+
+
+\subsection{Ecuación continua de la recta en el espacio}
+De esta ecuación de la recta conocemos un punto $P(x_0,y_0,z_0)$ y también su vector director
+$\vec{U}=(a,b,c)$.
+
+\begin{empheq}[box=\formulaBox]{equation}
+	\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}
+\end{empheq}
+
+% === VECTOR ===
+\section{Vector}
+Es un conjunto de coordenadas que indican una dirección. Cuando escibimos matemáticas solemos
+ponerle encima un "sombrero" para aclarar que nos referimos a un vector. Por ejemplo el
+vector $U$ se escribirá como $\vec{U}$.
+
+% === PLANO ===
+\section{Plano}
+
+\subsection{Ecuación paramétrica del plano en el espacio}
+
+De un plano conocemos un punto $P(x_0,y_0,z_0)$ y también dos vectores directores que se encuentran
+en su interior $\vec{U}=(u_1,u_2,u_3$ y $\vec{V}=(v_1,v_w,v_3)$
+
+\begin{empheq}[box=\formulaBox]{equation}
+	\begin{cases}
+		x &= x_0 + \lambda u_1 + \mu v_1 \\
+		y &= y_0 + \lambda u_2 + \mu v_2 \\
+		z &= z_0 + \lambda u_3 + \mu v_3 \\
+	\end{cases}
+\end{empheq}
+
+\subsection{Ecuación general o implícita del plano en el espacio}
+Los coeficientes $A$, $B$ y $C$ indican el vector normal $\vec{n}$ del plano.
+
+\begin{empheq}[box=\formulaBox]{equation}
+	Ax+By+Cz+D=0
+\end{empheq}
+
+En este ejemplo nos dan el plano $\pi:7x+2y-3z+2=0$ y de él sacamos la información de sus coeficientes
+que son $A=7$, $B=2$, $C=-3$ y $D=2$ y por lo tanto el vector normal del plano es $\vec{n}=(7,2,-3)$.
+
+
+
+%===================== RECETAS DE GEOMETRÍA =====================
+\chapter{Recetas de geometría}
+
+Estas recetas pretenden facilitarte las cosas a la hora de entender y aprobar geometría.
+
+% =============================================
+\section{Punto medio de un segmento}\label{punto_medio_segmento}
+\begin{itemize}
+	\item \textbf{Tengo} dos puntos $\color{red}A(x_1, y_1, z_1)$ y $\color{blue}B(x_2, y_2,z_2)$ 
+	\item \textbf{Obtengo} un punto $P_m$ que se encuentra a medio camino entre $\color{red}A$ y
+		$\color{blue}B$
+\end{itemize}
+\begin{enumerate}
+\item Aplico la fórmula
+\end{enumerate}
+
+\begin{empheq}[box=\formulaBox]{equation}
+	P_m=\left(\frac{\color{red}x_1\color{black}+\color{blue}x_2}{2}, 
+	\frac{\color{red}y_1\color{black}+\color{blue}y_2}{2}, 
+	\frac{\color{red}z_1\color{black}+\color{blue}z_2}{2}\right)
+\end{empheq}
+
+\vspace{1cm}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Segmento de unión 
+		\draw [dashed] (-5, 0) -- (5, 0); 
+		% Punto Pm
+		\draw [color=black, fill=white] (0,0) circle(0.1) node[anchor=north] {$P_m$};
+		% Extremo A
+		\draw [color=red, fill=red] (-5,0) circle(0.1) node[anchor=east] {$A$};
+		% Extremo B
+		\draw [color=blue, fill=blue] (5,0) circle(0.1) node[anchor=west] {$B$};
+	\end{tikzpicture}
+	\caption{Punto medio $P_m$ entre los puntos $\color{red}A$ y $\color{blue}B$}
+\end{figure}
+
+% ========================================================
+\section{Punto simétrico respecto de un plano}
+\begin{itemize}
+\item \textbf{Tengo} un punto $\color{red}P$ y un plano $\pi$
+\item \textbf{Obtengo} un punto simétrico $\color{blue}P'$ al otro lado del plano. Algo así como un efecto espejo
+\end{itemize}
+	
+\begin{enumerate}
+	\item Calculo la recta normal $r$ al plano $\pi$ que pasa por el punto $\color{red}P$
+\item Hallo el punto de intersección $P_m$ entre la normal y el plano $\pi$
+\item Obtengo el punto simétrico $\color{blue}P'$ mediante la fórmula del punto medio (ver
+	\ref{punto_medio_segmento}). Como conozco las coordenadas de un
+		punto extremo $\color{red}P$ y también las del punto medio $P_m$ ya solo me queda por obtener el otro
+		extremo $\color{blue}P'$.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Plano
+		\draw (0,0) -- (1,2) -- (10,2) -- (11,0) -- (0,0) node[anchor=east] {$\pi$};
+		% Punto Pm
+		\draw [color=black, fill=white] (5.5,1) circle(0.1) node[anchor=west] {$P_m$};
+		% Segmento de unión, recta r
+		\draw [dashed] (5.5, 4) -- (5.5, 1)  (5.5, 0) -- (5.5, -4); 
+		% Punto P
+		\draw [color=red, fill=red] (5.5,3) circle(0.1) node[anchor=east] {$P$};
+		% Punto P'
+		\draw [color=blue, fill=blue] (5.5,-3) circle(0.1) node[anchor=east] {$P'$};
+	\end{tikzpicture}
+	\caption{Punto $P'$ simétrico de $P$ respecto del plano $\pi$}
+\end{figure}
+
+\paragraph{Ejemplos} (2.4.1) Modelo 2003 Opción A; (2.5.6) Septiembre 2006 Opción A
+
+% ========================================================
+\section{Posición relativa de dos rectas}
+\begin{itemize}
+\item \textbf{Tengo} dos rectas $r$ y $s$ con sus dos vectores directores $\vec{u}$ y $\vec{v}$
+respectivamente
+\item \textbf{Obtengo} una descripción de como está posicionada una respecto a la otra
+\end{itemize}
+
+$$
+\begin{cases}
+	\vec{u} \propto \vec{v} &
+		\begin{cases}
+			\text{Tienen al menos un punto en común} \rightarrow \text{\textbf{Coincidentes}} \\
+			\text{NO tienen punto en común} \rightarrow \text{\textbf{Paralelas}}
+		\end{cases} \vspace{1cm}\\
+	\vec{u} \not\propto \vec{v} & 
+		\begin{cases}
+			\text{Tienen un punto en común} \rightarrow \text{\textbf{Se cortan}} \\
+			\text{NO tienen punto en común} \rightarrow \text{\textbf{Se cruzan}}
+		\end{cases} \\
+\end{cases}
+$$
+
+\begin{enumerate}
+	\item Si sus vectores directores apuntan en la misma dirección $\vec{u} \propto \vec{v}$
+		(proporcionales) averiguar si tienen algún punto en común sustituyendo un punto de la recta
+		$r$ en la recta $s$
+		\begin{enumerate}
+			\item Si el punto pertenece a la recta son coincidentes \textbf{coincidentes}
+			\item Si no, son rectas \textbf{paralelas}
+		\end{enumerate}
+	\item Si apuntan en direcciones diferentes $\vec{u} \not\propto \vec{v}$, 
+		averiguar si tienen algún punto en común resolviendo el sistema
+		\begin{enumerate}
+		\item Si el sistema es compatible determinado tienen un punto común y son
+			\textbf{coincidentes}
+		\item Si el sistema es incompatible no tienen punto común y son \textbf{paralelas}
+		\end{enumerate}
+\end{enumerate}
+
+% ==========================================================
+\section{Distancia entre un punto y una recta}
+% Junio 2005 op B (p.212)
+\begin{itemize}
+	\item \textbf{Tengo} un punto $P$ y una recta $r$ con su vector 
+		director $\color{blue}\vec{u}$
+	\item \textbf{Obtengo} un número real que indica la distancia
+\end{itemize}
+
+\begin{enumerate}
+	\item Calculo el vector punto a punto $\color{red}\vec{PP}$, que va desde el punto $P$ a un punto
+		cualquiera de la recta $r$
+	\item Uso la fórmula
+\end{enumerate}
+
+\begin{empheq}[box=\formulaBox]{equation}
+	d=\frac{|\color{red}\vec{PP} \times \color{blue}\vec{u}|}{|\color{blue}\vec{u}|}
+\end{empheq}
+
+% ====================================================
+\section{Distancia entre un punto y un plano}
+\begin{itemize}
+	\item \textbf{Tengo} un punto $\color{blue}P$ y un plano $\pi:\color{red}Ax+By+Cz+D\color{black}=0$
+	\item \textbf{Obtengo} un número real que indica la distancia
+\end{itemize}
+
+\begin{enumerate}
+\item El numerador de la fórmula contiene la ecuación del plano en valor absoluto.
+	El denominador contiene el módulo de la normal al plano
+
+	\begin{empheq}[box=\formulaBox]{equation}
+		d=\frac{|
+		\color{red}A\color{blue}x\color{black}+
+		\color{red}B\color{blue}y\color{black}+
+		\color{red}C\color{blue}z\color{black}+D|}
+		{\sqrt{\color{red}A^2+B^2+C^2}}
+	\end{empheq}
+
+\item Sustituyo las variables $x$, $y$ y $z$ por las coordenadas del punto $\color{blue}P$
+\end{enumerate}
+
+% =====================================================
+\section{Distancia entre dos rectas}
+\begin{itemize}
+	\item \textbf{Tengo} dos rectas $r$ y $s$
+	\item \textbf{Obtengo} un número real que indica la distancia
+\end{itemize}
+\begin{enumerate}
+	\item Obtener un vector de cada recta $\vec{u}$, $\vec{v}$
+	\item Obtener un punto de cada recta que llamaremos $P_r$ y $P_s$ y construimos el vector punto
+		a punto $\vec{PP}$
+	\item Aplicamos la fórmula. En el numerador se hace el producto mixto, en el denominador el
+		módulo del producto vetorial
+\end{enumerate}
+
+\begin{empheq}[box=\formulaBox]{equation}
+	d_{r, s}=\frac{|[\vec{PP}, \vec{u}, \vec{v}]|}{|\vec{u}\times\vec{v}|}
+\end{empheq}
+
+\paragraph{Nota} Si dos rectas se cortan o son coincidentes, su distancia es nula (0)
+
+% ================================================
+\section{Área del paralelogramo encerrado por dos vectores}
+\begin{itemize}
+\item \textbf{Tengo} dos vectores $\vec{u}$ y $\vec{v}$
+\item \textbf{Obtengo} un número real que indica el área en unidades al cuadrado
+\end{itemize}
+
+\begin{enumerate}
+\item Aplico la fórmula del área, que consiste en hacer el producto vectorial y luego su módulo
+	\begin{empheq}[box=\formulaBox]{equation}
+		A=|\vec{u}\times\vec{v}|
+	\end{empheq}
+
+\end{enumerate}
+\paragraph{Nota} Si se trata de un triángulo, divido su área a la mitad
+
+% ==================================================
+\section{Construir recta a partir de dos planos}
+\begin{itemize}
+	\item \textbf{Tengo} dos planos $\pi_1$ y $\pi_2$. Para construir una recta debemos obtener dos cosas: un vector
+	\item \textbf{Obtengo} un vector director $\vec{u}$ y un punto $P$ con el que contruir una recta $r$
+\end{itemize}
+
+\begin{enumerate}
+	\item Hago el producto vectorial de las normales de cada plano
+	\item El resultado será el vector director $\vec{u}$ de la recta que busco
+	\item Ahora debemos obtener el punto, para ello doy un valor a una de las incógnitas, por
+		ejemplo $x=0$ y resolvemos el sistema de ecuaciones para obtener las otras dos incógnitas.
+		Los tres resultados $(x,y,z)$ son las coordenadas del punto $P$
+	\item Escribirmos la recta en paramétricas con el punto $P$ y su vector director $\vec{u}$
+\end{enumerate}
+
+
+% =========================================================
+\section{Construir plano que contiene recta y punto}
+\begin{itemize}
+	\item \textbf{Tengo} un punto $\color{red}P(x,y,z)$ y una recta $r$
+	\item \textbf{Obtengo} un plano $\pi$ en forma general, también conocida como ecuación implícita
+\end{itemize}
+
+\begin{enumerate}
+	\item Saco el vector director $\color{blue}\vec{U}=(u_x,u_y,u_z)$ de la recta $r$
+	\item Obtengo un punto de la recta al que llamaré $P_r$
+	\item Contruyo el vector punto a punto $\color{orange}\vec{PP}=(PP_x,PP_y,PP_z)$ que va desde el punto $P$ a $P_r$
+	\item Aplico la fórmula que nos da el plano
+\end{enumerate}
+
+\begin{empheq}[box=\formulaBox]{equation}
+\begin{vmatrix}
+	x-\color{red}P_x & y-\color{red}P_y & z-\color{red}P_z \\
+	\color{blue}U_x & \color{blue}U_y & \color{blue}U_z \\
+	\color{orange}PP_x & \color{orange}PP_y & \color{orange}PP_z
+\end{vmatrix}
+=0
+\end{empheq}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Plano
+		\draw (0,0) -- (1,3) -- (10,3) -- (11,0) -- (0,0) node[anchor=east] {$\pi$};
+		% Recta contenida
+		\draw [dotted, line width=1pt, color=black] (4, 4) -- (10, -2) node[anchor=west] {$r$};
+		\draw [->, line width=2pt, color=blue] (5.2, 2.8) -- (7.6, 0.4) node[anchor=west] {$\vec{U}$};
+		% Punto P
+		\draw [color=red, fill=red] (3,1) circle(0.1) node[anchor=east] {$\color{red}P$};
+		% Vector punto a punto
+		\draw [->, line width=2pt, color=orange] (5.5, 2.5) -- (3,1) node[below, midway] {$\vec{PP}$};
+		% Punto Pr
+		\draw [color=black, fill=black] (5.5,2.5) circle(0.1) node[anchor=west] {$P_r$};
+	\end{tikzpicture}
+	\caption{Plano a partir de una recta contenido en él y un punto $\color{red}P$}
+\end{figure}
+% ====================================================
+\section{Construir plano a partir de vector perpendicular y punto}
+
+\begin{itemize}
+	\item \textbf{Tengo} un vector perpendicular $\color{red}\vec{n}=(A,B,C)$. Este vector será la normal del plano.
+		Tengo también un punto $\color{blue}P$
+	\item \textbf{Obtengo} un plano $\pi$
+\end{itemize}
+
+\begin{enumerate}
+	\item Todos los planos son de la forma
+		$Ax+By+Cz+D=0$. Usaré los coeficientes 
+		$\color{red}A,B,C$ de la normal $\color{blue}\vec{n}$ en la ecuación del plano.
+	\item Para averiguar la incógnita $D$, sustituyo $x$,$y$ y $z$ del plano por las coordenadas
+	del punto $\color{blue}P$.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Plano
+		\draw (0,0) -- (1,2) -- (10,2) -- (11,0) -- (0,0) node[anchor=east] {$\pi$};
+		% Vector normal
+		\draw [->, line width=2pt, color=red] (5.5, 1) -- (5.5, 3) node[anchor=west] {$\vec{n}$};
+		% Punto
+		\draw [color=blue, fill=blue] (3,1) circle(0.1) node[anchor=east] {$P$};
+	\end{tikzpicture}
+	\caption{Plano a partir de un vector perpendicular $\color{red}\vec{n}$ y un punto
+	$\color{blue}P$}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{c}
+	\qrcode{https://samuelgomez.es/r/2020/1}\\
+	Ejemplo \thesection.1
+\end{tabular}
+\end{center}
+
+
+% ======================================================
+\nocite{santillana2016_2bach}
+\nocite{cms1}
+\printbibliography
+
+
+\include{tmpl/foot}

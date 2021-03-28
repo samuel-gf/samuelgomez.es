@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://samuelgomez.es/$1 [R,L]
+
+# Vídeos
+#Ecuación del plano perpendicula a un punto
+Redirect 301 /v1 https://youtu.be/3rNMgjDH57Y	

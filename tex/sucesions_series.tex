@@ -1,0 +1,277 @@
+\include{tmpl/header_general1}
+\include{tmpl/header_a4}
+\title{Sucesiones}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+%============ SUCESIONES ==============================
+\chapter{Sucesiones}
+
+
+\section{Conceptos generales}
+Aplicación cuyo dominio es el conjunto $\mathbb{N}$. Cada uno de ellos se denomina término. El orden
+de sus elementos, denominados términos sí es relevante a diferencia de los conjuntos. Las sucesiones
+pueden seguir un esquema de \textbf{progresión aritmética} o \textbf{geométrica}.
+
+El conjunto de los términos de una sucesión puede ser definida como
+
+$$\{a_n, n\in \mathbb{N}\}=\left\{\frac{1}{n+1}, n\in\mathbb{N}\right\}$$
+
+\section{Sucesiones acotadas}
+
+Estará superiormente acotada (o inferiormente) si el conjunto de sus términos está acotado
+superiormente (o inferiormente). Es decir, estará acotada superiormente si
+
+$$\forall n\in\mathbb{N}, a_n \leq b$$
+
+y en este caso $b$ es la cota superior.
+
+Diremos que está acotada cuando lo esté tanto superior como inferiormente.
+
+\subsection{Subsucesiones}
+
+% ========= SUCESIONES CONVERGENTES ==================
+\section{Sucesiones convergentes}\label{sec_sucesiones_convergentes}
+
+\begin{figure}[H]	% Las sucesiones pueden ser convergentes o no convergentes
+	\centering
+	\begin{tikzpicture}[parent anchor=east, child anchor=west, grow=east, 
+		level 1/.style={level distance=2.5cm, sibling angle=45}]
+		\node{Sucesiones}
+			child{ node[anchor=west]{No convergente}}
+			child{ node[anchor=west]{Convergente}}
+	;
+	\end{tikzpicture}
+	\caption{Las sucesiones pueden ser convergentes o no convergentes}
+\end{figure}
+
+
+Diremos que converge al número real $l$ si, cualquiera que se el número real $\epsilon>0$ que
+fijemos podemos encontrar un número natural $k$, que dependerá de $\epsilon$, tal que los términos
+de la sucesión $(a_n)$ de orden mayor o igual que $k$ pertenecen al intervalo abierto $(l-\epsilon,
+l+\epsilon)$. En lenguaje matemático
+
+\begin{equation}\label{def_sucesion1}
+	\forall\epsilon>0, \exists k\in\mathbb{N}, \forall n \in\mathbb{N}, n\geq k \Rightarrow a_n\in
+	(l-\epsilon, l+\epsilon)
+\end{equation}
+
+o bien
+\begin{equation}\label{def_sucesion2}
+	\forall\epsilon>0, \exists k\in\mathbb{N}, \forall n \geq k, a_n\in (l-\epsilon, l+\epsilon)
+\end{equation}
+
+o incluso
+\begin{equation}\label{def_sucesion3}
+	\forall\epsilon>0, \exists k\in\mathbb{N}, \forall n \geq k \Rightarrow |l-a_n|<\epsilon
+\end{equation}
+
+y por la propiedad del valor absoluto tenemos
+\begin{equation}\label{def_sucesion4}
+	a_n\in(l-\epsilon, l+\epsilon) \Longleftrightarrow |l-a_n|<\epsilon
+\end{equation}
+
+Las cuatro ecuaciones \ref{def_sucesion1}, \ref{def_sucesion2}, \ref{def_sucesion3} y
+\ref{def_sucesion4} son equivalentes.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[grow cyclic, text width=2.7cm, align=flush center,
+			level 1/.style={level distance=3.3cm, sibling angle=51.43}]
+		\node{\textbf{Sucesiones convergentes}}
+			child{ node{Límite único}}
+			child{ node{Subsucesión convergente}}
+			child{ node{De tal astilla tal palo}}
+			child{ node{Independiente}}
+			child{ node{Límite absoluto}}
+			child{ node{Límite absoluto desplazado}}
+			child{ node{En pareja}}
+	;
+	\end{tikzpicture}
+	\caption{Esquema sucesiones convergentes de la sección \ref{sec_sucesiones_convergentes}}
+\end{figure}
+
+\begin{propo}[Límite único]\label{prop_20200529A}
+	El límite de una sucesión convergente de números reales es único. \cite[p55]{prieto2008}
+\end{propo}
+
+\begin{propo}[Subsucesión convergente]\label{prop_20200529B}
+	Toda subsucesión de una sucesión convergente de números reales es una sucesión convergente que
+	tiene el mismo límite. \cite[p55]{prieto2008}
+\end{propo}
+
+\begin{propo}[De tal astilla tal palo]\label{prop_20200529C}
+	Si la subsucesión $(a_n; n\geq k)$ de la sucesión $(a_n)$ de números reales es convergente,
+	entonces la sucesión $(a_n)$ es convergente y se cumple \cite[p59]{prieto2008} $$lim(a_n)=lim(a_n;n\geq k)$$
+\end{propo}
+
+\begin{propo}[Independiente]\label{prop_20200529D}
+	La propiedad de convergencia de una sucesión $(k\in\mathbb{N})$ de números reales a un límite es
+	independiente de los $k$ primeros términos de la sucesión $(k\in\mathbb{N})$. \cite[p59]{prieto2008}
+
+	Es decir, si la sucesión $(a_n)$ es convergente, entonces la sucesión $(a_{n+k})$ es convergente
+	y tiene el mismo límite que $(a_n)$ para todo $k\in\mathbb{N}$.
+\end{propo}
+
+\begin{propo}[Límite absoluto]\label{prop_20200529E}
+	Dada una sucesión $(a_n)$ de números reales, se verifica \cite[p59]{prieto2008}
+	$$lim(a_n) = 0 \Longleftrightarrow lim(|a_n|)=-1$$
+\end{propo}
+
+\begin{propo}[Límite absoluto desplazado]\label{prop_20200529F}
+	Dada una sucesión $(a_n)$ de números reales, se verifica \cite[p59]{prieto2008}
+	\begin{equation}\label{eq_20200529A}
+		lim(a_n)=l \Longleftrightarrow lim(a_n-l)=0
+	\end{equation}
+\end{propo}
+
+\begin{propo}[En pareja]\label{prop_20200529G}
+	Sean $(a_n)$ y $(b_n)$ dos sucesiones de números reales tales que existe $n_0\in\mathbb{N}$ de
+	modo que 
+	\begin{equation}\label{eq_20200529C}
+		\forall n \geq n_0, |a_n| \leq |b_n|
+	\end{equation}
+
+	Entonces, si la sucesión $(b_n)$ converge a $0$, también la sucesión $(a_n)$ converge a $0$. 
+	\cite[p60]{prieto2008}
+\end{propo}
+
+Si la sucesión $(a_n)$ converge a algún número real $l$, diremos que es una sucesión 
+convergente\index{sucesión! convergente} y del número $l$ diremos que es 
+el límite de la sucesión\index{sucesión! límite de} $(a_n)$. Si no existe
+ningún número real que se límite de la sucesión $(a_n)$ diremos que es 
+no convergente\index{sucesión! no convergente}.
+
+La sucesión $(a_n)$ converge a $l$ precisamente si para cada número real $\epsilon>0$ el intervalo
+$(l-\epsilon, l+\epsilon)$ contiene todos los término de la sucesión $(a_n)$ salvo, posiblemente una
+cantidad finita.
+
+\subsection{Operaciones entre sucesiones convergentes}
+
+\section{Límites infinitos}
+\section{Punto adherente}
+\section{Sucesiones monótonas}
+
+\section{Sucesiones de Cauchy}
+
+Diremos que una sucesión $(a_n)$ de números reales es una sucesiónd de 
+Cauchy\index{sucesión! de Cauchy}, si para todo
+número real positivo $\epsilon$, existe un número natural $m$ tal que el valor absoluto de la
+diferencia entre dos términos cualesquiera de la sucesión de orden mayor o igual que $m$ es menor
+que $\epsilon$. Es decir
+
+\begin{equation}
+	\forall \epsilon>0, \exists m\in\mathbb{N}, \forall(p,q)\in\mathbb{N}\times\mathbb{N},
+	(p \geq m \wedge q \geq m)\Rightarrow |a_p-a_q|<\epsilon
+\end{equation}
+
+a partir de $m$ cualquiera dos términos de la sucesión distan entre sí menos de $\epsilon$. Dichos
+términos no tienen que ser necesariamente consecutivos. De manera equivalente podríamos decir
+
+\begin{equation}
+	\forall>0, \exists k \in \mathbb{N}, \forall n\geq k, a_n \in (a_k-\epsilon, a_k+\epsilon)
+\end{equation}
+
+\begin{propo}
+	Toda sucesión convergente de dos números reales es una sucesión de
+	Cauchy\footnote{\cite[p84]{prieto2008}}
+\end{propo}
+
+\begin{propo}
+	Toda sucesión de Cauchy de números reales está acotada.
+\end{propo}
+
+\begin{propo}
+	Toda sucesión de números reales acotada admite una subsucesión convergente.
+\end{propo}
+
+\begin{propo}
+	Toda sucesión de Cauchy de números reales es convergente.
+\end{propo}
+
+\begin{coro}
+	Una condición necesaria y suficiente para que una sucesión de números reales sea de Cauchy es
+	que sea convergente.
+\end{coro}
+
+% =============== SERIES ==========================
+\chapter{Series de números reales}
+
+\begin{defi}
+	Dada una sucesión $(a_n)$ de números reales, se denomina serie de término 
+	general\index{serie} $a_n$
+	a la sucesión $(S_n)$, donde
+	\begin{equation}
+		S_n=\sum_{p=0}^{n} a_p = a_0+a_1+...+a_n
+	\end{equation}
+\end{defi}
+
+De la sucesión $(S_n)$ también diremos que es la serie asociada a la 
+
+sucesión\index{sucesión! serie asociada} $(a_n)$.
+
+\begin{figure}[H]	% Las series pueden ser convergentes o divergentes
+	\centering
+	\begin{tikzpicture}[parent anchor=east, child anchor=west, grow=east,
+		level 1/.style={level distance=2.5cm, sibling angle=45}]
+		\node{Series}
+			child{ node[anchor=west]{Divergentes}}
+			child{ node[anchor=west]{Convergente}}
+	;
+	\end{tikzpicture}
+	\caption{Las series pueden ser o convergentes o divergentes}
+\end{figure}
+
+\section{Progresiones}
+
+\section{Progresión aritmética}
+Es una sucesión donde el término que indica el incremento entre un término $a_n$ y el siguiente
+$a_{n+1}$ es un valor constante para toda la sucesión. Dicho término se denomina diferencia $d$ y
+la podemos expresar como término general $\{a_n\}$.
+
+$$d=a_{n+1}-a_n$$
+
+\section{Suma de los términos de una progresión aritmética}
+$$S_{pa}=\sum_{i=1}^n a_i = \frac{a_1+a_n}{2}\cdot n$$
+
+\section{Progresión geométrica}
+Es una sucesión donde el término que indica el incremento entre un término $a_n$ y el siguiente
+$a_{n+1}$ es una razón. Sea $r$ dicha razón, la suma de los términos de una progresión geométrica es
+
+$$S_{pg}=\sum_{i=1}^na_i=\frac{r^n-1}{ r-1}\cdot a_1$$
+
+% ============================================================
+% SUMA DE SERIES DE POTENCIAS
+\section{Suma de series de potencias}
+\paragraph{Exponencial}
+$$e^x=\sum_{n=0}^\infty \frac{x^n}{n!}$$
+
+\paragraph{Serie geométrica}
+$$S=\sum_{n=0}^M q^n = \frac{q^0-q^{M+1}}{1-q}$$
+
+DEMOSTRACIÓN
+
+\begin{align*}
+	S-qS &= (q^0+q^1+q^2+\dotsc+q^M)-(q^1+q^2+q^3+\dotsc+q^{M}+q^{M+1}) \\
+	S(1-q) &= q^0-q^{M+1} \\
+	S &= \frac{q^0+q^{M+1}}{1-q}
+\end{align*}
+
+
+\paragraph{Variaciones de la serie geométrica} Si derivo el termino que se suma de la serie
+geométrica debo derivar también el resultado de esta. Así, por ejemplo
+
+EJEMPLO
+
+$$\sum_{n=0}^\infty n p^{n-1} = \left(\frac{1}{1-p}\right)' = \frac{1}{(1-p)^2}$$
+% =============== INDEX ===================
+\printindex
+
+% ================ BIBLIOGRAFÍA ============================
+\nocite{prieto2008}
+\printbibliography
+
+\include{tmpl/foot}

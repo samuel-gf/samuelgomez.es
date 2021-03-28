@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="Apuntes de Javascript"/>
+    <link rel="stylesheet" type="text/css" href="css/reset2.css?t=1">
+	<link rel="stylesheet" type="text/css" href="css/general.css?t=1">
+	<link rel="stylesheet" type="text/css" href="css/highlight/default.css">
+
+	<script type="text/javascript" src="js/toc.js"></script>
+	<script type="text/javascript" src="js/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/code_reformat.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="48x48"   href="img/favicon/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="96x96"   href="img/favicon/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="196x196" href="img/favicon/favicon-196x196.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/favicon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/favicon-180x180.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/favicon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="167x167" href="img/favicon/favicon-167x167.png" />
+	
+	<title>Apuntes de Javascript</title>
+
+</head>
+<body>
+<header>
+	<nav>
+	<a href="index.html"><img id="logo" src="img/logo/logoS3.png" alt=""></a>
+	<a id="nav-toggle" href="#" onclick="toggle_toc();">&#9776;</a>
+	</nav>
+	<h1>Javascript</h1>
+</header>
+
+
+<nav id="toc">
+	<h2>Índice de contenidos</h2>
+	<ul>
+		<li><a href="#base">Base</a></li>
+		<li><a href="#utiles">Funciones útiles</a></li>
+		<li><a href="#svg">SVG</a></li>
+	</ul>	
+</nav>
+
+<main>
+<article>
+	<a name="base"><h1>Base</h1></a>
+	Incluir en la cabecera
+	<pre><code>
+	&lt;script type="text/javascript" src="archivo.js"&gt;&lt;/script&gt;
+	</code></pre>
+</article>
+
+<article>
+	<a name="utiles"><h1>Funciones útiles</h1></a>
+	<h2>Ejecutar tras la carga del DOM</h2>
+	<pre><code class="javascript">
+	document.addEventListener('DOMContentLoaded', function(){ 
+		// Tu código aquí
+	}, false);
+	</code></pre>
+
+	<h2>Detener el hilo de ejecición por un tiempo</h2>
+	<pre><code class="javascript">
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	async function myFunción(){
+		await sleep(100);
+	}
+	</code></pre>
+</article>
+
+<article>
+	<a name="svg"><h1>SVG</h1></a>
+	<p>La <a href="js/Svg.js">librería Svg</a> completa</p>
+	<h2>Crear el objeto</h2>
+	<p>Contenedor del lienzo en el <em>html</em> será</p>
+
+	<pre><code class="html">
+		&lt;svg id="canvas1" width="800px" height="500px"&gt;
+	</code></pre>
+
+	<pre><code class="javascript">
+	// Ejemplo para crear el lienzo en <em>javascript</em>
+	async function main(){
+		s = new Svg("canvas1", 800, 500);
+		s.drawAxis();
+		s.drawGrid();
+	}
+	</code></pre>
+
+	<h2>Dibujar objetos en el lienzo</h2>
+	<pre><code class="javascript">	
+	// Prototipos de métodos de la clase Svg
+	addCircle(circleId, cx, cy, r, fillColor, strokeWidth = 0, strokeColor = null);
+	addLine(lineId, x0, y0, x1, y1, color, width);
+	</code></pre>
+
+	En este ejemplo se crea un punto llamado <em>p1</em> en las 
+	coordenadas <em>x, y</em> de radio 4 y de color rojo
+	<pre><code class="javascript">
+	s.addCircle("p1", x, y, 4, "red");
+	</code></pre>
+
+	<h2>Mover dos puntos en asincrónicamente</h2>
+	Uno se moverá en círculos y el otro en línea recta
+	<pre><code class="javascript">
+	var o1, o2;
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	async function mover1(){
+		for(var i=0; i<200; i+=0.1){
+			var p = 50*Math.sin(i/10.0);
+			o1.setAttribute("cx", s.px(50*Math.cos(i/10.0)));
+			o1.setAttribute("cy", s.py(50*Math.sin(i/10.)));
+			await sleep(1);
+			console.log("1");
+		}
+	}
+	async function mover2(){
+		for(var i=0; i<100; i++){
+			console.log("2");
+			o2.setAttribute("cx", s.px(-i));
+			await sleep(100);
+			console.log("2");
+		}
+	}
+	document.addEventListener('DOMContentLoaded', function(){ 
+		s = new Svg("canvas1", 800, 500);
+		s.drawAxis();
+		s.drawGrid();
+		o1  = s.addCircle("c1", 0, 0, 5, "red");
+		o2  = s.addCircle("c2", 0, 0, 5, "blue");
+
+		mover1();
+		mover2();
+
+	}, false);
+	</code></pre>
+
+</article>
+</main>
+
+<footer>
+	<p>Este sitio web no utiliza cookies
+	<br>
+	Para contactar info<img src="img/perm/ab.png" alt="en">samuelgomez.es
+	</p>
+	<br/>
+</footer>
+
+</body>
+</html>
+
