@@ -10,7 +10,7 @@ all: $(FILES_PDF) clean_aux
 	biber $(basename $<)
 	$(LATEXC) $<
 	$(LATEXC) $<
-	mv $(basename $<).pdf ../pdf
+	mv $(basename $<).pdf ../../pdf
 	
 # Versión A5
 #cat tmpl/header_general1.tex tmpl/header_a5.tex tmpl/header_general2.tex $< tmpl/foot.tex > tmp.tex
