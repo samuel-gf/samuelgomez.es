@@ -5,76 +5,80 @@
 
 @font-face {
     font-family: "atkinson";
-    src: url("fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format('woff');
+    src: url("fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format('woff2');
+	font-weight: normal;
 }
 
 @font-face {
-    font-family: "hack-regular";
-    src: url("fonts/hack-regular.woff2") format('woff');
-}
-
-@font-face {
-    font-family: "hack-bold";
-    src: url("fonts/hack-bold.woff2") format('woff');
-}
-
-
-html{
-	/*font-family: "atkinson", sans-serif;*/
-	font-family: "hack-regular", monospace;
-	scroll-behavior: smooth;
-	height: 100%;
-	font-size: 0.9rem;
-}
-
-body{
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1000px;
-	height: 100%;
-	padding-left: 0.5rem;
-}
-
-header a{
-	font-size: 1.8rem;
-	padding: 1rem 0 2rem 0;
-}
-
-
-main{	/* M */
-}
-
-
-h1 {	/* M */
-	margin: 4rem 0 1rem 0;
-	font-size: 2rem;
-	color: #006aff;
+    font-family: "atkinson";
+    src: url("fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format('woff2');
 	font-weight: bold;
 }
 
 
-p {	/* M */
-	margin: 0 0 1rem 0;
-	line-height: 1.5rem;
+html {
+	font-family: "atkinson", sans-serif;
+	font-size: 1.2rem;
+	scroll-behavior: smooth;
+	height: 100%;
+	position: relative;
+	margin: 1rem;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+#logo {
+	font-size: 1.5rem;
+	padding: 1rem 0 1rem 0;
+	font-weight: bold;
+}
+
+header h1 {
+	text-align: center;
+	font-size: 3rem;
+	text-shadow: 2px 2px black;
 }
 
 
+main {	/* M */
+}
+
+section {
+	margin-top: 2rem;
+}
+
+
+h1 {	/* M */
+	margin: 1rem 0 1rem 0;
+	font-size: 1.5rem;
+	color: #006aff;
+	font-weight: bold;
+}
+
+p {	/* M */
+	margin: 0 0 1rem 0;
+}
+
+/* Enlaces *****************************************/
 a {
 	color: black;
 	text-decoration: none;
-	display: inline-block;
 	height: 2rem;
 }
 
-a::after{
-	/*content: " \1F5B9";
-	color: #006aff;*/
-}
 a:hover{
 	text-decoration: underline;
 }
 
+/* Título de sección */
+section > a:first-child {
+	text-decoration: none;
+}
 
+/* Listas *********************************************/
 ul {
 	list-style-position: inside;
 	margin-top: 1rem;
@@ -91,17 +95,21 @@ ol {	/* M */
 	list-style-type: decimal;
 }
 
+li{
+	line-height: 2rem;
+}
+
 pre{
 	tab-size:2;
 	-moz-tab-size: 4;
 	border: 1px solid #aaaaaa;
-	margin: 1.5rem 0;
+	margin: 0.5rem 0;
 }
 
 code{
   	font-family: monospace;
 	white-space: pre-wrap;
-	line-height: 1rem;
+	line-height: 1.4rem;
 }
 
 strong{
@@ -117,28 +125,18 @@ em {
 }
 
 footer{
-	border-top: 1px solid #aaaaaa;
-	padding: 0.2rem 0;
-	margin-top: 4rem;
-	color: #aaaaaa;
+	color: #777777;
+	margin-top: 2rem;
+	position: absolute;
 }
-
-footer p{
-	line-height: 1rem;
-	margin: 0;
+footer hr{
+	color: #777777;
 }
 
 
 /**************************** Desktop *****************************/
 @media only screen and (min-width: 800px) {
 
-html{	/* D */
-	font-size: 1rem;
-}
-
-body{	/* D */
-	padding-left: 0;
-}
 
 
 
