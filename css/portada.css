@@ -36,7 +36,7 @@ body {
 	font-weight: bold;
 }
 
-header h1 {
+header h1 {	/* Title of page */
 	text-align: center;
 	font-size: 3rem;
 	text-shadow: 2px 2px black;
@@ -46,6 +46,7 @@ header h1 {
 main {	/* M */
 }
 
+/* Section *********************************************/
 section {
 	margin-top: 2rem;
 }
