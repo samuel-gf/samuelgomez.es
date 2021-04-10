@@ -1,4 +1,19 @@
-== Funciones
+== Funciones e I/O
+
+=== Entrada y salida
+
+.Formatos de entrada y salida
+[width=50%, frame="topbot", options="header"]
+|==============================================================
+|Modificador | Descripción 
+|A           | Cadena      
+|Fa,b        | Real de anchura total a y número de decimales b
+|SP          | Forzar signo positivo
+|==============================================================
+
+
+
+=== Funciones
 
 [source,fortran]
 --

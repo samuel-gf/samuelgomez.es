@@ -1,4 +1,103 @@
-== Language Server
+== Plantillas
+
+=== Boiler plate
+
+Este es un buen punto de partida para construir todos los programas escritos en Fortran. Tiene una
+referencia al entorno iso y además tiene implicit none
+
+[source,fortran] 
+--
+program Boiler_plate
+	use iso_fortran_env
+	implicit none
+
+	module mod_hola_mundo
+	! Datos globales
+	end module mod_hola_mundo
+
+	contains
+
+	subroutine hola_mundo
+	! Test
+	end subroutine hola_mundo
+end program Boiler_plate
+--
+
+
+=== Makefile
+
+Este es un ejemplo de un Makefile. Básicamente obtiene un listado de todos los ficheros fuente
+*.f90* del directorio *src* y genera una lista de targets que asocia al directorio *app*.
+
+[source,makefile]
+--
+FC = gfortran
+CAF = caf
+SRC = $(wildcard src/*.f90)
+FILES_NO_EXT = $(notdir $(SRC))
+TARGETS = $(addprefix app/,$(FILES_NO_EXT:.f90=))
+
+# Modules
+MOD_SRC = $(wildcard src/mod/*.f)
+MOD_TARGETS = $(addprefix app/mod/,$(notdir $(MOD_SRC:.f=.mod)))
+
+# Arguments
+ARGS = -Wall -Wextra -std=f2018 -O3 -pedantic -fdec-math -ffree-form -Imod
+
+all: app mod $(TARGETS)
+
+# Make target directory
+app mod:
+	@mkdir -p app
+	@mkdir -p mod
+
+# Caso genérico
+app/%: src/%.f90 
+	$(FC) $(ARGS) $< -o $@
+
+clean:
+	@rm -f $(TARGETS)
+	@rm -f mod/*.mod mod/*.o
+--
+
+
+Este otro lo he usado más y me da buenos resultados
+
+[source,makefile]
+--
+FC = gfortran
+CAF = caf
+SRC = $(wildcard src/*.f)
+FILES_NO_EXT = $(notdir $(SRC))
+TARGETS = $(addprefix app/,$(FILES_NO_EXT:.f=))
+
+# Modules
+MOD_SRC = $(wildcard src/mod/*.f)
+MOD_TARGETS = $(addprefix app/mod/,$(notdir $(MOD_SRC:.f=.mod)))
+
+# Arguments
+#ARGS = -Wall -Wextra -std=f2018 -O3 -pedantic -fdec-math -ffree-form -Imod
+ARGS = -std=f2018 -ffree-form -Imod
+
+
+all: app mod $(TARGETS)
+
+# Make target directory
+app mod:
+	@mkdir -p app
+	@mkdir -p mod
+
+# Caso genérico
+app/%: src/%.f 
+	$(FC) $(ARGS) $< -o $@
+
+clean:
+	@rm -f $(TARGETS)
+	@rm -f mod/*.mod mod/*.o
+--
+
+
+=== Language Server
 
 Se encuentra en el paquete `fortran-language-server`. Puede ser arrancado mediante la orden `fortls`
 

@@ -1,33 +1,19 @@
-= Apuntes de Fortran
-:source-highlighter: pygments
-:pygments-style: manni
+= Apuntes de Fortran: Un enfoque práctico
 :author: Samuel Gómez
+:chapter-label: Capítulo
+:description: Recopilatorio de todos mis apuntes
 :doctype: book
-:toc:
 :icons:
 :lang: es
-:stylesheet: style1.css
+:pygments-style: manni
+:sectanchors:
+:sectnums:
+:source-highlighter: pygments
+:toc:
 :toc-title: Índice
 
-= Plantillas
-include::boilerplate.adoc[]
-include::fichero_makefile.adoc[]
-include::language-server.adoc[]
-
-= Datos y estructuras
-include::tipos.adoc[]
-include::strings.adoc[]
-include::data_structures.adoc[]
-
-= Funciones I/O
+include::plantillas.adoc[]
+include::estructuras_de_datos.adoc[]
 include::funciones.adoc[]
-include::entrada_salida.adoc[]
-
-= Variable compleja
 include::variable_compleja.adoc[]
-include::integrales_complejas.adoc[]
-
-= Tools
-include::coarrays.adoc[]
-include::medidas_tiempo.adoc[]
-include::resources.adoc[]
+include::otros.adoc[]
