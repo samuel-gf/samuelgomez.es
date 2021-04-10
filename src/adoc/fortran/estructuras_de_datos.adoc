@@ -54,16 +54,6 @@ end program Strings
 
 
 
-=== Registro
-
-[source,fortran]
---
-type :: persona
-	character(len=12):: nombre, apellido
-	integer:: edad
-end type
---
-
 === Estructura paramétrica o template
 
 Los parámetros de una estructura de este tipo pueden tener el atributo *len* o *kind* para
