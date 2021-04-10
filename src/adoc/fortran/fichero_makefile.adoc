@@ -1,25 +1,37 @@
 == Makefile
 
-Este es un ejemplo de un Makefile
+Este es un ejemplo de un Makefile. Básicamente obtiene un listado de todos los ficheros fuente
+*.f90* del directorio *src* y genera una lista de targets que asocia al directorio *app*.
 
 [source,makefile]
 --
 FC = gfortran
-SRC = $(wildcard *.f90)
-TARGET = $(addprefix app/,$(SRC:.f90=))
-ARGS =-ffree-form -fimplicit-none -fcheck -fbacktrace
-OPEN_BLAS=-L/opt/OpenBLAS/lib
+CAF = caf
+SRC = $(wildcard src/*.f90)
+FILES_NO_EXT = $(notdir $(SRC))
+TARGETS = $(addprefix app/,$(FILES_NO_EXT:.f90=))
 
-all: $(TARGET)
+# Modules
+MOD_SRC = $(wildcard src/mod/*.f)
+MOD_TARGETS = $(addprefix app/mod/,$(notdir $(MOD_SRC:.f=.mod)))
+
+# Arguments
+ARGS = -Wall -Wextra -std=f2018 -O3 -pedantic -fdec-math -ffree-form -Imod
+
+all: app mod $(TARGETS)
+
+# Make target directory
+app mod:
+	@mkdir -p app
+	@mkdir -p mod
 
 # Caso genérico
-app/%: %.f90 
-	$(FC) $(ARGS) -o $@ $<
+app/%: src/%.f90 
+	$(FC) $(ARGS) $< -o $@
 
 clean:
-	@rm -f $(TARGET)
-	@rm -f *.mod *.o
-
+	@rm -f $(TARGETS)
+	@rm -f mod/*.mod mod/*.o
 --
 
 

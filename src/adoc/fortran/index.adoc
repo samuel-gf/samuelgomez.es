@@ -9,18 +9,25 @@
 :stylesheet: style1.css
 :toc-title: Índice
 
+= Plantillas
 include::boilerplate.adoc[]
 include::fichero_makefile.adoc[]
 include::language-server.adoc[]
 
+= Datos y estructuras
 include::tipos.adoc[]
-include::variable_compleja.adoc[]
 include::strings.adoc[]
 include::data_structures.adoc[]
 
+= Funciones I/O
+include::funciones.adoc[]
 include::entrada_salida.adoc[]
 
-include::coarrays.adoc[]
+= Variable compleja
+include::variable_compleja.adoc[]
+include::integrales_complejas.adoc[]
 
-include::tools.adoc[]
+= Tools
+include::coarrays.adoc[]
+include::medidas_tiempo.adoc[]
 include::resources.adoc[]

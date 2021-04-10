@@ -1722,17 +1722,22 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Índice</div>
+<ul class="sectlevel0">
+<li><a href="#_plantillas">Plantillas</a>
 <ul class="sectlevel1">
 <li><a href="#_boiler_plate">Boiler plate</a></li>
 <li><a href="#_makefile">Makefile</a></li>
 <li><a href="#_language_server">Language Server</a></li>
+</ul>
+</li>
+<li><a href="#_datos_y_estructuras">Datos y estructuras</a>
+<ul class="sectlevel1">
 <li><a href="#_tipos">Tipos</a>
 <ul class="sectlevel2">
 <li><a href="#_tipos_iso">Tipos ISO</a></li>
 <li><a href="#_tipos_derivados">Tipos derivados</a></li>
 </ul>
 </li>
-<li><a href="#_variable_compleja">Variable compleja</a></li>
 <li><a href="#_strings">Strings</a></li>
 <li><a href="#_estructuras_de_datos">Estructuras de datos</a>
 <ul class="sectlevel2">
@@ -1743,9 +1748,24 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 <li><a href="#_estructura_de_arrays">Estructura de arrays</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#_funciones_io">Funciones I/O</a>
+<ul class="sectlevel1">
+<li><a href="#_funciones">Funciones</a></li>
 <li><a href="#_entrada_y_salida">Entrada y salida</a></li>
-<li><a href="#_coarrays">Coarrays</a></li>
+</ul>
+</li>
+<li><a href="#_variable_compleja">Variable compleja</a>
+<ul class="sectlevel1">
+<li><a href="#_variable_compleja_2">Variable compleja</a></li>
+<li><a href="#_integrales_complejas">Integrales complejas</a></li>
+</ul>
+</li>
 <li><a href="#_tools">Tools</a>
+<ul class="sectlevel1">
+<li><a href="#_coarrays">Coarrays</a></li>
+<li><a href="#_tools_2">Tools</a>
 <ul class="sectlevel2">
 <li><a href="#_medida_del_tiempo_en_ejecución_cpu_time">Medida del tiempo en ejecución cpu_time</a></li>
 </ul>
@@ -1757,12 +1777,19 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
+<h1 id="_plantillas" class="sect0">Plantillas</h1>
 <div class="sect1">
 <h2 id="_boiler_plate">Boiler plate</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Este es un buen punto de partida para construir todos los programas escritos en Fortran. Tiene una
+referencia al entorno iso y además tiene implicit none</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="fortran"><span></span><span class="tok-k">program </span><span class="tok-n">Boiler_plate</span>
@@ -1787,25 +1814,38 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 <h2 id="_makefile">Makefile</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Este es un ejemplo de un Makefile</p>
+<p>Este es un ejemplo de un Makefile. Básicamente obtiene un listado de todos los ficheros fuente
+<strong>.f90</strong> del directorio <strong>src</strong> y genera una lista de targets que asocia al directorio <strong>app</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="makefile"><span></span><span class="tok-nv">FC</span> <span class="tok-o">=</span> gfortran
-<span class="tok-nv">SRC</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>wildcard *.f90<span class="tok-k">)</span>
-<span class="tok-nv">TARGET</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>addprefix app/,<span class="tok-k">$(</span>SRC:.f90<span class="tok-o">=</span><span class="tok-k">))</span>
-<span class="tok-nv">ARGS</span> <span class="tok-o">=</span>-ffree-form -fimplicit-none -fcheck -fbacktrace
-<span class="tok-nv">OPEN_BLAS</span><span class="tok-o">=</span>-L/opt/OpenBLAS/lib
+<span class="tok-nv">CAF</span> <span class="tok-o">=</span> caf
+<span class="tok-nv">SRC</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>wildcard src/*.f90<span class="tok-k">)</span>
+<span class="tok-nv">FILES_NO_EXT</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>notdir <span class="tok-k">$(</span>SRC<span class="tok-k">))</span>
+<span class="tok-nv">TARGETS</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>addprefix app/,<span class="tok-k">$(</span>FILES_NO_EXT:.f90<span class="tok-o">=</span><span class="tok-k">))</span>
 
-<span class="tok-nf">all</span><span class="tok-o">:</span> <span class="tok-k">$(</span><span class="tok-nv">TARGET</span><span class="tok-k">)</span>
+<span class="tok-c"># Modules</span>
+<span class="tok-nv">MOD_SRC</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>wildcard src/mod/*.f<span class="tok-k">)</span>
+<span class="tok-nv">MOD_TARGETS</span> <span class="tok-o">=</span> <span class="tok-k">$(</span>addprefix app/mod/,<span class="tok-k">$(</span>notdir <span class="tok-k">$(</span>MOD_SRC:.f<span class="tok-o">=</span>.mod<span class="tok-k">)))</span>
+
+<span class="tok-c"># Arguments</span>
+<span class="tok-nv">ARGS</span> <span class="tok-o">=</span> -Wall -Wextra -std<span class="tok-o">=</span>f2018 -O3 -pedantic -fdec-math -ffree-form -Imod
+
+<span class="tok-nf">all</span><span class="tok-o">:</span> <span class="tok-n">app</span> <span class="tok-n">mod</span> <span class="tok-k">$(</span><span class="tok-nv">TARGETS</span><span class="tok-k">)</span>
+
+<span class="tok-c"># Make target directory</span>
+<span class="tok-nf">app mod</span><span class="tok-o">:</span>
+	@mkdir -p app
+	@mkdir -p mod
 
 <span class="tok-c"># Caso genérico</span>
-<span class="tok-nf">app/%</span><span class="tok-o">:</span> %.<span class="tok-n">f</span>90
-	<span class="tok-k">$(</span>FC<span class="tok-k">)</span> <span class="tok-k">$(</span>ARGS<span class="tok-k">)</span> -o <span class="tok-nv">$@</span> $&lt;
+<span class="tok-nf">app/%</span><span class="tok-o">:</span> <span class="tok-n">src</span>/%.<span class="tok-n">f</span>90
+	<span class="tok-k">$(</span>FC<span class="tok-k">)</span> <span class="tok-k">$(</span>ARGS<span class="tok-k">)</span> $&lt; -o <span class="tok-nv">$@</span>
 
 <span class="tok-nf">clean</span><span class="tok-o">:</span>
-	@rm -f <span class="tok-k">$(</span>TARGET<span class="tok-k">)</span>
-	@rm -f *.mod *.o</code></pre>
+	@rm -f <span class="tok-k">$(</span>TARGETS<span class="tok-k">)</span>
+	@rm -f mod/*.mod mod/*.o</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1883,6 +1923,7 @@ fortran-language-server: /usr/share/man/man1/fortls.1.gz</code></pre>
 </div>
 </div>
 </div>
+<h1 id="_datos_y_estructuras" class="sect0">Datos y estructuras</h1>
 <div class="sect1">
 <h2 id="_tipos">Tipos</h2>
 <div class="sectionbody">
@@ -1915,37 +1956,6 @@ fortran-language-server: /usr/share/man/man1/fortls.1.gz</code></pre>
 	<span class="tok-kt">real</span><span class="tok-kd">::</span>              <span class="tok-n">edad</span>
 <span class="tok-k">end type </span><span class="tok-n">Persona</span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_variable_compleja">Variable compleja</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="fortran"><span></span><span class="tok-k">program </span><span class="tok-n">coseno</span>
-    <span class="tok-kt">complex </span><span class="tok-n">w</span><span class="tok-p">,</span> <span class="tok-n">z</span>
-
-
-    <span class="tok-c">! Entrada</span>
-    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">,</span> <span class="tok-n">advance</span><span class="tok-o">=</span><span class="tok-s2">&quot;no&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;Valor real de z: &quot;</span>
-    <span class="tok-k">read</span> <span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-n">z</span><span class="tok-p">%</span><span class="tok-n">re</span>
-    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">,</span> <span class="tok-n">advance</span><span class="tok-o">=</span><span class="tok-s2">&quot;no&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;Valor imaginario de z: &quot;</span>
-    <span class="tok-k">read</span> <span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-n">z</span><span class="tok-p">%</span><span class="tok-n">im</span>
-
-	<span class="tok-c">! También se puede usar la función intrínseca</span>
-	<span class="tok-c">! z = cmplx(a, b)</span>
-
-    <span class="tok-c">! Cálculos</span>
-    <span class="tok-n">w</span> <span class="tok-o">=</span> <span class="tok-nb">cos</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">)</span>
-
-    <span class="tok-c">! Salida</span>
-    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;w=cos(z)&quot;</span>
-    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a,f4.2,sp,f5.2,a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;z:&quot;</span><span class="tok-p">,</span> <span class="tok-kt">real</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">),</span> <span class="tok-nb">aimag</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">),</span> <span class="tok-s2">&quot;i&quot;</span>
-    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a,f4.2,sp,f5.2,a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;w:&quot;</span><span class="tok-p">,</span> <span class="tok-kt">real</span><span class="tok-p">(</span><span class="tok-n">w</span><span class="tok-p">),</span> <span class="tok-nb">aimag</span><span class="tok-p">(</span><span class="tok-n">w</span><span class="tok-p">),</span> <span class="tok-s2">&quot;i&quot;</span>
-
-<span class="tok-k">end program </span><span class="tok-n">coseno</span></code></pre>
 </div>
 </div>
 </div>
@@ -2095,6 +2105,21 @@ antes de reservar la memoria si ya ha sido previamente reservada.</p>
 </div>
 </div>
 </div>
+<h1 id="_funciones_io" class="sect0">Funciones I/O</h1>
+<div class="sect1">
+<h2 id="_funciones">Funciones</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="fortran"><span></span><span class="tok-kt">real </span><span class="tok-k">pure elemental function </span><span class="tok-n">circle_area</span><span class="tok-p">(</span><span class="tok-n">r</span><span class="tok-p">)</span> <span class="tok-k">result</span> <span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-p">)</span>
+	<span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">intent</span><span class="tok-p">(</span><span class="tok-n">in</span><span class="tok-p">)</span><span class="tok-kd">::</span> <span class="tok-n">r</span>
+
+	<span class="tok-n">a</span> <span class="tok-o">=</span> <span class="tok-n">r</span><span class="tok-o">**</span><span class="tok-mi">2</span> <span class="tok-o">*</span> <span class="tok-mf">3.14</span>
+<span class="tok-k">end function </span><span class="tok-n">circle_area</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_entrada_y_salida">Entrada y salida</h2>
 <div class="sectionbody">
@@ -2127,6 +2152,115 @@ antes de reservar la memoria si ya ha sido previamente reservada.</p>
 </table>
 </div>
 </div>
+<h1 id="_variable_compleja" class="sect0">Variable compleja</h1>
+<div class="sect1">
+<h2 id="_variable_compleja_2">Variable compleja</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las variables complejas son de primera clase en Fortran. Tan solo será necesario declarar la
+variable de ese tipo y podemos acceder a su parte real e imaginaria con <code>z%re</code> y con <code>z%im</code> pero
+también se puede asignar una valor complejo en un solo paso con <code>z=cmplx(0,1)</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="fortran"><span></span><span class="tok-k">program </span><span class="tok-n">coseno</span>
+    <span class="tok-kt">complex </span><span class="tok-n">w</span><span class="tok-p">,</span> <span class="tok-n">z</span>
+
+
+    <span class="tok-c">! Entrada</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">,</span> <span class="tok-n">advance</span><span class="tok-o">=</span><span class="tok-s2">&quot;no&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;Valor real de z: &quot;</span>
+    <span class="tok-k">read</span> <span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-n">z</span><span class="tok-p">%</span><span class="tok-n">re</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">,</span> <span class="tok-n">advance</span><span class="tok-o">=</span><span class="tok-s2">&quot;no&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;Valor imaginario de z: &quot;</span>
+    <span class="tok-k">read</span> <span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-n">z</span><span class="tok-p">%</span><span class="tok-n">im</span>
+
+	<span class="tok-c">! También se puede usar la función intrínseca</span>
+	<span class="tok-c">! z = cmplx(a, b)</span>
+
+    <span class="tok-c">! Cálculos</span>
+    <span class="tok-n">w</span> <span class="tok-o">=</span> <span class="tok-nb">cos</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">)</span>
+
+    <span class="tok-c">! Salida</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;w=cos(z)&quot;</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a,f4.2,sp,f5.2,a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;z:&quot;</span><span class="tok-p">,</span> <span class="tok-kt">real</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">),</span> <span class="tok-nb">aimag</span><span class="tok-p">(</span><span class="tok-n">z</span><span class="tok-p">),</span> <span class="tok-s2">&quot;i&quot;</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a,f4.2,sp,f5.2,a)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;w:&quot;</span><span class="tok-p">,</span> <span class="tok-kt">real</span><span class="tok-p">(</span><span class="tok-n">w</span><span class="tok-p">),</span> <span class="tok-nb">aimag</span><span class="tok-p">(</span><span class="tok-n">w</span><span class="tok-p">),</span> <span class="tok-s2">&quot;i&quot;</span>
+
+<span class="tok-k">end program </span><span class="tok-n">coseno</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integrales_complejas">Integrales complejas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Una integral compleja puede ser calculada mediante una serie sucesiva de sumas. Las iteraciones
+deben ser parametrizadas. En este ejemplo, el parámetro de iteración paso a paso es <strong>t</strong>. Cada
+iteración es la suma del producto formado por la función en el punto en función de <strong>f(gamma(t))</strong> por la
+derivada del camino <strong>gamma'(t)</strong> por el diferencial <strong>dt</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="fortran"><span></span><span class="tok-k">program </span><span class="tok-n">Integral_compleja</span>
+<span class="tok-c">! Calcular $\int_{\gamma=\{|z|=1\}} \frac{Ln z}{z} dz$</span>
+<span class="tok-c">! SOLUCIÓN</span>
+<span class="tok-c">! Para calular esta integral compleja debemos hallar el camino y la derivada de este a lo largo del</span>
+<span class="tok-c">! contorno</span>
+<span class="tok-c">!</span>
+<span class="tok-c">! Camino: 					gamma(t)=e^{it}</span>
+<span class="tok-c">! Derivada del camino:		gamma&#39;(t)=ie^{it} dt</span>
+<span class="tok-c">! Función:					f(gamma(t))=\frac{Ln e^{it}}{e^{it}}=\frac{it}{e^{it}}</span>
+
+    <span class="tok-k">implicit none</span>
+<span class="tok-k">    </span><span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">parameter</span><span class="tok-kd">::</span> <span class="tok-n">pi</span> <span class="tok-o">=</span> <span class="tok-mf">3.141592654</span>
+    <span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">parameter</span><span class="tok-kd">::</span> <span class="tok-n">t_0</span><span class="tok-o">=</span><span class="tok-mi">0</span><span class="tok-p">,</span> <span class="tok-n">t_end</span><span class="tok-o">=</span><span class="tok-mi">2</span><span class="tok-o">*</span><span class="tok-n">pi</span>
+    <span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">parameter</span><span class="tok-kd">::</span> <span class="tok-n">dt</span> <span class="tok-o">=</span> <span class="tok-mf">0.001</span>
+    <span class="tok-kt">real</span><span class="tok-kd">::</span> <span class="tok-n">t</span>
+    <span class="tok-kt">complex</span><span class="tok-kd">::</span> <span class="tok-n">s</span>                 <span class="tok-c">! Suma</span>
+    <span class="tok-kt">complex</span><span class="tok-kd">::</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-nb">cmplx</span><span class="tok-p">(</span><span class="tok-mi">0</span><span class="tok-p">,</span><span class="tok-mi">1</span><span class="tok-p">)</span>
+
+    <span class="tok-c">! Inicializar variables</span>
+    <span class="tok-n">t</span> <span class="tok-o">=</span> <span class="tok-n">t_0</span>
+    <span class="tok-n">s</span> <span class="tok-o">=</span> <span class="tok-nb">cmplx</span><span class="tok-p">(</span><span class="tok-mi">0</span><span class="tok-p">,</span><span class="tok-mi">0</span><span class="tok-p">)</span>
+
+    <span class="tok-c">! Bucle de la integral</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a25)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;------------------------&quot;</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(a8,a8,a9)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;Iter.&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;Re&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;Im&quot;</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a25)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;------------------------&quot;</span>
+    <span class="tok-k">do while</span> <span class="tok-p">(</span><span class="tok-n">t</span> <span class="tok-o">&lt;=</span> <span class="tok-n">t_end</span><span class="tok-p">)</span>
+        <span class="tok-n">s</span> <span class="tok-o">=</span> <span class="tok-n">s</span> <span class="tok-o">+</span> <span class="tok-n">f</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-o">*</span> <span class="tok-n">fp</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-o">*</span> <span class="tok-n">dt</span>
+        <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-s2">&quot;(f8.2,f8.2, sp, f8.2, a1)&quot;</span><span class="tok-p">)</span> <span class="tok-n">t</span><span class="tok-p">,</span> <span class="tok-n">s</span><span class="tok-p">%</span><span class="tok-n">re</span><span class="tok-p">,</span> <span class="tok-n">s</span><span class="tok-p">%</span><span class="tok-n">im</span><span class="tok-p">,</span> <span class="tok-s2">&quot;i&quot;</span>
+        <span class="tok-n">t</span> <span class="tok-o">=</span> <span class="tok-n">t</span> <span class="tok-o">+</span> <span class="tok-n">dt</span>
+    <span class="tok-k">end do</span>
+
+    <span class="tok-c">! Mostrar resultados</span>
+    <span class="tok-k">write</span> <span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span> <span class="tok-s2">&quot;(a25)&quot;</span><span class="tok-p">)</span> <span class="tok-s2">&quot;------------------------&quot;</span>
+
+
+
+
+<span class="tok-k">contains</span>
+
+<span class="tok-k">    </span><span class="tok-kt">complex </span><span class="tok-k">function </span><span class="tok-n">f</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-k">result</span> <span class="tok-p">(</span><span class="tok-n">res</span><span class="tok-p">)</span>
+        <span class="tok-c">! Función a integrar: f(gamma(t))</span>
+        <span class="tok-k">implicit none</span>
+<span class="tok-k">        </span><span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">intent</span><span class="tok-p">(</span><span class="tok-n">in</span><span class="tok-p">)</span><span class="tok-kd">::</span> <span class="tok-n">t</span>
+        <span class="tok-n">res</span> <span class="tok-o">=</span> <span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-o">*</span><span class="tok-n">t</span><span class="tok-p">)</span><span class="tok-o">/</span><span class="tok-p">(</span><span class="tok-nb">exp</span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-o">*</span><span class="tok-n">t</span><span class="tok-p">))</span>
+    <span class="tok-k">end function </span><span class="tok-n">f</span>
+
+
+    <span class="tok-kt">complex </span><span class="tok-k">function </span><span class="tok-n">fp</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-k">result</span><span class="tok-p">(</span><span class="tok-n">res</span><span class="tok-p">)</span>
+        <span class="tok-c">! Derivada del camino en función de t. Es decir: gamma&#39;(t)</span>
+        <span class="tok-k">implicit none</span>
+<span class="tok-k">        </span><span class="tok-kt">real</span><span class="tok-p">,</span> <span class="tok-k">intent</span><span class="tok-p">(</span><span class="tok-n">in</span><span class="tok-p">)</span><span class="tok-kd">::</span> <span class="tok-n">t</span>
+        <span class="tok-n">res</span> <span class="tok-o">=</span> <span class="tok-n">i</span> <span class="tok-o">*</span> <span class="tok-nb">exp</span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-o">*</span><span class="tok-n">t</span><span class="tok-p">)</span>
+    <span class="tok-k">end function </span><span class="tok-n">fp</span>
+
+<span class="tok-k">end program </span><span class="tok-n">Integral_compleja</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_tools" class="sect0">Tools</h1>
 <div class="sect1">
 <h2 id="_coarrays">Coarrays</h2>
 <div class="sectionbody">
@@ -2160,7 +2294,7 @@ antes de reservar la memoria si ya ha sido previamente reservada.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tools">Tools</h2>
+<h2 id="_tools_2">Tools</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_medida_del_tiempo_en_ejecución_cpu_time">Medida del tiempo en ejecución cpu_time</h3>
@@ -2274,7 +2408,7 @@ findent --vim_fortran &gt; <span class="tok-nv">$vimroot</span>/after/indent/for
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-04-05 11:25:25 +0200
+Last updated 2021-04-10 18:24:09 +0200
 </div>
 </div>
 </body>

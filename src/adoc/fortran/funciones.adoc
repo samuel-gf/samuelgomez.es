@@ -1,0 +1,10 @@
+== Funciones
+
+[source,fortran]
+--
+real pure elemental function circle_area(r) result (a)
+	real, intent(in):: r
+	
+	a = r**2 * 3.14
+end function circle_area
+--

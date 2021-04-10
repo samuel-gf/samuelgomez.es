@@ -1,5 +1,9 @@
 == Variable compleja
 
+Las variables complejas son de primera clase en Fortran. Tan solo será necesario declarar la
+variable de ese tipo y podemos acceder a su parte real e imaginaria con `z%re` y con `z%im` pero
+también se puede asignar una valor complejo en un solo paso con `z=cmplx(0,1)`
+
 [source,fortran]
 --
 program coseno
