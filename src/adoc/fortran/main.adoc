@@ -3,12 +3,18 @@
 :chapter-label: Capítulo
 :description: Recopilatorio de todos mis apuntes
 :doctype: book
+:favicon: images/favicon.ico
 :icons:
 :lang: es
+:linkcss:
 :pygments-style: manni
+:pygments-css: style
+:pygments-linenums-mode: class
 :sectanchors:
 :sectnums:
 :source-highlighter: pygments
+:stylesheet: css/general.css
+:style-dir: ./css/
 :toc:
 :toc-title: Índice
 

@@ -40,10 +40,77 @@ deben ser parametrizadas. En este ejemplo, el parámetro de iteración paso a pa
 iteración es la suma del producto formado por la función en el punto en función de *f(gamma(t))* por la
 derivada del camino *gamma'(t)* por el diferencial *dt*.
 
+Se presentan dos versiones. Una sin coarrays y otra mucho más rápida con coarrays.
+
+==== Versión sin coarrays
 
 [source,fortran]
 --
-program Integral_compleja
+program Integral_sin_coarray
+! Calcular $\int_{\gamma=\{|z|=1\}} \frac{Ln z}{z} dz$
+! SOLUCIÓN
+! Para calular esta integral compleja debemos hallar el camino y la derivada de este a lo largo del
+! contorno
+!
+! Camino: 					gamma(t)=e^{it}
+! Derivada del camino:		gamma'(t)=ie^{it} dt
+! Función:					f(gamma(t))=\frac{Ln e^{it}}{e^{it}}=\frac{it}{e^{it}}
+
+    use iso_fortran_env
+    implicit none
+    real, parameter:: pi = 3.141592654
+    real, parameter:: t_0=0, t_end=2*pi
+    real(real64), parameter:: dt = 0.0000001
+    real(real64):: t
+    complex(real64):: suma
+    complex:: i = cmplx(0,1)
+
+    ! Inicializar variables
+    t = t_0
+    suma = 0
+
+    ! Cabecera
+    write (*, "(a25)") "------------------------"
+    write (*,"(a8,a8,a9)") "Iter.", "Re", "Im"
+    write (*, "(a25)") "------------------------"
+    do while (t <= t_end)
+        suma = suma + f(t) * fp(t) * dt
+        write (*,"(f8.2,f8.2, sp, f8.2, a1)") t, suma%re, suma%im, "i"
+        t = t + dt
+    end do
+
+    ! Mostrar resultados
+    write (*, "(a25)") "------------------------"
+
+
+
+
+contains
+
+    complex(real64) function f(t) result (res)
+        ! Función a integrar en función de t
+        implicit none
+        real(real64), intent(in):: t
+        res = (i*t)/(exp(i*t))
+    end function f
+
+
+    complex(real64) function fp(t) result(res)
+        ! Derivada del camino en función de t
+        implicit none
+        real(real64), intent(in):: t
+        res = i * exp(i*t)
+    end function fp
+
+end program Integral_sin_coarray
+--
+
+
+==== Versión con coarrays
+
+[source,fortran]
+--
+program Integral_coarray
 ! Calcular $\int_{\gamma=\{|z|=1\}} \frac{Ln z}{z} dz$
 ! SOLUCIÓN
 ! Para calular esta integral compleja debemos hallar el camino y la derivada de este a lo largo del
@@ -58,36 +125,25 @@ program Integral_compleja
 
     real, parameter:: pi = 3.141592654
     real, parameter:: t_0=0, t_end=2*pi
-    real(real64), parameter:: dt = 0.0001
+    real(real64), parameter:: dt = 0.000001
     real(real64):: t[*]
-    complex(real64):: s[*]                  ! Suma
+    complex(real64):: suma[*]
     complex:: i = cmplx(0,1)
 
     ! Inicializar variables
     t = t_0 + dt * this_image()-1
-    s = 0
-
-    ! Cabecera
-    if (this_image() == 1) then
-        write (*, "(a25)") "------------------------"
-        write (*,"(a8,a8,a9)") "Iter.", "Re", "Im"
-        write (*, "(a25)") "------------------------"
-    end if
-
-    sync all
+    suma = 0
 
     ! Bucle principal
     do while (t <= t_end)
-        s = s + f(t) * fp(t) * dt
-        !write (*,"(f8.2,f8.2, sp, f8.2, a1)") t, s%re, s%im, "i"
+        suma = suma + f(t) * fp(t) * dt
         t = t + dt * num_images()
     end do
-    sync all
 
-    call co_sum(s)   
+    ! Sumar los resultados y mostrarlos en pantalla
+    call co_sum(suma)
     if (this_image() == 1) then
-        write (*,"(f8.2,f8.2, sp, f8.2, a1)") t, s%re, s%im, "i"
-        write (*, "(a25)") "------------------------"
+        write (*,"(f8.2,f8.2, sp, f8.2, a1)") t, suma%re, suma%im, "i"
     end if
 
 
@@ -111,5 +167,5 @@ contains
         res = i * exp(i*t)
     end function fp
 
-end program Integral_compleja
+end program Integral_coarray
 --

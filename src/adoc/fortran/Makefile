@@ -1,9 +1,12 @@
-TARGET = index
+# Multipart: https://github.com/owenh000/asciidoctor-multipage
+TARGET = main
+DEST=../../../fortran
 
 all:
-	asciidoctor $(TARGET).adoc -a icons -a stylesheet=css/general.css  -o $(TARGET).html
-	asciidoctor-pdf $(TARGET).adoc -a icons -a stylesheet=css/general.css  -o fortran.pdf
-	cp fortran.pdf ../../../pdf
+	asciidoctor $(TARGET).adoc -r asciidoctor-multipage -b multipage_html5 -n -D$(DEST) -o index.html
+	cp -r img $(DEST)
+	cp -r images $(DEST)
+	#asciidoctor-pdf $(TARGET).adoc -a icons -o ../../../pdf/fortran.pdf
 
 clean:
 	rm -f $(TARGET).html
