@@ -36,10 +36,20 @@ body {
 	font-weight: bold;
 }
 
+#retrato {
+	width: 150px;
+	display: block;
+	margin-top: 2rem;
+}
+
 header h1 {	/* Title of page */
 	text-align: center;
 	font-size: 3rem;
 	text-shadow: 2px 2px black;
+}
+
+header #descripcion {
+	color: #777777;
 }
 
 main {	/* M */
