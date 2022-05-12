@@ -5,75 +5,71 @@
 
 @font-face {
     font-family:"atkinson";
-    src:url("./fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format('woff2');
+	src: url(../fonts/Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
 	font-weight: normal;
 }
 
 @font-face {
-    font-family:"atkinson";
-    src:url("./fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format('woff2');
+    font-family:"atkinson-bold";
+	src: url(../fonts/Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
 	font-weight: bold;
 }
 
 
-html {
+html{
 	font-family: "atkinson", sans-serif;
 	font-size: 1.2rem;
 	scroll-behavior: smooth;
-	height: 100%;
-	position: relative;
-	margin: 1rem;
-	height: 100%;
 }
 
-body {
-	height: 100%;
+body{
+	margin: 1rem;
 }
+
+body header h1{
+	margin: 0;
+	color: #777777;
+	font-size: 0.8rem;
+}
+
 
 #logo {
 	font-size: 1.5rem;
 	padding: 1rem 0 1rem 0;
-	font-weight: bold;
+	font-family: atkinson-bold;
 }
 
-#retrato {
-	width: 150px;
-	display: block;
-	margin-top: 2rem;
-}
 
-header h1 {	/* Title of page */
-	text-align: center;
-	font-size: 3rem;
-	text-shadow: 2px 2px black;
-}
-
-header #descripcion {
-	color: #777777;
-}
-
+/* MAIN ************************************************/
 main {	/* M */
+	padding: 1rem 0;
+}
+
+main h1{
+	font-family: atkinson-bold;
+	margin: 1rem 0;
+	font-size: 3rem;
+	color: #006aff;
+}
+
+main h2{
+	font-family: atkinson-bold;
+	font-size: 2rem;
+	margin: 4rem 0 1rem 0;
+}
+
+main h3{
+	font-family: atkinson-bold;
 }
 
 /* Section *********************************************/
-section {
+section{
 	margin-top: 2rem;
 }
 
 
-h1 {	/* M */
-	margin: 1rem 0 1rem 0;
-	font-size: 1.5rem;
-	color: #006aff;
-	font-weight: bold;
-}
-
-p {	/* M */
-	margin: 0 0 1rem 0;
-}
-
 /* Enlaces *****************************************/
-a {
+a{
 	color: black;
 	text-decoration: none;
 	height: 2rem;
@@ -84,12 +80,12 @@ a:hover{
 }
 
 /* Título de sección */
-section > a:first-child {
+section > a:first-child{
 	text-decoration: none;
 }
 
 /* Listas *********************************************/
-ul {
+ul{
 	list-style-position: inside;
 	margin-top: 1rem;
 }
@@ -100,7 +96,7 @@ ul li::before{
 	color: #aaaaaa;
 }
 
-ol {	/* M */
+ol{	/* M */
 	list-style-position: inside;
 	list-style-type: decimal;
 }
@@ -145,9 +141,10 @@ footer hr{
 
 
 /**************************** Desktop *****************************/
+/*
 @media only screen and (min-width: 800px) {
 
 
 
 
-} /* @media */
+}*/ /* @media */
