@@ -1,7 +1,11 @@
-/*.color-primary-0 { color: #006aff }	Color principal */
-/*.color-primary-0b{ color: #003B8C }	Color azul oscuro */
-/*.color-primary-1 { color: #FF9200 }	    Color Opuesto */
-@charset "utf-8";
+/*
+.color-primary-0 { color: #006aff }	Color principal 
+.color-primary-0b{ color: #003B8C }	Color azul oscuro 
+.color-primary-1 { color: #FF9200 }	    Color Opuesto */
+/********************************************************************************/
+/* DESKTOP */
+/********************************************************************************/
+@media only screen and (min-width: 1350px) {
 
 @font-face {
     font-family:"atkinson";
@@ -26,7 +30,8 @@ body{
 	margin: 1rem;
 }
 
-body header h1{
+
+body header h2{
 	margin: 0;
 	color: #777777;
 	font-size: 0.8rem;
@@ -39,10 +44,34 @@ body header h1{
 	font-family: atkinson-bold;
 }
 
+/* NAV ***************************************************/
+#menu_icon{
+	display: none;
+}
+
+#menu_content{
+	display: block;
+	float: left;
+	margin: 2rem 0 0 0;
+	position: unset;
+	padding: 1rem;
+	font-size: 1.2rem;
+	border: unset;
+	border-radius: unset;
+	border-right: 2px solid #006aff;
+	min-width: 10rem;
+}
+
+#menu_content ul{
+	margin: 0;
+}
+
 
 /* MAIN ************************************************/
 main {	/* M */
 	padding: 1rem 0;
+	max-width: 900px;
+	margin: auto;
 }
 
 main h1{
@@ -62,10 +91,6 @@ main h3{
 	font-family: atkinson-bold;
 }
 
-/* Section *********************************************/
-section{
-	margin-top: 2rem;
-}
 
 
 /* Enlaces *****************************************/
@@ -90,7 +115,7 @@ ul{
 	margin-top: 1rem;
 }
 
-ul li::before{
+main ul li::before{
 	content: "-";
 	margin-right: 1rem;
 	color: #aaaaaa;
@@ -140,11 +165,5 @@ footer hr{
 }
 
 
-/**************************** Desktop *****************************/
-/*
-@media only screen and (min-width: 800px) {
 
-
-
-
-}*/ /* @media */
+}

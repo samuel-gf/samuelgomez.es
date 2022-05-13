@@ -8,8 +8,8 @@ all: $(TARGETS)
 
 %.html: _tmpl/%.html $(TMPL)
 	# Construyendo $@
-	@cat _tmpl/header.html _tmpl/$@ _tmpl/footer.html > $@; \
-	TITULO=$$(grep '<h1>.*<\/h1>' -m1 -w -o $@ | sed 's/<h1>//' | sed 's/<\/h1>//'); \
+	@cat _tmpl/header.html _tmpl/$@ _tmpl/footer.html > $@
+	TITULO=$$(grep '<h1.*>.*<\/h1>' -m1 -w -o $@ | sed 's/<h1[^>]*>//' | sed 's/<\/h1>//'); \
 	sed "s/__TITLE__/$$TITULO - Samuel Gómez/" $@ | sponge $@;
 
 
