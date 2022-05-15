@@ -1,14 +1,21 @@
 SHELL := '/bin/bash'
 INC=$(wildcard _inc/*.html)
-ITEMS=index javascript python
-TARGETS=$(addsuffix .html,$(ITEMS))
-SRC=$(addprefix _src/,$(addsuffix .m4.html,$(ITEMS)))
+
+# M4 files
+SRC_HTML=$(wildcard _src/*.html)
+SRC_CSS=$(wildcard _src/*.css)
+
+# Targets
+TARGETS_HTML=$(notdir $(SRC_HTML:.m4.html=.html))
+TARGETS_CSS=$(addprefix css/,$(notdir $(SRC_CSS:.m4.css=.css)))
+
 
 # Genera la web estática
-all: $(TARGETS) $(CSS)
+all: $(TARGETS_HTML) $(TARGETS_CSS)
 
 %.html: _src/%.m4.html $(INC)
 	# Construyendo $@
+	@m4 -Q -P -I_inc $< >$@
 	@#cat _inc/header.html _src/$@ _inc/footer.html > $@;
 
 	@# Añade cabecera_logo.html
@@ -17,9 +24,10 @@ all: $(TARGETS) $(CSS)
 	#	| sed -e "/__CABECERA_LOGO__/ d" \
 	#	| sponge $@;
 	
-	@m4 -Q -P -I_inc $< >$@
 
-
+css/%.css: _src/%.m4.css
+	# Construyendo $@
+	@m4 -Q -P _src/lib.m4 $< >$@
 
 # Comprueba errores
 check:
@@ -30,4 +38,4 @@ check:
 
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS_HTML) $(TARGETS_CSS)
