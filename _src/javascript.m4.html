@@ -1,3 +1,4 @@
+m4_include(`cabecera_html.html')
 	<title>Apuntes de Javascript</title>
 	<script type="text/javascript" src="js/menu.js"></script>		   <!-- Menú desplegable   -->
 	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
@@ -5,7 +6,7 @@
 	</head>
 <body>
 
-__CABECERA_LOGO__
+m4_include(`cabecera_fixed.html')
 
 <script>hljs.highlightAll();</script>
 
@@ -148,3 +149,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </section>
 
 </main>
+m4_include(`footer.html')

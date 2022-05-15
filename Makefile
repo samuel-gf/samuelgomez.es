@@ -1,20 +1,24 @@
 SHELL := '/bin/bash'
-TMPL=_tmpl/header.html _tmpl/footer.html _tmpl/cabecera_logo.html
-TARGETS=index.html javascript.html python.html
-
+INC=$(wildcard _inc/*.html)
+ITEMS=index javascript python
+TARGETS=$(addsuffix .html,$(ITEMS))
+SRC=$(addprefix _src/,$(addsuffix .m4.html,$(ITEMS)))
 
 # Genera la web estática
-all: $(TARGETS)
+all: $(TARGETS) $(CSS)
 
-%.html: _src/%.html $(TMPL)
+%.html: _src/%.m4.html $(INC)
 	# Construyendo $@
-	@cat _tmpl/header.html _src/$@ _tmpl/footer.html > $@;
+	@#cat _inc/header.html _src/$@ _inc/footer.html > $@;
 
 	@# Añade cabecera_logo.html
-	@cat $@ \
-		| sed -e "/__CABECERA_LOGO__/ r _tmpl/cabecera_logo.html" \
-		| sed -e "/__CABECERA_LOGO__/ d" \
-		| sponge $@;
+	@#cat $@ \
+	#	| sed -e "/__CABECERA_LOGO__/ r _inc/cabecera_logo.html" \
+	#	| sed -e "/__CABECERA_LOGO__/ d" \
+	#	| sponge $@;
+	
+	@m4 -Q -P -I_inc $< >$@
+
 
 
 # Comprueba errores
