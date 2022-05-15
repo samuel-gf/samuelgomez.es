@@ -23,33 +23,41 @@ html{
 }
 
 body{
-	margin: 1rem;
+	line-height: 1.2rem;
+	counter-reset: section;
 }
 
 body header {
 	height: 3rem;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: white;
 }
-
-body header h2{
-	margin: 0;
-	color: #777777;
-	font-size: 0.8rem;
-}
-
 
 #logo {
 	font-size: 1.2rem;
 	font-family: atkinson-bold;
+	margin-left: 0.5rem;
 }
+
+/* Ingeniero informático y matemático */
+body header h2{
+	margin: 0;
+	color: #777777;
+	font-size: 0.8rem;
+	padding: 0 0 0 0.5rem;
+}
+
+
 
 /* NAV ***************************************************/
 #menu_icon{
 	position: absolute;
 	top: 0.5rem;
-	right: 0;
+	right: 0.5rem;
 	font-size: 2.5rem;
-	padding: 0 1rem 0 0;
 }
 
 #menu_icon a{
@@ -70,47 +78,48 @@ body header h2{
 	right: 0;
 	font-size: 1.2rem;
 	border: 1px solid #003b8c;
-	border-radius: 1rem;
+	border-radius: 1rem 0 0 1rem;
 	min-width: 10rem;
 }
 
 #menu_content li{
 	margin-bottom: 1rem;
 }
+#menu_content li:last-child{
+	margin-bottom: unset;
+}
 
 /* MAIN ************************************************/
 main {	/* M */
-	padding: 1rem 0;
+	padding: 0 0.5rem;
+	margin-top: 3rem;
+	line-height: 1.5rem;
 }
 
 main h1{
 	font-family: atkinson-bold;
 	margin: 1rem 0;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #006aff;
+	border-bottom: 1px solid blue;
 }
 
 main h2{
 	font-family: atkinson-bold;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin: 4rem 0 1rem 0;
 }
 
 main h3{
 	font-family: atkinson-bold;
-}
-
-/* Section *********************************************/
-section{
+	font-size: 1.2rem;
 	margin-top: 2rem;
 }
-
 
 /* Enlaces *****************************************/
 a{
 	color: black;
 	text-decoration: none;
-	height: 2rem;
 }
 
 main a:hover{
@@ -118,50 +127,59 @@ main a:hover{
 }
 
 /* Título de sección */
-section > a:first-child{
-	text-decoration: none;
+/* El primer título no tiene el margen extra */
+main > section h2:first-child{
+	margin-top: unset;
 }
-
 /* Listas *********************************************/
 main ul{
 	list-style-position: inside;
 	margin-top: 1rem;
 }
 
+main ul li{
+	line-height: 2rem;
+	list-style-type: circle;
+}
+
+/*
 main ul li::before{
 	content: "-";
 	margin-right: 1rem;
 	color: #aaaaaa;
-}
+}*/
 
 main ol{	/* M */
 	list-style-position: inside;
 	list-style-type: decimal;
 }
 
-li{
-	line-height: 2rem;
+main ol li{
+	margin: 1rem;
+	line-height: 1.5rem;
 }
+
 
 pre{
 	tab-size:2;
-	-moz-tab-size: 4;
 	border: 1px solid #aaaaaa;
-	margin: 0.5rem 0;
+	margin: 0;
+	padding: 0;
 }
 
 code{
   	font-family: monospace;
-	white-space: pre-wrap;
-	line-height: 1.4rem;
+	line-height: 1rem;
+	font-size: 0.9rem;
+	overflow: auto;
 }
 
 strong{
-	font-weight: bold;
+	font-family: atkinson-bold;
 }
 
 em {
-	font-style: italic;
+	text-decoration: underline;
 }
 
 .blue {
@@ -181,6 +199,35 @@ footer p{
 footer hr{
 	color: #777777;
 }
+
+/* Section *********************************************/
+section{
+	margin-top: 2rem;
+	counter-increment: section;
+}
+
+section h2:before{
+	content: counter(section) ".- ";
+}
+
+section ol{
+	list-style-type: none;
+}
+
+section ol.problemas{
+	counter-reset: problema;
+}
+
+section ol.problemas li{
+	margin-bottom: 2rem;
+}
+
+section ol.problemas li:before{
+	counter-increment: problema;
+	content: "Problema " counter(section) "." counter(problema) " ";
+	font-family: atkinson-bold;
+}
+
 
 
 /**************************** Desktop *****************************/

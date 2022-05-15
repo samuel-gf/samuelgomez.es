@@ -1,4 +1,12 @@
-<script src="js/highlight.min.js"></script>
+	<title>Apuntes de Javascript</title>
+	<script type="text/javascript" src="js/menu.js"></script>		   <!-- Menú desplegable   -->
+	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
+	<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
+	</head>
+<body>
+
+__CABECERA_LOGO__
+
 <script>hljs.highlightAll();</script>
 
 <nav id="menu_content"><ul>
@@ -10,7 +18,7 @@
 
 <main>
 
-<h1>Apuntes y trucos de Javascript</h1>
+<h1>Apuntes de Javascript</h1>
 
 <section>
 <a name="cabecera">
@@ -39,7 +47,7 @@
 
 <pre><code class="language-javascript">
 document.addEventListener('DOMContentLoaded', function(){ 
-    // Tu código aquí
+  // Tu código aquí
 }, false);
 
 </code></pre>
@@ -48,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function(){
 <pre>
 <code class="language-javascript">
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function myFunción(){
-    await sleep(100);
+  await sleep(100);
 }
 
 </code></pre>
@@ -78,9 +86,9 @@ Crear el objeto
 <pre>
 <code class="language-javascript">// Ejemplo para crear el lienzo en <em>javascript</em>
 async function main(){
-    s = new Svg("canvas1", 800, 500);
-    s.drawAxis();
-    s.drawGrid();
+  s = new Svg("canvas1", 800, 500);
+  s.drawAxis();
+  s.drawGrid();
 }
 </code></pre>
 
@@ -103,37 +111,37 @@ s.addCircle("p1", x, y, 4, "red");
 <pre><code class="javascript">
 var o1, o2;
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function mover1(){
-    for(var i=0; i<200; i+=0.1){
-        var p = 50*Math.sin(i/10.0);
-        o1.setAttribute("cx", s.px(50*Math.cos(i/10.0)));
-        o1.setAttribute("cy", s.py(50*Math.sin(i/10.)));
-        await sleep(1);
-        console.log("1");
-    }
+  for(var i=0; i<200; i+=0.1){
+    var p = 50*Math.sin(i/10.0);
+    o1.setAttribute("cx", s.px(50*Math.cos(i/10.0)));
+    o1.setAttribute("cy", s.py(50*Math.sin(i/10.)));
+    await sleep(1);
+    console.log("1");
+  }
 }
 
 async function mover2(){
-    for(var i=0; i<100; i++){
-        console.log("2");
-        o2.setAttribute("cx", s.px(-i));
-        await sleep(100);
-        console.log("2");
-    }
+  for(var i=0; i<100; i++){
+    console.log("2");
+    o2.setAttribute("cx", s.px(-i));
+    await sleep(100);
+    console.log("2");
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function(){ 
-    s = new Svg("canvas1", 800, 500);
-    s.drawAxis();
-    s.drawGrid();
-    o1  = s.addCircle("c1", 0, 0, 5, "red");
-    o2  = s.addCircle("c2", 0, 0, 5, "blue");
+  s = new Svg("canvas1", 800, 500);
+  s.drawAxis();
+  s.drawGrid();
+  o1  = s.addCircle("c1", 0, 0, 5, "red");
+  o2  = s.addCircle("c2", 0, 0, 5, "blue");
 
-    mover1();
-    mover2();
+  mover1();
+  mover2();
 
 }, false);
 </code></pre>

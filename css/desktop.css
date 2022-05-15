@@ -7,36 +7,6 @@
 /********************************************************************************/
 @media only screen and (min-width: 1350px) {
 
-@font-face {
-    font-family:"atkinson";
-	src: url(../fonts/Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
-	font-weight: normal;
-}
-
-@font-face {
-    font-family:"atkinson-bold";
-	src: url(../fonts/Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
-	font-weight: bold;
-}
-
-
-html{
-	font-family: "atkinson", sans-serif;
-	font-size: 1.2rem;
-	scroll-behavior: smooth;
-}
-
-body{
-	margin: 1rem;
-}
-
-
-body header h2{
-	margin: 0;
-	color: #777777;
-	font-size: 0.8rem;
-}
-
 
 #logo {
 	font-size: 1.5rem;
@@ -51,119 +21,40 @@ body header h2{
 
 #menu_content{
 	display: block;
-	float: left;
 	margin: 2rem 0 0 0;
-	position: unset;
 	padding: 1rem;
-	font-size: 1.2rem;
 	border: unset;
 	border-radius: unset;
 	border-right: 2px solid #006aff;
-	min-width: 10rem;
+	top: 4rem;
+	left: 0;
+	width: 16rem;
+	position: fixed;
 }
 
-#menu_content ul{
-	margin: 0;
-}
 
 
 /* MAIN ************************************************/
 main {	/* M */
-	padding: 1rem 0;
 	max-width: 900px;
-	margin: auto;
+	margin: 5rem auto 0 auto;
 }
 
 main h1{
-	font-family: atkinson-bold;
-	margin: 1rem 0;
 	font-size: 3rem;
-	color: #006aff;
-}
-
-main h2{
-	font-family: atkinson-bold;
-	font-size: 2rem;
-	margin: 4rem 0 1rem 0;
-}
-
-main h3{
-	font-family: atkinson-bold;
+	border: unset;
 }
 
 
-
-/* Enlaces *****************************************/
-a{
-	color: black;
-	text-decoration: none;
-	height: 2rem;
+code {
+	font-size: 1rem;
 }
 
-a:hover{
-	text-decoration: underline;
-}
+/* SECTION *************************************************/
 
-/* Título de sección */
-section > a:first-child{
-	text-decoration: none;
-}
-
-/* Listas *********************************************/
-ul{
-	list-style-position: inside;
-	margin-top: 1rem;
-}
-
-main ul li::before{
-	content: "-";
-	margin-right: 1rem;
-	color: #aaaaaa;
-}
-
-ol{	/* M */
-	list-style-position: inside;
-	list-style-type: decimal;
-}
-
-li{
-	line-height: 2rem;
-}
-
-pre{
-	tab-size:2;
-	-moz-tab-size: 4;
-	border: 1px solid #aaaaaa;
-	margin: 0.5rem 0;
-}
-
-code{
-  	font-family: monospace;
-	white-space: pre-wrap;
-	line-height: 1.4rem;
-}
-
-strong{
-	font-weight: bold;
-}
-
-em {
-	font-style: italic;
-}
-
-.blue {
-	color: #006aff;
-}
-
-footer{
-	color: #777777;
-	margin-top: 2rem;
-	position: absolute;
-}
-footer hr{
-	color: #777777;
+section ol.problemas li{
+	margin-bottom: unset;
 }
 
 
-
-}
+}	 /* END MEDIA */
