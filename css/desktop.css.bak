@@ -1,3 +1,4 @@
+	
 /********************************************************************************/
 /* DESKTOP */
 /********************************************************************************/
@@ -28,7 +29,7 @@
 	padding: 1rem;
 	border: unset;
 	border-radius: unset;
-	border-right: 2px solid color_principal;
+	border-right: 2px solid #006AFF;
 	top: 4rem;
 	left: 0;
 	width: 320px;
@@ -61,3 +62,9 @@ section ol.problemas li{
 
 
 }	 /* END MEDIA */
+	# Do not dump to output
+
+
+
+
+# Dump to output
