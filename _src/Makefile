@@ -3,15 +3,15 @@ INC=$(wildcard inc/*.html)
 
 # M4 files
 SRC_HTML=$(wildcard *.html)
-SRC_CSS=$(wildcard *.css)
+#SRC_CSS=$(wildcard *.css)
 
 # Targets
 TARGETS_HTML=$(addprefix ../,$(notdir $(SRC_HTML:.m4.html=.html)))
-TARGETS_CSS=$(addprefix ../css/,$(notdir $(SRC_CSS:.m4.css=.css)))
+#TARGETS_CSS=$(addprefix ../css/,$(notdir $(SRC_CSS:.m4.css=.css)))
 
 
 # Genera la web estática
-all: $(TARGETS_HTML) $(TARGETS_CSS)
+all: $(TARGETS_HTML)
 
 %.html: _src/$(notdir %).m4.html $(INC)
 	# Construyendo $@
@@ -25,9 +25,9 @@ all: $(TARGETS_HTML) $(TARGETS_CSS)
 	#	| sponge $@;
 	
 
-../css/%.css: %.m4.css
+#../css/%.css: %.m4.css
 	# Construyendo $@
-	@m4 -Q -P lib.m4 $< >$@
+#	@m4 -Q -P lib.m4 $< >$@
 
 # Comprueba errores
 check:
@@ -38,4 +38,4 @@ check:
 
 
 clean:
-	rm -f $(TARGETS_HTML) $(TARGETS_CSS)
+	rm -f $(TARGETS_HTML)

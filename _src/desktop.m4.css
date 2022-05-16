@@ -11,6 +11,12 @@
 
 }
 
+#retrato{
+	float: right;
+	margin: 0 0 2rem 2rem;
+	width: 15rem;
+}
+
 /* NAV ***************************************************/
 #menu_icon{
 	display: none;
