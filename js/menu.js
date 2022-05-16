@@ -1,6 +1,7 @@
 var bMenu = false;
 
 document.addEventListener('DOMContentLoaded', function(){ 
+	console.log("GO");
 	let menu_content = document.getElementById("menu_content");
 	let menu_icon = document.getElementById("menu_icon");
 
