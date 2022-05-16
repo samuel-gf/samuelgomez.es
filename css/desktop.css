@@ -28,7 +28,7 @@
 	padding: 1rem;
 	border: unset;
 	border-radius: unset;
-	border-right: 2px solid color_principal;
+	border-right: 2px solid var(--color_principal);
 	top: 4rem;
 	left: 0;
 	width: 320px;
@@ -54,6 +54,10 @@ code {
 }
 
 /* SECTION *************************************************/
+
+.valign_2rem{
+	height: 2rem;
+}
 
 section ol.problemas li{
 	margin-bottom: unset;
