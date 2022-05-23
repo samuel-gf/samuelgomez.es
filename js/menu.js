@@ -1,7 +1,6 @@
 var bMenu = false;
 
 document.addEventListener('DOMContentLoaded', function(){ 
-	console.log("GO");
 	let menu_content = document.getElementById("menu_content");
 	let menu_icon = document.getElementById("menu_icon");
 
@@ -23,14 +22,16 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	});
 	// Hide the menu
-	document.getElementById("menu_content").addEventListener("click", function (){
+	if (menu_content != null) {
+		menu_content.addEventListener("click", function (){
 		if (bMenu){	// Si es un menú desplegable y se ha hecho visible
 			bMenu = false;
 			if (menu_icon.style.display != "none") {
 				menu_content.style.display="none";
 			}
 		}
-	});
+		});
+	}
 }, false);
 
 

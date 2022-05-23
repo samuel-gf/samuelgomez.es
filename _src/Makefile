@@ -14,7 +14,7 @@ all: $(TARGETS_HTML)
 	
 # Comprueba errores
 check:
-	@for f in *.html; do \
+	@for f in ../*.html; do \
 		echo "Analizado $$f"; \
 		tidy -q -errors -utf8 $$f; \
 		done;
