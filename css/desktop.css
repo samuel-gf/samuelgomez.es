@@ -3,6 +3,9 @@
 /********************************************************************************/
 @media only screen and (min-width: 1632px) {
 
+html{
+	font-size: 1.2rem;
+}
 
 #logo {
 	font-size: 1.5rem;
@@ -16,7 +19,6 @@
 	margin: 0 0 2rem 2rem;
 	width: 15rem;
 }
-
 
 /* NAV ***************************************************/
 #menu_icon{

@@ -1,16 +1,17 @@
 SHELL := '/bin/bash'
 INC=$(wildcard inc/*.html)
+SRC=$(wildcard *.php)
+TARGETS=$(addprefix ../,$(notdir $(SRC:.php=.html)))
+URL_BASE=https://samuelgomez.es/
 
-# M4 files
-SRC_HTML=$(wildcard *.m4.html)
-TARGETS_HTML=$(addprefix ../,$(notdir $(SRC_HTML:.m4.html=.html)))
 
 # Genera la web estática
-all: $(TARGETS_HTML)
+all: $(TARGETS) sitemap
 
-%.html: _src/$(notdir %).m4.html $(INC)
+# Construye los .html que son target
+%.html: _src/$(notdir %).php $(INC)
 	# Construyendo $@
-	@m4 -Q -P -Iinc $< >$@
+	@php $< >$@
 	
 # Comprueba errores
 check:
@@ -19,5 +20,12 @@ check:
 		tidy -q -errors -utf8 $$f; \
 		done;
 
+# Construye el sitemap
+sitemap:
+	@echo $(addprefix $(URL_BASE), $(notdir $(wildcard ../*.html))) \
+		| sed 's/ /\n/g' > ../sitemap.txt
+
+	
+
 clean:
-	rm -f $(TARGETS_HTML)
+	rm -f $(TARGETS) ../sitemap.txt

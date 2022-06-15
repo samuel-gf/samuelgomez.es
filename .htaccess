@@ -2,6 +2,20 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://samuelgomez.es/$1 [R,L]
 
+# Cache
+<IfModule mod_expires.c>
+AddType application/font-woff2    woff2
+
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access 7 days"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType text/javascript "access 1 month"
+ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
 # Vídeos
 #Ecuación del plano perpendicula a un punto
 Redirect 301 /v1 https://youtu.be/3rNMgjDH57Y	

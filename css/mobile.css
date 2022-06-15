@@ -7,24 +7,27 @@
 	--color_opuesto: #ff9200;
 	--color_gris_medio: #777777;
 }
+
 @charset "utf-8";
 
 @font-face {
     font-family:"atkinson";
 	src: url(../fonts/Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
 	font-weight: normal;
+	font-display: swap;
 }
 
 @font-face {
     font-family:"atkinson-bold";
 	src: url(../fonts/Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
 	font-weight: bold;
+	font-display: swap;
 }
 
 
 html{
 	font-family: "atkinson", sans-serif;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	scroll-behavior: smooth;
 	scroll-padding-top: 4rem;
 }
@@ -67,7 +70,16 @@ body header a{
 #retrato{
 	float: right;
 	margin: 0 0 1rem 1rem;
-	width: 25vw;
+	width: 45vw;
+	aspect-ratio: 1;
+}
+
+.left{
+	text-align: left;
+}
+
+i{
+	font-style: italic;
 }
 
 /* NAV ***************************************************/
@@ -94,7 +106,7 @@ body header a{
 	padding: 1rem;
 	top: 0.5rem;
 	right: 0;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	border: 1px solid var(--color_oscuro);
 	border-radius: 1rem 0 0 1rem;
 	min-width: 10rem;
@@ -108,7 +120,7 @@ body header a{
 
 #menu_content h1{
 	font-family: atkinson-bold;
-	margin: 3rem 0 1rem 0;
+	margin: 2rem 0 0.5rem 0;
 	color: var(--color_principal);
 }
 #menu_content h1:first-child{
@@ -116,7 +128,7 @@ body header a{
 }
 
 #menu_content li{
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 #menu_content li:last-child{
 	margin-bottom: unset;
@@ -193,7 +205,6 @@ main ol li{
 
 p{
 	margin-top: 1rem;
-	text-align: justify;
 }
 
 pre{
