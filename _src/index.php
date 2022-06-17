@@ -28,7 +28,7 @@
 <main>
 
 <img src="img/perm/retrato.webp" id="retrato" alt="Mi retrato" width="320">
-<h2>Sobre mí</h2>
+<h2 style="margin-top: 0;">Sobre mí</h2>
 <p class="left">Padre, ingeniero, matemático y motero. Me levanto cada día con ganas de comerme el mundo.</p>
 
 

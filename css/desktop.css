@@ -31,17 +31,21 @@ html{
 }
 
 nav#menu_content{
-	display: block;
 	margin: 0;
-	padding: 1rem;
 	border: unset;
 	border-radius: unset;
-	border-right: 2px solid var(--color_principal);
-	top: 4rem;
+	border-right: 1px solid var(--color_principal);
+	top: 5rem;
+	padding-top: 0;
 	left: 0;
 	width: 320px;
 	position: fixed;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: visible;
+	scrollbar-color: var(--color_principal) black;
+	scrollbar-width: thin;
+	height: calc(80% - 5rem);
+	display: block;
 }
 
 
@@ -60,6 +64,7 @@ main h1{
 
 
 code {
+	font-size: 1rem;
 }
 
 /* SECTION *************************************************/
