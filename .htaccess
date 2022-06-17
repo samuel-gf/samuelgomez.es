@@ -2,7 +2,7 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://samuelgomez.es/$1 [R,L]
 
-# Cache
+# BROWSER CACHING USING EXPIRES HEADERS: Método 1 de 2
 <IfModule mod_expires.c>
 AddType application/font-woff2    woff2
 
@@ -15,6 +15,27 @@ ExpiresByType text/x-javascript "access 1 month"
 ExpiresByType text/javascript "access 1 month"
 ExpiresByType application/font-woff2 "access plus 1 month"
 </IfModule>
+
+# BROWSER CACHING USING CACHE-CONTROL HEADERS: Método 2 de 2
+<ifModule mod_headers.c> 
+    # One year for image and video files
+    <filesMatch ".(flv|gif|ico|jpg|jpeg|mp4|mpeg|png|svg|swf|webp|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+
+    # One month for JavaScript and PDF files
+    <filesMatch ".(js|pdf)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
+
+    # One week for CSS files
+    <filesMatch ".(css)$">
+        Header set Cache-Control "max-age=604800, public"
+    </filesMatch>
+</ifModule>
+
+
+
 
 # Vídeos
 #Ecuación del plano perpendicula a un punto

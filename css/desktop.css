@@ -25,7 +25,12 @@ html{
 	display: none;
 }
 
-#menu_content{
+#gran_contenedor{
+	display: flex;
+	justify-content: space-between;
+}
+
+nav#menu_content{
 	display: block;
 	margin: 0;
 	padding: 1rem;
@@ -36,6 +41,7 @@ html{
 	left: 0;
 	width: 320px;
 	position: fixed;
+	overflow: auto;
 }
 
 
@@ -54,7 +60,6 @@ main h1{
 
 
 code {
-	font-size: 1rem;
 }
 
 /* SECTION *************************************************/

@@ -1,4 +1,5 @@
-<?php include('inc/cabecera_html.php'); ?>
+	<?php include('inc/cabecera_html.php'); ?>
+	<link rel="canonical" href="https://samuelgomez.es">
 	<title>Samuel Gómez</title>
 	</head>
 <body>

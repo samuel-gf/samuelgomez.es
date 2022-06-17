@@ -9,6 +9,8 @@ TARGETS = $(shell echo $(SRC) | sed -e "s/_src\///g" -e "s/.php/.html/g")
 DIR_SRC = $(shell pwd)
 SRC = $(shell find $(DIR_SRC) -name "*.php" -not -path "*inc/*")
 
+INC = $(shell find inc -name "*.php")
+
 #vpath %.php $(DIR_SRC)
 #vpath %.php $(DIR_SRC)/matematicas/problemas
 
@@ -16,12 +18,12 @@ SRC = $(shell find $(DIR_SRC) -name "*.php" -not -path "*inc/*")
 all: $(TARGETS) sitemap
 
 # El parámetro 0 es la profundidad del directorio
-$(DIR_TARGET)/%.html: $(DIR_SRC)/%.php
+$(DIR_TARGET)/%.html: $(DIR_SRC)/%.php $(INC)
 	# Construyendo $@
 	@php $< 0 >$@
 
 # El parámetro 2 es la profundidad del directorio
-$(DIR_TARGET)/matematicas/problemas/%.html: $(DIR_SRC)/matematicas/problemas/%.php
+$(DIR_TARGET)/matematicas/problemas/%.html: $(DIR_SRC)/matematicas/problemas/%.php $(INC)
 	# Construyendo $@
 	@php $< 2 >$@
 

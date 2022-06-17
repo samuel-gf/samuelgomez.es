@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name='description' content='Profesor de secundaria'/>
 	<link rel="stylesheet" type="text/css" href="<?php echo str_repeat('../', $argv[1]);?>css/reset2.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo str_repeat('../', $argv[1]);?>css/mobile.css?t=2">
-	<link rel="stylesheet" type="text/css" href="<?php echo str_repeat('../', $argv[1]);?>css/desktop.css?t=2">
+	<link rel="stylesheet" type="text/css" href="<?php echo str_repeat('../', $argv[1]);?>css/mobile.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo str_repeat('../', $argv[1]);?>css/desktop.css">
 	<link rel="icon" type="image/svg+xml" href="<?php echo str_repeat('../', $argv[1]);?>img/favicon/favicon.svg" sizes="any"/>
 	<link rel="preload">
 	<script type="text/javascript" src="<?php echo str_repeat('../', $argv[1]);?>js/menu.js"></script>		   <!-- Menú desplegable   -->
