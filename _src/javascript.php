@@ -1,11 +1,11 @@
-<?php include('inc/cabecera_html.html'); ?>
+<?php include('inc/cabecera_html.php'); ?>
 	<title>Apuntes de Javascript</title>
 	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
 	<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
 	</head>
 <body>
 
-<?php include('inc/cabecera_fixed.html'); ?>
+<?php include('inc/cabecera_fixed.php'); ?>
 
 <script>hljs.highlightAll();</script>
 
@@ -205,4 +205,4 @@ error_log(print_r($data, true));
 
 
 </main>
-<?php include('inc/footer.html'); ?>
+<?php include('inc/footer.php'); ?>

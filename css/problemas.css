@@ -1,3 +1,30 @@
-.problema{
+.problemas{
+	counter-reset: problema;
+}
 
+.problemas img{
+	margin: 0 auto 3rem auto;
+	display: block;
+	width: 100%;
+}
+
+.problemas li:before{
+	counter-increment: problema;
+	content: "Problema " counter(section) "." counter(problema);
+	font-weight: bold;
+	font-family: "atkinson-bold", sans-serif;
+	margin-right: 1rem;
+}
+
+.problemas li{
+	list-style-type: none;
+	margin: 0 0 2rem 0;
+}
+
+.problemas p:first-child{
+	margin-top: 0;
+}
+
+.problemas p{
+	line-height: 1.5rem;
 }

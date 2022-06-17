@@ -1,14 +1,15 @@
-<?php include('inc/cabecera_html.html'); ?>
+<?php include('inc/cabecera_html.php'); ?>
 	<title>Samuel Gómez</title>
 	</head>
 <body>
 
-<?php include('inc/cabecera_fixed.html'); ?>
+<?php include('inc/cabecera_fixed.php'); ?>
 
 <nav id="menu_content"><ul>
 		<h1>Álgebra</h1>
 		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
 		<li><a href="pdf/sucesiones.pdf">Sucesiones y series</a></li>
+		<li><a href="matematicas/problemas/3eso_01.html">Aprendizaje basado en problemas</a></li>
 
 		<h1>Geometría</h1>
 		<li><a href="pdf/geometria.recetas.pdf">Recetas de geometría</a></li>
@@ -18,7 +19,7 @@
 		<li><a href="python.html">Python</a></li>
 		<li><a href="http://fortran.es">Fortran</a></li>
 		<li><a href="javascript.html">Javascript</a></li>
-		<li><a href="#">Tikz</a></li>
+		<li><a href="tikz.html">Tikz</a></li>
 	</ul>
 </nav>
 
@@ -56,4 +57,5 @@ donde procuro transmitir con entusiasmo mis conocimientos sobre Matemáticas, Ci
 
 
 </main>
-<?php include('inc/footer.html'); ?>
+
+<?php include('inc/footer.php'); ?>

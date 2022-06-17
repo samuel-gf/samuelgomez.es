@@ -6,6 +6,7 @@
 	--color_oscuro: #003b8c;
 	--color_opuesto: #ff9200;
 	--color_gris_medio: #777777;
+	--color_gris_claro: #cccccc;
 }
 
 @charset "utf-8";
@@ -35,6 +36,7 @@ html{
 body{
 	line-height: 1.2rem;
 	counter-reset: section;
+	margin-bottom: 4rem;
 }
 
 body header {
@@ -44,6 +46,7 @@ body header {
 	top: 0;
 	left: 0;
 	background-color: white;
+	border-bottom: 1px solid var(--color_gris_claro);
 }
 
 #logo {
@@ -135,9 +138,15 @@ i{
 }
 
 /* MAIN ************************************************/
+#gran_contenedor{
+	display: flex;
+	justify-content: space-between;
+}
+
+
 main {	/* M */
 	padding: 0 0.5rem;
-	margin-top: 3rem;
+	margin-top: 4rem;
 	line-height: 1.5rem;
 }
 
@@ -274,13 +283,9 @@ section ol.problemas li:before{
 	font-family: atkinson-bold;
 }
 
+section img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
 
-
-/**************************** Desktop *****************************/
-/*
-@media only screen and (min-width: 800px) {
-
-
-
-
-}*/ /* @media */

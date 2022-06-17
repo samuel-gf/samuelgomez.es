@@ -49,6 +49,7 @@ main {	/* M */
 main h1{
 	font-size: 3rem;
 	border: unset;
+	line-height: 3rem;
 }
 
 

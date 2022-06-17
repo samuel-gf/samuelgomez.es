@@ -1,4 +1,4 @@
-<?php include('inc/cabecera_html.html'); ?>
+<?php include('inc/cabecera_html.php'); ?>
 	<title>Apuntes de Python</title>
 	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
 	<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
@@ -6,7 +6,7 @@
 <body>
 
 
-<?php include('inc/cabecera_fixed.html'); ?>
+<?php include('inc/cabecera_fixed.php'); ?>
 <script>hljs.highlightAll();</script>
 
 <nav id="menu_content"><ul>
@@ -353,4 +353,4 @@ nombres.insert(0, "Guillermo Fernando")
 </section>
 <!------------------------------------------------------------------------------------->
 </main>
-<?php include('inc/footer.html'); ?>
+<?php include('inc/footer.php'); ?>
