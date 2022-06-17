@@ -5,6 +5,7 @@
 
 <?php include('inc/cabecera_fixed.php'); ?>
 
+
 <nav id="menu_content"><ul>
 		<h1>Álgebra</h1>
 		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
