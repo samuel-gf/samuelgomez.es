@@ -9,7 +9,7 @@
 <?php include('inc/cabecera_fixed.php'); ?>
 <script>hljs.highlightAll();</script>
 
-<nav id="menu_content"><ul>
+<nav id="menu"><ul>
 		<li><a href="#tipos_variables">Tipos de variables</a></li>
 		<li><a href="#acumuladores">Acumuladores</a></li>
 		<li><a href="#salida_numero">Poner un número en pantalla</a></li>

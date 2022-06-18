@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	let body = document.querySelector("body");
 
 	// No mostrar el menú si está en modo escritorio
-	if (document.getElementById("menu_content") == null){
-		document.getElementById("menu_icon").style.display="none";
-	}
+	//if (document.getElementById("menu_content") == null){
+	//	document.getElementById("menu_icon").style.display="none";
+	//}
 
 	// Mostrar el menú cuando se pincha en el icono
 	menu_icon.addEventListener("click", function (){
@@ -18,23 +18,18 @@ document.addEventListener('DOMContentLoaded', function(){
 		if (bMenu) {
 			menu_content.style.display="block";
 		} else {
-			menu_content.style.display="none";
+			menu_content.style.display=null;
 		}
 	});
-	// Hide the menu
+	// Hide the menu after click
 	if (menu_content != null) {
 		menu_content.addEventListener("click", function (){
 		if (bMenu){	// Si es un menú desplegable y se ha hecho visible
 			bMenu = false;
-			if (menu_icon.style.display != "none") {
-				menu_content.style.display="none";
+			if (menu_icon.style.display != null) {
+				menu_content.style.display=null;
 			}
 		}
 		});
 	}
 }, false);
-
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}

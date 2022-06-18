@@ -7,7 +7,7 @@
 <?php include('inc/cabecera_fixed.php'); ?>
 
 
-<nav id="menu_content"><ul>
+<nav id="menu"><ul>
 		<h1>Álgebra</h1>
 		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
 		<li><a href="pdf/sucesiones.pdf">Sucesiones y series</a></li>

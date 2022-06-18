@@ -9,7 +9,7 @@
 
 <script>hljs.highlightAll();</script>
 
-<nav id="menu_content"><ul>
+<nav id="menu"><ul>
 		<li><a href="#cabecera">Cabecera</a></li>
 		<li><a href="#funciones_utiles">Funciones útiles</a></li>
 		<li><a href="#svg">SVG</a></li>

@@ -16,7 +16,7 @@
 
 <?php include('inc/cabecera_fixed.php'); ?>
 
-<nav id="menu_content"><ul>
+<nav id="menu"><ul>
 		<h1>Problemas</h1>
 		<li><a href="#problemas1">Campamento de verano</a></li>
 		<li><a href="#problemas2">Sin Internet en la montaña</a></li>

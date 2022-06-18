@@ -1,7 +1,7 @@
 /********************************************************************************/
 /* DESKTOP */
 /********************************************************************************/
-@media only screen and (min-width: 1632px) {
+@media only screen and (min-width: 1220px) {
 
 html{
 	font-size: 1.2rem;
@@ -30,7 +30,7 @@ html{
 	justify-content: space-between;
 }
 
-nav#menu_content{
+nav#menu{
 	margin: 0;
 	border: unset;
 	border-radius: unset;
@@ -52,8 +52,9 @@ nav#menu_content{
 
 /* MAIN ************************************************/
 main {	/* M */
-	width: 900px;
-	margin: 5rem 320px 0 auto;
+	max-width: 900px;
+	margin: 5rem auto 0 auto;
+	padding-left: 400px;
 }
 
 main h1{

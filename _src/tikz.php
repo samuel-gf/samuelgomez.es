@@ -9,7 +9,7 @@
 
 <script>hljs.highlightAll();</script>
 
-<nav id="menu_content"><ul>
+<nav id="menu"><ul>
 		<li><a href="#introduccion">Introducción</a></li>
 		<li><a href="#base">Base</a></li>
 	</ul>
