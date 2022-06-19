@@ -14,7 +14,7 @@
 		<li><a href="matematicas/problemas/3eso_01.html">Aprendizaje basado en problemas</a></li>
 
 		<h1>Geometría</h1>
-		<li><a href="pdf/geometria.recetas.pdf">Recetas de geometría</a></li>
+		<li><a href="pdf/geometria_recetas.pdf">Recetas de geometría</a></li>
 
 		<h1>Programación</h1>
 		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>

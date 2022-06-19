@@ -5,15 +5,18 @@ RewriteRule ^(.*)$ https://samuelgomez.es/$1 [R,L]
 # BROWSER CACHING USING EXPIRES HEADERS: Método 1 de 2
 <IfModule mod_expires.c>
 AddType application/font-woff2    woff2
+AddType application/font-woff    woff
 
 ExpiresByType image/jpeg "access plus 1 year"
 ExpiresByType image/webp "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
-ExpiresByType text/css "access 7 days"
+#ExpiresByType text/css "access 7 days"
+ExpiresByType text/css "access 1 day"
 ExpiresByType text/x-javascript "access 1 month"
 ExpiresByType text/javascript "access 1 month"
 ExpiresByType application/font-woff2 "access plus 1 month"
+ExpiresByType application/font-woff "access plus 1 month"
 </IfModule>
 
 # BROWSER CACHING USING CACHE-CONTROL HEADERS: Método 2 de 2
@@ -30,7 +33,8 @@ ExpiresByType application/font-woff2 "access plus 1 month"
 
     # One week for CSS files
     <filesMatch ".(css)$">
-        Header set Cache-Control "max-age=604800, public"
+        #Header set Cache-Control "max-age=604800, public"
+        Header set Cache-Control "max-age=600, public"
     </filesMatch>
 </ifModule>
 
