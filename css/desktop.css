@@ -57,9 +57,13 @@ main {	/* M */
 	padding-left: 400px;
 }
 
-main h1{
+main > header > h1{	/* El título portada de main */
 	font-size: 3rem;
 	border: unset;
+	line-height: 3rem;
+}
+
+main h1{
 	line-height: 3rem;
 }
 

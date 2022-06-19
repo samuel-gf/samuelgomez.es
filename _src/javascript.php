@@ -17,13 +17,12 @@
 </nav>
 
 <main>
+<header><h1>Apuntes de Javascript</h1></header>
 
-<h1>Apuntes de Javascript</h1>
+
 
 <section>
-<a name="cabecera">
-	<h2>Cabecera</h2>
-</a>
+<h1><a name="cabecera">Cabecera</a></h1>
 
 <p>El archivo .html debe hacer referencia al script .js y esto se logra añadiendo a la cabecera del
 .html esta línea:</p>
@@ -39,11 +38,9 @@
 
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="funciones_utiles">
-	<h2>Funciones útiles</h2>
-</a>
+<h1><a name="funciones_utiles">Funciones útiles</a></h1>
 
-<h3>Ejecutar tras la carga del DOM</h3>
+<h2>Ejecutar tras la carga del DOM</h2>
 
 <pre><code class="language-javascript">
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -52,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 </code></pre>
 
-<h3>Detener el hilo de ejecución por un tiempo</h3>
+<h2>Detener el hilo de ejecución por un tiempo</h2>
 <pre>
 <code class="language-javascript">
 function sleep(ms) {
@@ -70,8 +67,7 @@ async function myFunción(){
 <!------------------------------------------------------------------------------------->
 
 <section>
-<a name="svg">
-	<h2>SVG</h2>
+<h1><a name="svg">SVG</a></h1>
 </a>
 
 <p>La <a href="js/Svg.js">librería Svg</a> completa</p>
@@ -150,13 +146,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="post_ajax">
-	<h2>Enviar post mediante ajax</h2>
-</a>
+<h1><a name="post_ajax">Enviar post mediante ajax</a></h1>
 
 <p>Creamos dos ficheros, una será un <i>.html</i> en el cliente y un <i>.php</i> en el servidor.
 
-<h3>Cliente</h3>
+<h2>Cliente</h2>
 
 <pre><code class="language-html">&lt;!-- Cliente HTML --&gt;
 &lt;!DOCTYPE html&gt;
@@ -187,9 +181,9 @@ document.addEventListener('DOMContentLoaded', function(){
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-</section>
 
-<h3>Servidor</h3>
+<h2>Servidor</h2>
+
 <pre><code class="language-javascript">&lt;?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: content-type');

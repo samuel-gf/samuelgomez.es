@@ -28,7 +28,7 @@
 <main>
 
 <img src="img/perm/retrato.webp" id="retrato" alt="Mi retrato" width="320">
-<h2 style="margin-top: 0;">Sobre mí</h2>
+<h1 style="margin-top: 0;">Sobre mí</h1>
 <p class="left">Padre, ingeniero, matemático y motero. Me levanto cada día con ganas de comerme el mundo.</p>
 
 
@@ -46,15 +46,18 @@ Mis fuentes favoritas son <a href="https://brailleinstitute.org/freefont" target
 y <a href="https://sourcefoundry.org/hack/" target="_blank">Hack</a>. Mi editor de texto diario es 
 <a href="https://neovim.io/" target="_blank">Neo Vim</a>.</p>
 
+<p>Veo cada vez más interesante el movimiento <a href="https://indieweb.org/" target="_blank">Indie Web</a> 
+que es una comunidad de sitios web personales de desarrolladores.</p>
 
-<h2>Laboro</h2>
+
+<h1 style="margin-top: 2rem;">Laboro</h1>
 <p>Aunque en el pasado trabajé como ingeniero en una multinacional de las telecomunicaciones descubrí mi vocación
 transmitiendo y guíando a las jóvenes generaciones en el mundo de las matemáticas y la tecnología.</p>
 
 <p>Soy profesor de secundaria. Me encanta mi trabajo,
 donde procuro transmitir con entusiasmo mis conocimientos sobre Matemáticas, Ciencia y Tecnología.</p>
 
-<h2>Contacto</h2>
+<h1 style="margin-top: 2rem;">Contacto</h1>
 <p>contacto<img src="img/perm/a.png" alt="#" style="padding: 0.2rem;" width="16" height="16">samuelgomez.es</p>
 
 

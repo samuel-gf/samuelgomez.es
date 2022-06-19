@@ -32,9 +32,7 @@
 
 <!-- SECCIÓN -------------------------------------------------------- -->
 <section>
-
-<a name="problemas1">
-<h2>Campamento de verano</h2>
+<h1><a name="problemas1">Campamento de verano</a></h1>
 </a>
 
 <p>Como cada año. Emi ahorra para llevar a su hija Alba a un campamento de verano. Tiene dos opciones: llevarla seis o 
@@ -100,7 +98,7 @@ representa?
 <!-- SECCIÓN -------------------------------------------------------- -->
 <section>
 <a name="problemas2">
-<h2>Sin Internet en la montaña</h2>
+<h1>Sin Internet en la montaña</h1>
 </a>
 
 

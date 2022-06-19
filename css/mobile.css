@@ -37,7 +37,7 @@
 
 html{
 	font-family: "atkinson", sans-serif;
-	font-size: 1rem;
+	font-size: 100%;
 	scroll-behavior: smooth;
 	scroll-padding-top: 4rem;
 }
@@ -101,7 +101,9 @@ b{
 	font-weight: bold;
 }
 
-/* NAV ***************************************************/
+/*********************************************************/
+/* MENU **************************************************/
+/*********************************************************/
 #menu_icon{
 	position: absolute;
 	top: 0.5rem;
@@ -130,6 +132,7 @@ b{
 	border-radius: 1rem 0 0 1rem;
 	min-width: 10rem;
 	max-width: 75%;
+	counter-reset: section;
 }
 
 #menu a{
@@ -148,6 +151,11 @@ b{
 
 #menu li{
 	margin-bottom: 0.5rem;
+	counter-increment: section;
+}
+
+#menu li:before{
+	content: counter(section) ". ";
 }
 #menu li:last-child{
 	margin-bottom: unset;
@@ -158,25 +166,32 @@ main {	/* M */
 	padding: 0 0.5rem;
 	margin-top: 4rem;
 	line-height: 1.5rem;
+	counter-reset: section;
 }
 
-main h1{
+h1, h2, h3{
 	font-family: atkinson-bold;
-	margin: 1rem 0;
 	font-size: 1.5rem;
+}
+
+main > header > h1{
+	margin: 0;
+	font-size: 2rem;
 	color: var(--color_principal);
 	border-bottom: 1px solid blue;
 }
 
-main h2{
-	font-family: atkinson-bold;
-	font-size: 1.5rem;
-	margin: 4rem 0 1rem 0;
+main section h1{
+	font-size: 1.8rem;
 }
 
-main h3{
-	font-family: atkinson-bold;
+main section h2{
+	margin: 4rem 0 1rem 0;
 	font-size: 1.2rem;
+}
+
+main section h3{
+	font-size: 1rem;
 	margin-top: 2rem;
 }
 
@@ -193,11 +208,11 @@ main a:hover{
 	text-decoration: underline;
 }
 
-/* Título de sección */
-/* El primer título no tiene el margen extra */
-main > section h2:first-child{
+/* La primera subsección no tiene margen extra*/
+main section h1 + h2{
 	margin-top: unset;
 }
+
 /* Listas *********************************************/
 main ul{
 	list-style-position: inside;
@@ -209,12 +224,6 @@ main ul li{
 	list-style-type: circle;
 }
 
-/*
-main ul li::before{
-	content: "-";
-	margin-right: 1rem;
-	color: #aaaaaa;
-}*/
 
 main ol{	/* M */
 	list-style-position: inside;
@@ -271,12 +280,23 @@ footer hr{
 
 /* Section *********************************************/
 section{
-	margin-top: 2rem;
+	margin-top: 4rem;
 	counter-increment: section;
+	counter-reset: subsection;
+}
+
+/* La primera sección no tiene margen extra */
+main section:first-of-type{
+	margin-top: unset;
+}
+
+section h1:before{
+	content: counter(section) ".- ";
 }
 
 section h2:before{
-	content: counter(section) ".- ";
+	counter-increment: subsection;
+	content: counter(section) "." counter(subsection) ".- ";
 }
 
 section ol{
