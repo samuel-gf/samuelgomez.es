@@ -6,7 +6,6 @@
 <body>
 
 <?php include('inc/cabecera_fixed.php'); ?>
-
 <script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>

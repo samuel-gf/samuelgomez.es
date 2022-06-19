@@ -3,4 +3,5 @@ https://samuelgomez.es/index.html
 https://samuelgomez.es/python.html
 https://samuelgomez.es/matematicas/problemas/3eso_01.html
 https://samuelgomez.es/404.html
+https://samuelgomez.es/tpr/index.html
 https://samuelgomez.es/tikz.html

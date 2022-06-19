@@ -25,8 +25,9 @@
 </nav>
 
 <main>
-
-<h1>Aprendizaje basado en problemas</h1>
+<header>
+	<h1>Aprendizaje basado en problemas</h1>
+</header>
 
 
 <!-- SECCIÓN -------------------------------------------------------- -->

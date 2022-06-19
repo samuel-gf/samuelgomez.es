@@ -17,7 +17,7 @@
 		<li><a href="pdf/geometria.recetas.pdf">Recetas de geometría</a></li>
 
 		<h1>Programación</h1>
-		<li><a href="https://tpr.samuelgomez.es">Tecnología, programación y robótica</a></li>
+		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
 		<li><a href="python.html">Python</a></li>
 		<li><a href="http://fortran.es">Fortran</a></li>
 		<li><a href="javascript.html">Javascript</a></li>

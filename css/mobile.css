@@ -48,7 +48,10 @@ body{
 	margin-bottom: 4rem;
 }
 
-body header {
+/*********************************************************/
+/*** BANNER CABECERA *************************************/
+/*********************************************************/
+body > header {	/* Banner cabecera */
 	height: 3rem;
 	width: 100%;
 	position: fixed;
@@ -68,14 +71,14 @@ body header {
 }
 
 /* Ingeniero informático y matemático */
-body header h2{
+body > header h2{
 	margin: 0;
 	color: var(--color_gris_medio);
 	font-size: 0.8rem;
 	font-family: atkinson;
 }
 
-body header a{
+body > header a{
 	text-decoration: none;
 }
 
@@ -92,6 +95,10 @@ body header a{
 
 i{
 	font-style: italic;
+}
+
+b{
+	font-weight: bold;
 }
 
 /* NAV ***************************************************/
@@ -171,6 +178,10 @@ main h3{
 	font-family: atkinson-bold;
 	font-size: 1.2rem;
 	margin-top: 2rem;
+}
+
+main img{
+	padding: 1rem 0;
 }
 
 main p a{
@@ -272,6 +283,7 @@ section ol{
 	list-style-type: none;
 }
 
+/* PROBLEMAS ********************************************/
 section ol.problemas{
 	counter-reset: problema;
 }
@@ -285,6 +297,23 @@ section ol.problemas li:before{
 	content: "Problema " counter(section) "." counter(problema) " ";
 	font-family: atkinson-bold;
 }
+
+/* PROYECTOS **********************************************/
+section.proyectos{
+	counter-reset: proyecto;
+}
+
+section.proyectos h2{
+	margin-bottom: 2rem;
+}
+
+section.proyectos h2:before{
+	counter-increment: proyecto;
+	content: "Proyecto " counter(proyecto) ".- ";
+	font-family: atkinson-bold;
+}
+/***********************************************************/
+
 
 section img{
 	margin-left: auto;

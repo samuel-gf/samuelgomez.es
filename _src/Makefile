@@ -22,6 +22,11 @@ $(DIR_TARGET)/%.html: $(DIR_SRC)/%.php $(INC)
 	# Construyendo $@
 	@php $< 0 >$@
 
+# El parámetro 1 es la profundidad del directorio
+$(DIR_TARGET)/tpr/%.html: $(DIR_SRC)/tpr/%.php $(INC)
+	# Construyendo $@
+	@php $< 1 >$@
+
 # El parámetro 2 es la profundidad del directorio
 $(DIR_TARGET)/matematicas/problemas/%.html: $(DIR_SRC)/matematicas/problemas/%.php $(INC)
 	# Construyendo $@
