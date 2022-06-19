@@ -5,6 +5,12 @@
 
 html{
 	font-size: 1.2rem;
+	/*scroll-padding-top: 8rem;*/
+}
+
+body{
+	display: flex;
+	justify-content: space-between;
 }
 
 #logo {
@@ -25,10 +31,12 @@ html{
 	display: none;
 }
 
+/*
 #gran_contenedor{
 	display: flex;
 	justify-content: space-between;
 }
+*/
 
 nav#menu{
 	margin: 0;

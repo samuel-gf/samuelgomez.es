@@ -10,4 +10,3 @@
 	</a>
 </header>
 
-<div id="gran_contenedor">

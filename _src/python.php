@@ -22,17 +22,16 @@
 
 <main>
 
-<h1>Apuntes Python</h1>
+<header><h1><a name="tipos_variables">Apuntes Python</a></h1></header>
 
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="tipos_variables">
-	<h2>Tipos de variables</h2>
-</a>
+<h1>Tipos de variables</h1>
+
 <p>El sistema asocia un nombre de variable con un valor que puede ser un
 número entero, un número decimal o una cadena:</p>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python"># Variables01.py
 a = 7           # Número entero
@@ -41,15 +40,16 @@ c = "Filomena"  # Cadena
 </code></pre>
 
 </section>
+
+
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="acumuladores">
-	<h2>Acumuladores</h2>
-</a>
+<h1><a name="acumuladores">Acumuladores</a></h1>
+
 <p>Una variable se puede usar como un acumulador para que su valor se
 incremente por encima o por debajo de su valor anterior:</p>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python"># acumuladores01.py
 n = 0      # n vale 0
@@ -68,11 +68,9 @@ print(n)   # 22
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="salida_numero">
-	<h2>Poner un número en pantalla</h2>
-</a>
+<h1><a name="salida_numero">Poner un número en pantalla</a></h1>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python">
 # Poner en pantalla un texto (cadena literal)
@@ -87,7 +85,7 @@ print("El resultado es", n)
 
 
 
-<h3>Problemas</h3>
+<h2>Problemas</h2>
 <ol class="problemas">
 	<li>Prueba el siguiente código:
 	<pre><code class="language-python">
@@ -118,11 +116,9 @@ print("El resultado es", n)
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="entrada_numero">
-	<h2>Preguntar al usuario un número</h2>
-</a>
+<h1><a name="entrada_numero">Preguntar al usuario un número</a></h1>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python">
 # Número entero:
@@ -132,7 +128,7 @@ n = int(input("Dime un número entero"))
 n = float(input("Dime un número decimal:"))
 </code></pre>
 
-<h3>Problemas</h3>
+<h2>Problemas</h2>
 <ol class="problemas">
 
 	<li>Prueba el siguiente código
@@ -166,11 +162,9 @@ n = float(input("Dime un número decimal:"))
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="condicional">
-	<h2>Condicionales</h2>
-</a>
+<h1><a name="condicional">Condicionales</a></h1>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python">
 edad = int(input("Dime tu edad:"))
@@ -192,7 +186,7 @@ else:
   print("No cumples las dos condiciones")
 </code></pre>
 
-<h3>Problemas</h3>
+<h2>Problemas</h2>
 <ol class="problemas">
 	<li>Prueba este código
 	<pre>
@@ -221,11 +215,9 @@ else:
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="bucle_for">
-	<h2>Bucles for</h2>
-</a>
+<h1><a name="bucle_for">Bucles for</a></h1>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python">
 # Repetir un bloque 10 veces
@@ -254,15 +246,13 @@ for i in range(1,1000):
 
 
 
-<h3>Problemas</h3>
+<h2>Problemas</h2>
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
-<a name="lista">
-	<h2>Listas</h2>
-</a>
+<h1><a name="lista">Listas</a></h1>
 
-<h3>Ejemplos</h3>
+<h2>Ejemplos</h2>
 <pre>
 <code class="language-python">
 # Crear una lista
@@ -317,7 +307,7 @@ nombres.insert(1, "Fabiola")
 nombres.insert(0, "Guillermo Fernando")
 </code></pre>
 
-<h3>Problemas</h3>
+<h2>Problemas</h2>
 <ol class="problemas">
 	<li>Prueba este código:
 		<pre>
