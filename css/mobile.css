@@ -45,7 +45,6 @@ html{
 
 body{
 	line-height: 1.2rem;
-	counter-reset: seccion;
 	margin-bottom: 4rem;
 }
 
@@ -171,12 +170,12 @@ strong{
 }
 
 /* MAIN ************************************************/
-main {	/* M */
+main{	/* M */
 	padding: 0 0.5rem;
 	margin-top: 4rem;
 	line-height: 1.5rem;
-	counter-reset: seccion;
 	counter-reset: proyecto;
+	counter-reset: seccion;
 }
 
 h1, h2, h3{
@@ -340,8 +339,11 @@ section ol.problemas li:before{
 }
 
 /* PROYECTOS **********************************************/
-section.proyecto h1:before{
+section.proyecto {
 	counter-increment: proyecto;
+}
+
+section.proyecto h1:before{
 	content: "Proyecto " counter(proyecto) ".- ";
 	font-family: atkinson-bold;
 }

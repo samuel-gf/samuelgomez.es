@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/katex.min.css">
 <script type="text/javascript" src="../../js/katex.min.js"></script>
 <script type="text/javascript" src="../../js/katex.autorender.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../../css/problemas.css">
+<!--<link rel="stylesheet" type="text/css" href="../../css/problemas.css">-->
 	
 
 <title>Aprendizaje mediante problemas</title>
