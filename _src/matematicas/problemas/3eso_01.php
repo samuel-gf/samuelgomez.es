@@ -33,7 +33,6 @@
 <!-- SECCIÓN -------------------------------------------------------- -->
 <section>
 <h1><a name="problemas1">Campamento de verano</a></h1>
-</a>
 
 <p>Como cada año. Emi ahorra para llevar a su hija Alba a un campamento de verano. Tiene dos opciones: llevarla seis o 
 10 días. Evidentemente, el precio no es el mismo. Por seis días debe pagar 810€ y tiene que informarse sobre el
@@ -97,9 +96,7 @@ representa?
 
 <!-- SECCIÓN -------------------------------------------------------- -->
 <section>
-<a name="problemas2">
-<h1>Sin Internet en la montaña</h1>
-</a>
+<h1><a name="problemas2">Sin Internet en la montaña</a></h1>
 
 
 <p>José está de campamento en la playa. Le permiten conectarse a internet en horario de 9:00 a 11:00 horas y de

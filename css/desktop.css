@@ -1,7 +1,7 @@
 /********************************************************************************/
 /* DESKTOP */
 /********************************************************************************/
-@media only screen and (min-width: 1220px) {
+@media only screen and (min-width: 1300px) {
 
 html{
 	font-size: 1.2rem;
@@ -65,10 +65,16 @@ main {	/* M */
 	padding-left: 400px;
 }
 
-main > header > h1{	/* El título portada de main */
+main > header > h1{	/* El título portada de página */
 	font-size: 3rem;
-	border: unset;
 	line-height: 3rem;
+	/*
+	text-align: right;
+	border-left: 1px solid var(--color_principal);
+	border-bottom: 1px solid var(--color_principal);
+	border-radius: 1rem;
+	padding-right: 2rem;
+	*/
 }
 
 main h1{
