@@ -198,7 +198,8 @@ main > header > h1{	/* Título portada de página */
 }
 
 main > header img{
-	float: right;
+	margin: 0 auto;
+	max-width: 100%;
 }
 
 main section h1{

@@ -33,18 +33,6 @@
 </nav>
 
 
-<script>
-// Adapta el tamaño de las imágenes a pantalla
-//document.addEventListener('DOMContentLoaded', function(){ 
-//	var arr = document.querySelectorAll("img");
-//	arr[0].style.display = "none";
-//	for (let i=1; i<arr.length; i++){
-//		arr[i].style = "";
-//	}
-//}, false);
-</script>
-
-
 <main>
 
 <header>
