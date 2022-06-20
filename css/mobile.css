@@ -45,7 +45,7 @@ html{
 
 body{
 	line-height: 1.2rem;
-	counter-reset: section;
+	counter-reset: seccion;
 	margin-bottom: 4rem;
 }
 
@@ -102,6 +102,10 @@ b{
 	font-family: Atkinson-bold;
 }
 
+u{
+	text-decoration: underline;
+}
+
 strong{
 	background-color: var(--color_fluorescente);
 }
@@ -137,7 +141,7 @@ strong{
 	border-radius: 1rem 0 0 1rem;
 	min-width: 10rem;
 	max-width: 75%;
-	counter-reset: section;
+	counter-reset: seccion;
 }
 
 #menu a{
@@ -156,11 +160,11 @@ strong{
 
 #menu li{
 	margin-bottom: 0.5rem;
-	counter-increment: section;
+	counter-increment: seccion;
 }
 
 #menu li:before{
-	content: counter(section) ". ";
+	content: counter(seccion) ". ";
 }
 #menu li:last-child{
 	margin-bottom: unset;
@@ -218,6 +222,7 @@ main section h3{
 
 main img{
 	padding: 1rem 0;
+	max-width: 100%;
 }
 
 main p a{
@@ -294,7 +299,7 @@ footer hr{
 /* Section *********************************************/
 section{
 	margin-top: 4rem;
-	counter-increment: secccion;
+	counter-increment: seccion;
 	counter-reset: subseccion;
 }
 
@@ -304,7 +309,7 @@ main section:first-of-type{
 }
 
 section h1:before{
-	content: counter(secccion) ".- ";
+	content: counter(seccion) ".- ";
 }
 
 section h2:before{
@@ -325,11 +330,12 @@ section ol.problemas{
 
 section ol.problemas li{
 	margin-bottom: 2rem;
+	list-style-type: none;
 }
 
 section ol.problemas li:before{
 	counter-increment: problema;
-	content: "Problema " counter(section) "." counter(problema) " ";
+	content: "Problema " counter(seccion) "." counter(problema) " ";
 	font-family: atkinson-bold;
 }
 

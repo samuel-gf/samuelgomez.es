@@ -39,7 +39,7 @@
 precio si quisiera ampliar los días.</p>
 
 
-<ul class="problemas">
+<ol class="problemas">
 <img src="../../img/0001.webp" alt="#">
 
 <li>&#11088;<p>Si Emi lleva ahorradas dos novenas partes del precio del campamento para una semana, 
@@ -86,7 +86,7 @@ campamento en este caso.
 Si tiene ahorrados los 810€, escribe con una fracción la parte que le queda por ahorrar. ¿Qué tipo de decimal
 representa?
 </p></li>
-</ul>
+</ol>
 </section>
 
 
@@ -105,7 +105,7 @@ representa?
 <p>Gema está en un campamento en la montaña y el horario para navegar por la Red es de sde las 10:00 hasta
 antes de las 12:00 horas de la mañana y de 15:00 a 17:00 horas.</p>
 
-<ul class="problemas">
+<ol class="problemas">
 <img src="../../img/0002.webp" alt="#">
 
 <li>&#11088;<p>
@@ -162,7 +162,7 @@ Escribe mediante intervalos el tiempo en el que están conectados uno u otro. ¿
 </p></li>
 
 
-</ul>
+</ol>
 </section>
 
 </main>

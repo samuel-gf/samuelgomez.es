@@ -10,7 +10,8 @@
 <script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>
-		<li><a href="#tipos_variables">Tipos de variables</a></li>
+		<h1>Temas</h1>
+		<li><a href="#variables">Variables</a></li>
 		<li><a href="#acumuladores">Acumuladores</a></li>
 		<li><a href="#salida_numero">Poner un número en pantalla</a></li>
 		<li><a href="#entrada_numero">Preguntar un número</a></li>
@@ -22,11 +23,11 @@
 
 <main>
 
-<header><h1><a name="tipos_variables">Apuntes Python</a></h1></header>
+<header><h1><a name="variables">Programación con Python</a></h1></header>
 
 <!------------------------------------------------------------------------------------->
 <section>
-<h1>Tipos de variables</h1>
+<h1>Variables</h1>
 
 <p>El sistema asocia un nombre de variable con un valor que puede ser un
 número entero, un número decimal o una cadena:</p>
@@ -87,20 +88,19 @@ print("El resultado es", n)
 
 <h2>Problemas</h2>
 <ol class="problemas">
-	<li>Prueba el siguiente código:
+	<li>&#11088;<p>Prueba el siguiente código:</p>
 	<pre><code class="language-python">
 	print("Hola mundo")
 	</code></pre>
-	</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> dos números, los sume
-		y <em>muestre en pantalla</em> el resultado.</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> tres números que pueden ser 
-		decimales o no, calcular el promedio y <em>mostrarlo en pantalla</em>.</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> un número n y <em>muestre
-			en pantalla</em> el cuadrado de ese valor.</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> su nombre (cadena literal) y luego <em>ponga 
-			en pantalla</em> un saludo a esa persona llamándola por su nombre</li>
-	<li><em>Mostrar en pantalla</em> la tabla de multiplicar del 7 en este formato:
+	<li>&#11088;&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> dos números, los sume
+		y <u>muestre en pantalla</u> el resultado.</p></li>
+	<li>&#11088;&#11088;&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> tres números que pueden ser 
+		decimales o no, calcular el promedio y <u>mostrarlo en pantalla</u>.</p></li>
+	<li>&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> un número n y <u>muestre
+			en pantalla</u> el cuadrado de ese valor.</p></li>
+	<li>&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> su nombre (cadena literal) y luego <u>ponga 
+			en pantalla</u> un saludo a esa persona llamándola por su nombre.</p></li>
+	<li>&#11088;&#11088;<p><u>Mostrar en pantalla</u> la tabla de multiplicar del 7 en este formato:</p>
 		<pre>
 		  7 x 1 = 7
 		  7 x 2 = 14
@@ -108,9 +108,9 @@ print("El resultado es", n)
 		  ...
 		</pre>
 	</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> el radio de una circunferencia. 
-		El programa <em>mostrará en pantalla</em> cual es el perímetro de
-		dicha circunferencia. P = 2πr</li>
+	<li>&#11088;&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> el radio de una circunferencia. 
+		El programa <u>mostrará en pantalla</u> cual es el perímetro de
+		dicha circunferencia. P = 2πr.</p></li>
 
 </ol>
 </section>
@@ -131,7 +131,7 @@ n = float(input("Dime un número decimal:"))
 <h2>Problemas</h2>
 <ol class="problemas">
 
-	<li>Prueba el siguiente código
+	<li><p>Prueba el siguiente código:</p>
 	<pre><code class="language-python">
 	print("MENÚ del RESTAURANTE")
 	print("1.Pollo con patatas")
@@ -142,21 +142,21 @@ n = float(input("Dime un número decimal:"))
 	</code></pre>
 	</li>
 
-	<li>Escribe un problema que <em>pregunte al usuario</em> un número entero 
-		y <em>ponga en pantalla</em> el doble de esa cantidad</li>
-	<li>Haz un programa que <em>pregunte al usuario</em> tres números y 
-		<em>muestre por pantalla</em> cuál de ellos es mayor</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> un número entero
-		y <em>ponga en pantalla</em> la tabla de multiplicar de dicho número
-		desde el 1 hasta el 10</li>
-	<li>Escribir un programa que <em>pregunte al usuario</em> dos números, los sume y
-		<em>muestre en pantalla</em> el resultado</li>
-	<li>Escribir un programa que <em>pregunte al usuario</em> tres números que
-		pueden ser decimales o no, calcular el promedio y <em>mostrarlo en pantalla</em></li>
-	<li>Escribir un programa que <em>pregunte al usuario</em> dos números y <em>muestre
-			en pantalla</em> el que sea mayor de los dos</li>
-	<li>Escribir un programa que <em>pregunte al usuario</em> su nombre (cadena literal) 
-		y luego <em>ponga en pantalla</em> un saludo a esa persona llamándola por su nombre</li>
+	<li><p>Escribe un problema que <u>pregunte al usuario</u> un número entero 
+		y <u>ponga en pantalla</u> el doble de esa cantidad</p></li>
+	<li><p>Haz un programa que <u>pregunte al usuario</u> tres números y 
+		<u>muestre por pantalla</u> cuál de ellos es mayor</p></li>
+	<li><p>Escribe un programa que <u>pregunte al usuario</u> un número entero
+		y <u>ponga en pantalla</u> la tabla de multiplicar de dicho número
+		desde el 1 hasta el 10</p></li>
+	<li><p>Escribir un programa que <u>pregunte al usuario</u> dos números, los sume y
+		<u>muestre en pantalla</u> el resultado</p></li>
+	<li><p>Escribir un programa que <u>pregunte al usuario</u> tres números que
+		pueden ser decimales o no, calcular el promedio y <u>mostrarlo en pantalla</u></p></li>
+	<li><p>Escribir un programa que <u>pregunte al usuario</u> dos números y <u>muestre
+			en pantalla</u> el que sea mayor de los dos</p></li>
+	<li><p>Escribir un programa que <u>pregunte al usuario</u> su nombre (cadena literal) 
+		y luego <u>ponga en pantalla</u> un saludo a esa persona llamándola por su nombre</p></li>
 </ol>
 
 </section>
@@ -188,7 +188,7 @@ else:
 
 <h2>Problemas</h2>
 <ol class="problemas">
-	<li>Prueba este código
+	<li><p>Prueba este código:</p>
 	<pre>
 	<code class="language-python">
 	edad = int(input("Dime tu edad:"))
@@ -204,13 +204,13 @@ else:
 	  print("No puedes conducir ni comprar coche. ¡Estudia!")
 	</code></pre>
 	</li>
-	<li>Haz un programa que <em>pregunte al usuario</em> tres números y <em>muestre
-			por pantalla</em> cuál de ellos es mayor.</li>
-	<li>Escribe un programa que <em>pregunte al usuario</em> un número entero y
-		<em>ponga en pantalla</em> los 100 primeros múltiplos.</li>
-	<li>El sistema <em>pregunta al usuario</em> que hora es (en formato 0-23) y tras
-		realizar un cálculo, debe <em>indicar</em> que hora es en Nueva York. No usar los
-		minutos. En Nueva York hay seis horas menos que en España.</li>
+	<li><p>Haz un programa que <u>pregunte al usuario</u> tres números y <u>muestre
+			por pantalla</u> cuál de ellos es mayor.</p></li>
+	<li><p>Escribe un programa que <u>pregunte al usuario</u> un número entero y
+		<u>ponga en pantalla</u> los 100 primeros múltiplos.</p></li>
+	<li><p>El sistema <u>pregunta al usuario</u> que hora es (en formato 0-23) y tras
+		realizar un cálculo, debe <u>indicar</u> que hora es en Nueva York. No usar los
+		minutos. En Nueva York hay seis horas menos que en España.</p></li>
 </ol>
 </section>
 <!------------------------------------------------------------------------------------->
@@ -309,7 +309,7 @@ nombres.insert(0, "Guillermo Fernando")
 
 <h2>Problemas</h2>
 <ol class="problemas">
-	<li>Prueba este código:
+	<li><p>Prueba este código:</p>
 		<pre>
 		<code class="language-python">
 		lista = []
@@ -324,21 +324,21 @@ nombres.insert(0, "Guillermo Fernando")
 		print(lista) # A, B, C
 		</code></pre>
 	</li>
-	<li>Crear <em>una lista</em> con cuatro nombres de persona y otra con cuatro
-		tipos de bailes. <em>Mostrar en pantalla</em> una línea por cada persona
-		y al lado el nombre de un baile.</li>
-	<li>Crear <em>una lista</em> con 10 números enteros. <em>Mostrar en pantalla</em>, en
+	<li><p>Crear <u>una lista</u> con cuatro nombres de persona y otra con cuatro
+		tipos de bailes. <u>Mostrar en pantalla</u> una línea por cada persona
+		y al lado el nombre de un baile.</p></li>
+	<li><p>Crear <u>una lista</u> con 10 números enteros. <u>Mostrar en pantalla</u>, en
 		una línea cada número de la lista y al lado el cuadrado de ese
-		número.</li>
-	<li>El sistema <em>preguntará al usuario</em> por cuatro productos del supermercado 
+		número.</p></li>
+	<li><p>El sistema <u>preguntará al usuario</u> por cuatro productos del supermercado 
 		y su correspondiente precio. Cada producto será almacenado 
-	<em>en la lista</em> llamada productos y cada precio en la lista
+	<u>en la lista</u> llamada productos y cada precio en la lista
 		denominada precios. Al final se mostrarán en pantalla los productos y 
 		los precios de estos productos en pantalla y una línea
-		más para indicar el total a pagar en el supermercado.</li>
-	<li>El ordenador <em>pregunta al usuario</em> números, si uno de los números es un 0, 
+		más para indicar el total a pagar en el supermercado.</p></li>
+	<li><p>El ordenador <u>pregunta al usuario</u> números, si uno de los números es un 0, 
 		el ordenador deja de preguntar, calcula la media y la
-		<em>muestra en pantalla</em> (sin contar el último cero).</li>
+		<u>muestra en pantalla</u> (sin contar el último cero).</p></li>
 </ol>
 </section>
 <!------------------------------------------------------------------------------------->
