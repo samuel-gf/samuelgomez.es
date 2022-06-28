@@ -11,7 +11,7 @@
 
 <nav id="menu"><ul>
 		<h1>Temas</h1>
-		<li><a href="#variables">Variables</a></li>
+		<li><a href="#top">Variables</a></li>
 		<li><a href="#acumuladores">Acumuladores</a></li>
 		<li><a href="#salida_numero">Poner un número en pantalla</a></li>
 		<li><a href="#entrada_numero">Preguntar un número</a></li>

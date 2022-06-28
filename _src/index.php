@@ -27,7 +27,11 @@
 
 <main>
 
-<img src="img/perm/retrato.webp" id="retrato" alt="Mi retrato" width="320">
+<aside id="retrato" class="h-card">
+	<img src="img/perm/retrato.webp" alt="Samuel Gómez" width="320">
+	<p class="p-name u-url" href="https://samuelgomez.es">Samuel Gómez</p>
+</aside>
+
 <h1 style="margin-top: 0;">Sobre mí</h1>
 <p class="left">Padre, ingeniero, matemático y motero. Me levanto cada día con ganas de comerme el mundo.</p>
 

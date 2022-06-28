@@ -10,7 +10,7 @@
 
 <nav id="menu"><ul>
 <h1>Proyectos TPR</h1>
-<li><a href="#hola-mundo">Hola mundo</a></li>
+<li><a href="#top">Hola mundo</a></li>
 <li><a href="#btn-doble-led">Botón doble LED</a></li>
 <li><a href="#semaforo-tres-luces">Semáforo de tres luces</a></li>
 <li><a href="#piezoelectrico-led-y-boton">Piezoeléctrico, LED y botón</a></li>
@@ -393,7 +393,7 @@ void loop() {
 <section class="proyecto">
 <h1><a name="boton-hombre-muerto">Botón hombre muerto</a></h1>
 
-<p><b>Este proyecto no se firma</b> Este es un proyecto que servirá para realizar pruebas.</p>
+<p><mark>Este proyecto no se firma</mark> Este es un proyecto que servirá para realizar pruebas.</p>
 
 <img src="../img/tpr/07.webp" alt="Circuito del proyecto">
 
@@ -445,7 +445,7 @@ void loop() {
 
 <img src="../img/tpr/08.webp" alt="Circuito del proyecto">
 
-<p><b>Este proyecto no se firma</b> Este es un proyecto que servirá para realizar pruebas.</p>
+<p><mark>Este proyecto no se firma</mark> Este es un proyecto que servirá para realizar pruebas.</p>
 
 <h2>Pasos para desarrollar el proyecto</h2>
 <ol>

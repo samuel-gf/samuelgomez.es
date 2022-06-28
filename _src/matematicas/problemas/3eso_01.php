@@ -18,8 +18,9 @@
 
 <nav id="menu"><ul>
 		<h1>Problemas</h1>
-		<li><a href="#problemas1">Campamento de verano</a></li>
+		<li><a href="#top">Campamento de verano</a></li>
 		<li><a href="#problemas2">Sin Internet en la montaña</a></li>
+		<li><a href="#problemas3">La factura de la luz</a></li>
 
 	</ul>
 </nav>
@@ -40,7 +41,7 @@ precio si quisiera ampliar los días.</p>
 
 
 <ol class="problemas">
-<img src="../../img/0001.webp" alt="#">
+<img src="../../img/matematicas/0001.webp" alt="#">
 
 <li>&#11088;<p>Si Emi lleva ahorradas dos novenas partes del precio del campamento para una semana, 
 ¿qué fracción del total tiene ahorrado?¿Cuánto dinero es?</p></li>
@@ -106,7 +107,7 @@ representa?
 antes de las 12:00 horas de la mañana y de 15:00 a 17:00 horas.</p>
 
 <ol class="problemas">
-<img src="../../img/0002.webp" alt="#">
+<img src="../../img/matematicas/0002.webp" alt="#">
 
 <li>&#11088;<p>
 ¿Podrían chatear a las 9:30 de la mañana?¿Y por la tarde?
@@ -164,6 +165,38 @@ Escribe mediante intervalos el tiempo en el que están conectados uno u otro. ¿
 
 </ol>
 </section>
+
+<section>
+<h1><a name="problemas3">La factura de la luz</a></h1>
+
+<p>En la factura de la luz aparecen unos conceptos cuyo precio es siempre el mismo y otros con un precio variable.</p>
+
+<p>Los conceptos de precio variable son el consumo realizado en el período de facturación y el IVA, que es el $21\%$ de la suma
+de todos los conceptos anteriores.</p>
+
+<img src="../../img/matematicas/0004.webp" alt="#" style="border: 1px solid black;">
+
+<ol class="problemas">
+<li>&#11088;<p>¿Cuál es la cantidad fija, sin IVA, que hay que pagar en una factura?¿Y con IVA?</p></li>
+
+<li>&#11088;<p>Si el kWh se paga a $0,149$€, ¿cuánto costaría el consumo de la factura anterior?</p></li>
+<li>&#11088;<p>Halla el importe total de la factura anterior de dos formas:</p>
+<ol class="apartados">
+	<li>Suma todas las cantidades que hay que pagar y luego aplica el IVA al resultado.</li>
+	<li>Calcula primero el precio del consumo con IVA y súmalo al resultado del fijo más IVA que hallaste en
+		el ejercicio 1</li>
+</ol>
+</li>
+<li>&#11088;&#11088;<p>Si, durante un período de facturación, no se realizara ningún consumo, ¿a 
+	cuánto ascendería la factura?</p></li>
+<li>&#11088;<p>Construye una tabla de valores que refleje el importe de la factura en función de los kWh consumidos.</p></li>
+<li>&#11088;<p>Haz una representación gráfica con la tabla anterior.</p></li>
+<li>&#11088;&#11088;&#11088;<p>Escribe la fórmula de la función correspondiente.</p></li>
+<li>&#11088;&#11088;<p>¿Cuál es su dominio?</p></li>
+<li>&#11088;<p>Escribe sus intervalos de crecimiento, y sus máximos y mínimos relativos absolutos.</p></li>
+</ol>
+</section>
+
 
 </main>
 <?php include('inc/footer.php'); ?>

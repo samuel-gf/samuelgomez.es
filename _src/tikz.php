@@ -10,31 +10,29 @@
 <script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>
-		<li><a href="#introduccion">Introducción</a></li>
+		<li><a href="#top">Introducción</a></li>
 		<li><a href="#base">Base</a></li>
 	</ul>
 </nav>
 
 <main>
-
-<a name="introduccion">
-<h1>Apuntes de Tikz</h1>
-</a>
+<header><h1>Apuntes de Tikz</h1></header>
 
 <section>
-<h2>Introducción</h2>
+<h1><a name="introduccion">Introducción</a></h1>
+
 <p><a href="https://tikz.dev/" target="_blank">Tikz</a> es un lenguaje que 
 sirve para crear gráficos estáticos en 
 <a href="https://www.latex-project.org/" target="_blank">LaTeX</a>. Los resultados son muy vistosos y
 espectaculares.</p>
 
-<img src="img/0003.webp" style="border: 1px solid black; width: 50%;">
+<img src="img/matematicas/0003.webp" style="border: 1px solid black; width: 50%;">
 </section>
 
 
 
 <section>
-<a name="base"><h2>Base</h2></a>
+<h1><a name="base">Base</a></h1>
 <p>En la cabecera del fichero <b>LaTeX</b> debes usar:</p>
 
 <pre><code class="lang-tex">% En la cabecera del fichero .tex

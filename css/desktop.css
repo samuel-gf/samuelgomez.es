@@ -16,8 +16,8 @@ body{
 #logo {
 	font-size: 1.5rem;
 	padding: 0 0 1rem 0;
-	font-family: atkinson-bold;
-
+	font-family: "atkinson";
+	font-weight: bold;
 }
 
 #retrato{
@@ -52,7 +52,7 @@ nav#menu{
 	overflow-y: visible;
 	scrollbar-color: var(--color_principal) black;
 	scrollbar-width: thin;
-	height: calc(80% - 5rem);
+	height: calc(90% - 5rem);
 	display: block;
 }
 
@@ -79,6 +79,8 @@ main > header > h1{	/* El título portada de página */
 
 main > header img{
 	float: right;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
 }
 
 main h1{
