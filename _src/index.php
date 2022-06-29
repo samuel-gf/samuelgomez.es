@@ -28,8 +28,8 @@
 <main>
 
 <aside id="retrato" class="h-card">
-	<img src="img/perm/retrato.webp" alt="Samuel Gómez" width="320">
-	<p class="p-name u-url" href="https://samuelgomez.es">Samuel Gómez</p>
+	<img class="u-photo" src="img/perm/retrato.webp" alt="Samuel Gómez" width="320">
+	<a class="p-name u-url" rel="me" href="https://samuelgomez.es">Samuel Gómez</a>
 </aside>
 
 <h1 style="margin-top: 0;">Sobre mí</h1>
