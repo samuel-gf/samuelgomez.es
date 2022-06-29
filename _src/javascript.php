@@ -1,12 +1,11 @@
 <?php include('inc/cabecera_html.php'); ?>
 	<title>Apuntes de Javascript</title>
-	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
-	<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
+	<link rel="stylesheet" type="text/css" href="css/highlight.css">  
 	</head>
 <body>
 
+<?php include('inc/lib.php'); ?>
 <?php include('inc/cabecera_fixed.php'); ?>
-<script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>
 		<li><a href="#top">Cabecera</a></li>
@@ -29,7 +28,7 @@
 
 <pre>
 <code class="language-html">
-&lt;script type="text/javascript" src="archivo.js"&gt;&lt;/script&gt;
+<script type="text/javascript" src="archivo.js"></script>
 
 </code></pre>
 </section>
@@ -42,16 +41,19 @@
 
 <h2>Ejecutar tras la carga del DOM</h2>
 
-<pre><code class="language-javascript">
+<?php
+$c = <<<'END_CODE'
 document.addEventListener('DOMContentLoaded', function(){ 
   // Tu código aquí
 }, false);
+END_CODE;
+colorea($c, "javascript");
+?>
 
-</code></pre>
 
 <h2>Detener el hilo de ejecución por un tiempo</h2>
-<pre>
-<code class="language-javascript">
+<?php
+$c = <<<'END_CODE'
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -59,8 +61,10 @@ function sleep(ms) {
 async function myFunción(){
   await sleep(100);
 }
+END_CODE;
+colorea($c, "javascript");
+?>
 
-</code></pre>
 </section>
 
 
@@ -75,36 +79,53 @@ async function myFunción(){
 Crear el objeto
 <p>Contenedor del lienzo en el <em>html</em> será</p>
 
-<pre>
-<code class="language-html">&lt;svg id="canvas1" width="800px" height="500px"&gt;
-</code></pre>
+<?php
+$c = <<<'END_CODE'
+	<svg id="canvas1" width="800px" height="500px">
+END_CODE;
+colorea($c, "html");
+?>
 
-<pre>
-<code class="language-javascript">// Ejemplo para crear el lienzo en <em>javascript</em>
+<?php
+$c = <<<'END_CODE'
+// Ejemplo para crear el lienzo en <em>javascript</em>
 async function main(){
   s = new Svg("canvas1", 800, 500);
   s.drawAxis();
   s.drawGrid();
 }
-</code></pre>
+END_CODE;
+colorea($c, "javascript");
+?>
 
 Dibujar objetos en el lienzo
-<pre><code class="javascript">  
-// Prototipos de métodos de la clase Svg
-addCircle(circleId, cx, cy, r, fillColor, strokeWidth = 0, strokeColor = null);
-addLine(lineId, x0, y0, x1, y1, color, width);
+<?php
+$c = <<<'END_CODE'
 
-</code></pre>
+	// Prototipos de métodos de la clase Svg
+	addCircle(circleId, cx, cy, r, fillColor, strokeWidth = 0, strokeColor = null);
+	addLine(lineId, x0, y0, x1, y1, color, width);
+
+END_CODE;
+colorea($c, "javascript");
+?>
+
 
 En este ejemplo se crea un punto llamado <em>p1</em> en las 
 coordenadas <em>x, y</em> de radio 4 y de color rojo
-<pre><code class="javascript">
+
+<?php
+$c = <<<'END_CODE'
+
 s.addCircle("p1", x, y, 4, "red");
 
-</code></pre>
+END_CODE;
+colorea($c, "javascript");
+?>
 
 <p>Mover dos puntos asincrónicamente. Uno se moverá en círculos y el otro en línea recta</p>
-<pre><code class="javascript">
+<?php
+$c = <<<'END_CODE'
 var o1, o2;
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -140,7 +161,9 @@ document.addEventListener('DOMContentLoaded', function(){
   mover2();
 
 }, false);
-</code></pre>
+END_CODE;
+colorea($c, "javascript");
+?>
 </section>
 
 
@@ -152,48 +175,57 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <h2>Cliente</h2>
 
-<pre><code class="language-html">&lt;!-- Cliente HTML --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;/head&gt;
-&lt;script&gt;
-document.addEventListener('DOMContentLoaded', function(){ 
-	document.getElementById("b").addEventListener("click", function(){
-	let obj_post = {
-		nombre: document.getElementById("campo1").value,
-		apellido: document.getElementById("campo2").value
-	}
-	let xhr = new XMLHttpRequest(); 
-	xhr.open("POST", "http://192.168.1.118:8080/ajax_post.php");
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.send(JSON.stringify(obj_post));
-	});
-}, false);
-&lt;/script&gt;
+<?php
+$c = <<<'END_CODE'
+	<!-- Cliente HTML -->
+	<!DOCTYPE html>
+	<html>
+	<head>
+	</head>
+	<script>
+	document.addEventListener('DOMContentLoaded', function(){ 
+		document.getElementById("b").addEventListener("click", function(){
+		let obj_post = {
+			nombre: document.getElementById("campo1").value,
+			apellido: document.getElementById("campo2").value
+		}
+		let xhr = new XMLHttpRequest(); 
+		xhr.open("POST", "http://192.168.1.118:8080/ajax_post.php");
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send(JSON.stringify(obj_post));
+		});
+	}, false);
+	</script>
 
-&lt;body&gt;
-	&lt;form&gt;
-		&lt;input id="campo1" type="text" value="Ambrosio"&gt;
-		&lt;input id="campo2" type="text" value="Benavente"&gt;
-		&lt;input id="btn" type="button" value="Enviar"&gt;
-	&lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+	<body>
+		<form>
+			<input id="campo1" type="text" value="Ambrosio">
+			<input id="campo2" type="text" value="Benavente">
+			<input id="btn" type="button" value="Enviar">
+		</form>
+	</body>
+	</html>
+END_CODE;
+colorea($c, "html");
+?>
 
 <h2>Servidor</h2>
 
-<pre><code class="language-javascript">&lt;?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: content-type');
-header('Access-Control-Allow-Methods: POST');
+<?php
+$c = <<<'END_CODE'
+	<?php
 
-$json = file_get_contents('php://input');
-$data = json_decode($json);
+	header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Headers: content-type');
+	header('Access-Control-Allow-Methods: POST');
 
-error_log(print_r($data, true));
-</code></pre>
+	$json = file_get_contents('php://input');
+	$data = json_decode($json);
+
+	error_log(print_r($data, true));
+END_CODE;
+colorea($c, "php");
+?>
 </section>
 
 

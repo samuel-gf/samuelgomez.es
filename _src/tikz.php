@@ -1,13 +1,12 @@
 <?php include('inc/cabecera_html.php'); ?>
 <title>Apuntes de Tikz</title>
-<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
-<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
+<link rel="stylesheet" type="text/css" href="css/highlight.css">  
 </head>
 
 <body>
+<?php include('inc/lib.php'); ?>
 <?php include('inc/cabecera_fixed.php'); ?>
 
-<script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>
 		<li><a href="#top">Introducción</a></li>
@@ -41,14 +40,18 @@ espectaculares.</p>
 </code></pre>
 
 <p>Y en el lugar donde quieras incluir el gráfico puedes poner algo tal que así:</p>
-<pre><code class="lang-tex">% Hola mundo Tikz
+<?php
+$c = <<<'END_CODE'
+% Hola mundo Tikz
 \begin{tikzpicture}
 	\draw (-2,0) -- (2,0);
 	\filldraw [gray] (0,0) circle (2pt);
 	\draw (-2,-2) .. controls (0,0) .. (2,-2);
 	\draw (-2,2) .. controls (-1,0) and (1,0) .. (2,2);
 \end{tikzpicture}
-</code></pre>
+END_CODE;
+colorea($c, "latex");
+?>
 </section>
 
 </main>

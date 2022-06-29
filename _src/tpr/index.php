@@ -1,12 +1,11 @@
 <?php include('inc/cabecera_html.php'); ?>
 	<title>Practicas de Tenología, programación y robótica con Arduino</title>
-	<script type="text/javascript" src="../js/highlight.min.js"></script> <!-- Color código 1 de 2-->
-	<link rel="stylesheet" type="text/css" href="../css/github.min.css">  <!-- Color código 2 de 2-->
+	<link rel="stylesheet" type="text/css" href="../css/highlight.css">
 	</head>
 <body>
 
+<?php include('inc/lib.php'); ?>
 <?php include('inc/cabecera_fixed.php'); ?>
-<script>hljs.highlightAll();</script>
 
 <nav id="menu"><ul>
 <h1>Proyectos TPR</h1>
@@ -56,7 +55,11 @@
 
 <img src="../img/tpr/01.webp" alt="circuito">
 
-<pre><code class="language-cpp">// Hola mundo
+
+<?php
+$c = <<<'END_CODE'
+// Hola mundo
+
 void setup() {
     pinMode(4, OUTPUT);
 }
@@ -67,7 +70,9 @@ void loop() {
     digitalWrite(4, LOW);
     delay(1000);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -92,7 +97,10 @@ void loop() {
 
 <img src="../img/tpr/02.webp">
 
-<pre><code class="language-cpp">// Botón doble LED
+<?php
+$c = <<<'END_CODE'
+// Botón doble LED
+
 void setup() {
     pinMode(4, OUTPUT);
     pinMode(5, OUTPUT);
@@ -108,7 +116,9 @@ void loop() {
         digitalWrite(5, HIGH);
     }
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -130,7 +140,9 @@ void loop() {
 </ol>
 
 
-<pre><code class="language-cpp">// Semáforo de tres luces
+<?php
+$c = <<<'END_CODE'
+// Semáforo de tres luces
 void setup() {
     pinMode(4, OUTPUT);
     pinMode(5, OUTPUT);
@@ -153,7 +165,9 @@ void loop() {
     digitalWrite(6,LOW);
     delay(1000);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -178,7 +192,10 @@ void loop() {
 
 <p><img src="../img/tpr/04.webp" alt="Circuito del proyecto"></p>
 
-<pre><code class="language-cpp">// Piezoeléctrico, LED, botón
+<?php
+$c = <<<'END_CODE'
+// Piezoeléctrico, LED, botón
+
 void setup() {
     pinMode(4, OUTPUT);
     pinMode(5, OUTPUT);
@@ -194,7 +211,9 @@ void loop() {
         digitalWrite(5, HIGH);
     }
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -223,7 +242,10 @@ void loop() {
 
 <img src="../img/tpr/05.webp" alt="Circuito del proyecto">
 
-<pre><code class="language-cpp">// Emisor morse
+
+<?php
+$c = <<<'END_CODE'
+// Emisor morse
 void setup() {
   pinMode(4, INPUT);
   pinMode(5, INPUT);
@@ -239,7 +261,9 @@ void loop() {
   }
   delay(500);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -299,8 +323,13 @@ void loop() {
 es importante que comprendas como funciona porque será la base de proyectos futuros.</p>
 
 
-<h2>Primer software</h2>// Primer software
-<pre><code class="language-cpp">
+<h2>Primer software</h2>
+
+
+<?php
+$c = <<<'END_CODE'
+// Primer software
+
 void setup() {
   Serial.begin(9600);
 }
@@ -308,10 +337,16 @@ void setup() {
 void loop() {
   Serial.println("Hola");
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 
 <h2>Segundo software</h2>
-<pre><code class="language-cpp">// Segundo software
+
+<?php
+$c = <<<'END_CODE'
+// Segundo software
+
 int n = 0;              // Inicializa la variable
 
 void setup() {
@@ -323,7 +358,9 @@ void loop() {
   Serial.println(n);  // Mostrar en pantalla el valor
   delay(100);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -343,7 +380,9 @@ como funciona porque este componente se utilizará en poryectos futuros.</p>
 <h2>Primer software</h2>
 
 
-<pre><code class="language-cpp">// Primer software del proyecto servo
+<?php
+$c = <<<'END_CODE'
+// Primer software del proyecto servo
 #include &lt;Servo.h&gt;
 
 Servo s1;             // Asigna nombre al servo
@@ -358,12 +397,16 @@ void loop() {
   s1.write(90);       // Posición 90 grados
   delay(1000);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 
 <h2>Segundo software</h2>
 
 
-<pre><code class="language-cpp">// Segundo software del proyecto servo
+<?php
+$c = <<<'END_CODE'
+// Segundo software del proyecto servo
 #include &lt;Servo.h&gt;
 
 Servo s1;
@@ -384,7 +427,9 @@ void loop() {
       delay(500);
   }
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -406,7 +451,9 @@ void loop() {
 </ol>
 
 
-<pre><code class="language-cpp">// Botón hombre muerto
+<?php
+$c = <<<'END_CODE'
+// Botón hombre muerto
 #include &lt;Servo.h&gt;
 
 Servo s;
@@ -431,7 +478,9 @@ void loop() {
     delay(2000);
   }
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -456,7 +505,9 @@ void loop() {
 </ol>
 
 
-<pre><code class="language-cpp">// Resistencia variable
+<?php
+$c = <<<'END_CODE'
+// Resistencia variable
 int x = 0;             // Variable
 
 void setup() {
@@ -485,7 +536,9 @@ void loop() {
         digitalWrite(4, HIGH);
     }
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </section>
 
 
@@ -569,7 +622,9 @@ Recuerda como se usaba tone con estos ejemplos:<br />
 </p>
 
 
-<pre><code class="language-cpp">// Piano de tres botones
+<?php
+$c = <<<'END_CODE'
+// Piano de tres botones
 void setup(){
     pinMode(9, OUTPUT);
 }
@@ -578,7 +633,9 @@ void loop(){
     //tone(PUERTO,FRECUENCIA,TIEMPO);
     tone(9,        3000.0,     1000);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 </li>
 
 <li>Añadir dos botones más en los puertos 5 y 6 [HW]</li>
@@ -598,7 +655,9 @@ void loop(){
 
 
 
-<pre><code class="language-cpp">// Primer software
+<?php
+$c = <<<'END_CODE'
+// Primer software
 long t;    // Tiempo
 long x;    // Espacio o distancia
 
@@ -615,10 +674,14 @@ void loop(){
     t = pulseIn(9, HIGH);
     x = t * 0.017;
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 
 
-<pre><code class="language-cpp">// Segundo software
+<?php
+$c = <<<'END_CODE'
+// Segundo software
 void setup(){
     Serial.begin(9600);
 }
@@ -626,7 +689,9 @@ void setup(){
 void loop(){
     Serial.println(x);
 }
-</code></pre>
+END_CODE;
+colorea($c, "cpp");
+?>
 
 
 

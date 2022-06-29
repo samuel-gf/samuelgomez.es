@@ -1,13 +1,19 @@
 <?php include('inc/cabecera_html.php'); ?>
 	<title>Apuntes de Python</title>
+	<link rel="stylesheet" type="text/css" href="css/highlight.css">
+<!--
 	<script type="text/javascript" src="js/highlight.min.js"></script> <!-- Color código 1 de 2-->
 	<link rel="stylesheet" type="text/css" href="css/github.min.css">  <!-- Color código 2 de 2-->
+	<link rel="stylesheet" type="text/css" href="css/hl.css">  <!-- Color código 2 de 2-->
+-->
 	</head>
 <body>
-
-
+<?php include('inc/lib.php'); ?>
 <?php include('inc/cabecera_fixed.php'); ?>
+
+<!--
 <script>hljs.highlightAll();</script>
+-->
 
 <nav id="menu"><ul>
 		<h1>Temas</h1>
@@ -33,12 +39,17 @@
 número entero, un número decimal o una cadena:</p>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python"># Variables01.py
+<?php
+$c = <<<'END_CODE'
+# Variables
 a = 7           # Número entero
 b = 3.14        # Número decimal
 c = "Filomena"  # Cadena
-</code></pre>
+END_CODE;
+
+colorea($c, "python");
+?>
+
 
 </section>
 
@@ -51,8 +62,9 @@ c = "Filomena"  # Cadena
 incremente por encima o por debajo de su valor anterior:</p>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python"># acumuladores01.py
+<?php
+$c = <<<'END_CODE'
+# acumuladores01.py
 n = 0      # n vale 0
 print(n)   # 0
 
@@ -64,16 +76,17 @@ print(n)   # 11
 
 n = n * 2  # Ahora n vale el doble de lo que valía antes
 print(n)   # 22
-</code></pre>
-
+END_CODE;
+colorea($c, "python");
+?>
 </section>
 <!------------------------------------------------------------------------------------->
 <section>
 <h1><a name="salida_numero">Poner un número en pantalla</a></h1>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Poner en pantalla un texto (cadena literal)
 print("Aquí se pone el texto")
 
@@ -82,16 +95,22 @@ print(n)
 
 # Poner en pantalla un texto y una variable
 print("El resultado es", n)
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
 
 <h2>Problemas</h2>
 <ol class="problemas">
 	<li>&#11088;<p>Prueba el siguiente código:</p>
-	<pre><code class="language-python">
+<?php
+$c = <<<'END_CODE'
 	print("Hola mundo")
-	</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
+
 	<li>&#11088;&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> dos números, los sume
 		y <u>muestre en pantalla</u> el resultado.</p></li>
 	<li>&#11088;&#11088;&#11088;<p>Escribe un programa que <u>pregunte al usuario</u> tres números que pueden ser 
@@ -119,27 +138,32 @@ print("El resultado es", n)
 <h1><a name="entrada_numero">Preguntar al usuario un número</a></h1>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python">
-# Número entero:
-n = int(input("Dime un número entero"))
+<?php
+$c = <<<'END_CODE'
+	# Número entero:
+	n = int(input("Dime un número entero"))
 
-# Número decimal
-n = float(input("Dime un número decimal:"))
-</code></pre>
+	# Número decimal
+	n = float(input("Dime un número decimal:"))
+END_CODE;
+colorea($c, "python");
+?>
 
 <h2>Problemas</h2>
 <ol class="problemas">
 
 	<li><p>Prueba el siguiente código:</p>
-	<pre><code class="language-python">
+<?php
+$c = <<<'END_CODE'
 	print("MENÚ del RESTAURANTE")
 	print("1.Pollo con patatas")
 	print("2.Guisantes con jamón")
 	print("3.Caldo de gallina")
 	n = int(input("¿Qué plato quieres?"))
 	print("Has elegido el plato nº", n)
-	</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 	</li>
 
 	<li><p>Escribe un problema que <u>pregunte al usuario</u> un número entero 
@@ -165,18 +189,20 @@ n = float(input("Dime un número decimal:"))
 <h1><a name="condicional">Condicionales</a></h1>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 edad = int(input("Dime tu edad:"))
 if edad >= 18:
   print("Eres mayor de edad")
 else:
   print("Eres menor de edad")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Condicional doble (AND)
 edad = 20
 euros = 30000
@@ -184,13 +210,15 @@ if edad>=18 and euros>=10000:
   print("Puedes comprar un coche")
 else:
   print("No cumples las dos condiciones")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 <h2>Problemas</h2>
 <ol class="problemas">
 	<li><p>Prueba este código:</p>
-	<pre>
-	<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 	edad = int(input("Dime tu edad:"))
 	dinero = int(input("¿Cuánto dinero tienes ahorrado?))
 	
@@ -202,7 +230,9 @@ else:
 	  print("Puedes conducir pero no comprar coche")
 	if edad < 18 and dinero < 10000:
 	  print("No puedes conducir ni comprar coche. ¡Estudia!")
-	</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 	</li>
 	<li><p>Haz un programa que <u>pregunte al usuario</u> tres números y <u>muestre
 			por pantalla</u> cuál de ellos es mayor.</p></li>
@@ -218,31 +248,37 @@ else:
 <h1><a name="bucle_for">Bucles for</a></h1>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Repetir un bloque 10 veces
 for i in range(1,11):
   print("Hola mundo”, i)
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Preguntar al usuario 10 veces
 for i in range(1, 11):
   nombre = input("Dime tu nombre:")
   print("Hola", nombre)
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Repetir un bloque y no repetir la última línea
 for i in range(1,1000):
   print("Esto forma parte del bucle")
   print("Esto también")
   print("Esto NO se repite")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
 
@@ -253,65 +289,81 @@ for i in range(1,1000):
 <h1><a name="lista">Listas</a></h1>
 
 <h2>Ejemplos</h2>
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Crear una lista
 nombres = ["Alberto", "Beatriz", "Carlos", "Diana"]
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Usar un elemento de la lista
 print(nombres[1],"y", nombres[2])
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Tamaño de la lista
 print("Hay", len(nombres), "personas en la lista")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Mostrar los nombres de la lista
 print(nombres)
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Mostrar cada nombre en un línea
 for i in range(0, len(nombres)):
   print(nombres[i])
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Añadir un dato al final de la lista
 nombres.append("Emiliano")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Añadir un dato en una posición 1
 nombres.insert(1, "Fabiola")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 
-<pre>
-<code class="language-python">
+<?php
+$c = <<<'END_CODE'
 # Añadir un dato al principio de la lista
 nombres.insert(0, "Guillermo Fernando")
-</code></pre>
+END_CODE;
+colorea($c, "python");
+?>
 
 <h2>Problemas</h2>
 <ol class="problemas">
 	<li><p>Prueba este código:</p>
-		<pre>
-		<code class="language-python">
+	<?php
+	$c = <<<'END_CODE'
 		lista = []
 
 		lista.append("A")
@@ -322,7 +374,9 @@ nombres.insert(0, "Guillermo Fernando")
 
 		lista.append("C")
 		print(lista) # A, B, C
-		</code></pre>
+END_CODE;
+		colorea($c, "python");
+		?>
 	</li>
 	<li><p>Crear <u>una lista</u> con cuatro nombres de persona y otra con cuatro
 		tipos de bailes. <u>Mostrar en pantalla</u> una línea por cada persona

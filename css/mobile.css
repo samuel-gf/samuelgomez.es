@@ -283,6 +283,7 @@ p{
 	margin-top: 1rem;
 }
 
+/*
 pre{
 	tab-size:2;
 	border: 1px solid #aaaaaa;
@@ -291,6 +292,19 @@ pre{
 }
 
 code{
+  	font-family: "Hack", monospace;
+	line-height: 1.2rem;
+	font-size: 1rem;
+	overflow: auto;
+}
+*/
+
+code .highlight pre{
+	padding: 1rem;
+	tab-size:2;
+	border: 1px solid #aaaaaa;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
   	font-family: "Hack", monospace;
 	line-height: 1.2rem;
 	font-size: 1rem;
