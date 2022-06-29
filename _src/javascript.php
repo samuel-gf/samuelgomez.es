@@ -26,11 +26,13 @@
 <p>El archivo .html debe hacer referencia al script .js y esto se logra añadiendo a la cabecera del
 .html esta línea:</p>
 
-<pre>
-<code class="language-html">
+<?php
+$c = <<<'END_CODE'
 <script type="text/javascript" src="archivo.js"></script>
+END_CODE;
+colorea($c, "html");
+?>
 
-</code></pre>
 </section>
 
 
@@ -222,7 +224,13 @@ $c = <<<'END_CODE'
 	$json = file_get_contents('php://input');
 	$data = json_decode($json);
 
-	error_log(print_r($data, true));
+	if (isset($json)){
+		# El script será llamado varias veces:
+		# Primera vez: obtener cabeceras, $json == null
+		# Segunda vez: $json is set
+		error_log(print_r($data, true));
+	}
+
 END_CODE;
 colorea($c, "php");
 ?>

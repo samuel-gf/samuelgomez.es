@@ -1,1 +1,14 @@
 1.01	Pygmentize
+
+
+
+# NOTAS DE DESARROLLO
+
+## KaTeX
+
+Las fuentes tenían en el original un enlace "duro" a la carpeta css/fonts y lo he cambiado mediante:
+
+	`cat katex.min.css | sed 's/url(fonts/url(\.\.\/fonts/g' | sponge katex.min.css`
+
+
+
