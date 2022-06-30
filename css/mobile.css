@@ -59,6 +59,7 @@ body > header {	/* Banner cabecera */
 	left: 0;
 	background-color: white;
 	border-bottom: 1px solid var(--color_gris_claro);
+	z-index: 10;
 }
 
 #logo {
@@ -267,8 +268,9 @@ main section h1 + h2{
 
 /* Listas *********************************************/
 main ul{
-	list-style-position: inside;
+	list-style-position: outside;
 	margin-top: 1rem;
+	margin-left: 1rem;
 }
 
 main ul li{

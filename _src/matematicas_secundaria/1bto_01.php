@@ -103,7 +103,17 @@ $$a_n=a_1 \cdot r^{n-1}$$
 
 <li><b>Suma de los n primeros términos</b> de una progresión <u>geométrica</u></li>
 $$S_n=\frac{a_1(r^n-1)}{r-1}; \text{  con } r \neq 1$$
+
+
+<li><b>Suma de todos los infinitos términos</b> de una progresión geométrica da como resultado
+infinito excepto si $-1 &lt; r &lt; 1$, en cuyo caso sí se puede calcular puesto que cada nuevo término es más
+pequeño y por lo tanto tienden a cero. La suma es:</li>
+
+$$S=\frac{a_1}{1-r}$$
 </ul>
+
+
+
 
 <h2>Problemas</h2>
 <ol class="problemas">
