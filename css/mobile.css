@@ -127,8 +127,16 @@ mark{
 
 strong{
 	font-weight: bold;
+	color: var(--color_principal);
 }
 
+a{
+	color: var(--color_principal);
+	text-decoration: none;
+}
+a:visited{
+	color: var(--color_principal);
+}
 /*********************************************************/
 /* MENU **************************************************/
 /*********************************************************/
@@ -346,6 +354,7 @@ main section:first-of-type{
 
 section h1:before{
 	content: counter(seccion) ".- ";
+	color: var(--color_principal);
 }
 
 section h2:before{

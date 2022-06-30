@@ -1,9 +1,10 @@
+https://samuelgomez.es/matematicas_secundaria/index.html
+https://samuelgomez.es/matematicas_secundaria/1bto_01.html
+https://samuelgomez.es/matematicas_secundaria/3eso_01.html
 https://samuelgomez.es/javascript.html
 https://samuelgomez.es/mermaid.html
 https://samuelgomez.es/index.html
 https://samuelgomez.es/python.html
-https://samuelgomez.es/matematicas/index.html
-https://samuelgomez.es/matematicas/secundaria/3eso_01.html
 https://samuelgomez.es/404.html
 https://samuelgomez.es/tpr/index.html
 https://samuelgomez.es/tikz.html

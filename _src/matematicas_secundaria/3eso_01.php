@@ -1,14 +1,14 @@
 <?php include('inc/cabecera_html.php'); ?>
+<?php include('inc/lib.php'); ?>
 
 
 <!-- Matemáticas -->
-<link rel="stylesheet" type="text/css" href="../../css/katex.min.css">
-<script type="text/javascript" src="../../js/katex.min.js"></script>
-<script type="text/javascript" src="../../js/katex.autorender.min.js"></script>
-<!--<link rel="stylesheet" type="text/css" href="../../css/problemas.css">-->
+	<link rel="stylesheet" type="text/css" href="<?php profundidad($argv);?>css/katex.min.css">
+<script type="text/javascript" src="<?php profundidad($argv);?>js/katex.min.js"></script>
+<script type="text/javascript" src="<?php profundidad($argv);?>js/katex.autorender.min.js"></script>
 	
 
-<title>Aprendizaje mediante problemas</title>
+<title>Problemas de tercero de la ESO</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 
 <main>
 <header>
-	<h1>Aprendizaje basado en problemas</h1>
+	<h1>Problemas de 3º ESO</h1>
 </header>
 
 
@@ -41,7 +41,7 @@ precio si quisiera ampliar los días.</p>
 
 
 <ol class="problemas">
-<img src="../../img/matematicas/0001.webp" alt="#">
+<img src="<?php profundidad($argv);?>img/matematicas/0001.webp" alt="#">
 
 <li>&#11088;<p>Si Emi lleva ahorradas dos novenas partes del precio del campamento para una semana, 
 ¿qué fracción del total tiene ahorrado?¿Cuánto dinero es?</p></li>
@@ -107,7 +107,7 @@ representa?
 antes de las 12:00 horas de la mañana y de 15:00 a 17:00 horas.</p>
 
 <ol class="problemas">
-<img src="../../img/matematicas/0002.webp" alt="#">
+<img src="<?php profundidad($argv);?>img/matematicas/0002.webp" alt="#">
 
 <li>&#11088;<p>
 ¿Podrían chatear a las 9:30 de la mañana?¿Y por la tarde?
@@ -174,7 +174,7 @@ Escribe mediante intervalos el tiempo en el que están conectados uno u otro. ¿
 <p>Los conceptos de precio variable son el consumo realizado en el período de facturación y el IVA, que es el $21\%$ de la suma
 de todos los conceptos anteriores.</p>
 
-<img src="../../img/matematicas/0004.webp" alt="#" style="border: 1px solid black;">
+<img src="<?php profundidad($argv);?>img/matematicas/0004.webp" alt="#" style="border: 1px solid black;">
 
 <ol class="problemas">
 <li>&#11088;<p>¿Cuál es la cantidad fija, sin IVA, que hay que pagar en una factura?¿Y con IVA?</p></li>

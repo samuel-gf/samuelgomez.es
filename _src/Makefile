@@ -22,7 +22,7 @@ $(DIR_TARGET)/%.html: $(DIR_SRC)/%.php $(INC)
 	$(eval b=$(shell echo $< | sed 's/[^\/]//g' | tr -d \\n | wc -m))
 	@# $(c) es el nivel de profundidad del objetivo a construir
 	$(eval c=$(shell expr $b - $a))
-	# Constryendo (nivelnivel  $c) $<
+	# Construyendo (nivel  $c) $<
 	@php $< $(c) >$@
 
 	

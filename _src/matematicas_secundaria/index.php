@@ -8,13 +8,13 @@
 
 
 <main>
-<header><h1>Matemáticas</h1></header>
+<header><h1>Matemáticas de secundaria</h1></header>
 
 <h2>Tabla de contenidos</h2>
-<ol>
-	<li><a href="problemas/3eso_01.html">3º ESO</li>
-	<li><a href="problemas/1bto_01.html">1º Bachillerato</li>
-</ol>
+<ul>
+	<li><a href="3eso_01.html">Problemas de 3ºESO</li>
+	<li><a href="1bto_01.html">Problemas de 1ºBachillerato</li>
+</ul>
 
 
 </main>
