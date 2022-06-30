@@ -14,22 +14,26 @@ INC = $(shell find inc -name "*.php")
 #vpath %.php $(DIR_SRC)
 #vpath %.php $(DIR_SRC)/matematicas/problemas
 
+
 # Genera la web estática
 all: $(TARGETS) sitemap
 
+
+
 # El parámetro 0 es la profundidad del directorio
 $(DIR_TARGET)/%.html: $(DIR_SRC)/%.php $(INC)
-	# Construyendo $@
+	# Construyendo (0) $@
 	@php $< 0 >$@
 
 # El parámetro 1 es la profundidad del directorio
 $(DIR_TARGET)/tpr/%.html: $(DIR_SRC)/tpr/%.php $(INC)
-	# Construyendo $@
+$(DIR_TARGET)/matematicas/%.html: $(DIR_SRC)/matematicas/%.php $(INC)
+	# Construyendo (1) $@
 	@php $< 1 >$@
 
 # El parámetro 2 es la profundidad del directorio
-$(DIR_TARGET)/matematicas/problemas/%.html: $(DIR_SRC)/matematicas/problemas/%.php $(INC)
-	# Construyendo $@
+$(DIR_TARGET)/matematicas/secundaria/%.html: $(DIR_SRC)/matematicas/secundaria/%.php $(INC)
+	# Construyendo (2) $@
 	@php $< 2 >$@
 
 
