@@ -156,7 +156,7 @@ a:visited{
 	text-decoration: none;
 }
 
-#menu{
+nav#menu{
 	display: none;
 	margin: 2rem 0 0 0;
 	position: absolute;
@@ -172,30 +172,39 @@ a:visited{
 	counter-reset: seccion;
 }
 
-#menu a{
+nav#menu a{
 	color: black;
 	text-decoration: none;
 }
 
-#menu h1{
+nav#menu h1{
 	font-family: "atkinson";
 	font-weight: bold;
 	margin: 2rem 0 0.5rem 0;
 	color: var(--color_principal);
 }
-#menu h1:first-child{
+nav#menu h1:first-child{
 	margin-top: unset;
 }
 
-#menu li{
+nav#menu h2{
+	font-size: 1rem;
+	margin-top: 2rem;
+}
+
+nav#menu h2:first-of-type{
+	margin-top: 0;
+}
+
+nav#menu li{
 	margin-bottom: 0.5rem;
 	counter-increment: seccion;
 }
 
-#menu li:before{
+nav#menu li:before{
 	content: counter(seccion) ". ";
 }
-#menu li:last-child{
+nav#menu li:last-child{
 	margin-bottom: unset;
 }
 

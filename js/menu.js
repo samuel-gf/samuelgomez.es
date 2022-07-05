@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	}, false);
 
-	// Hide the menu after click
+	// Hide the menu after click a link
 	if (menu != null) {
 		menu.addEventListener("click", function (){
 		if (bMenu){	// Si es un menú desplegable y se ha hecho visible
@@ -25,6 +25,16 @@ document.addEventListener('DOMContentLoaded', function(){
 			if (menu_icon.style.display != null) {
 				menu.style.display=null;
 			}
+		}
+		});
+	}
+
+	// Hide the menu after click outside the menu
+	if (menu != null) {
+		document.querySelector("body main").addEventListener("click", function (){
+		bMenu = false;
+		if (menu_icon.style.display != null) {
+			menu.style.display=null;
 		}
 		});
 	}
