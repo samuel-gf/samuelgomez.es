@@ -113,8 +113,6 @@ $$S=\frac{a_1}{1-r}$$
 </ul>
 
 
-
-
 <h2>Problemas</h2>
 <ol class="problemas">
 <li>&#11088;<p>De una progresión aritmética se sabe que la suma de los términos tercero y séptimo es 50 y que 21
