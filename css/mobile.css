@@ -1,10 +1,10 @@
 /*.color-primary-0 { color: #006aff }	Color principal */
 /*.color-primary-0b{ color: #003B8C }	Color azul oscuro */
-/*.color-primary-1 { color: #FF9200 }	    Color Opuesto */
+/*.color-primary-1 { color: #FF9200 }	    Color Complementario */
 :root{
 	--color_principal: #006aff;
 	--color_oscuro: #003b8c;
-	--color_opuesto: #ff9200;
+	--color_complementario: #ff9200;
 	--color_gris_medio: #777777;
 	--color_gris_claro: #cccccc;
 	--color_fluorescente: #ffff33;

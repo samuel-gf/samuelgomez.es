@@ -8,14 +8,16 @@
 
 
 <nav id="menu"><ul>
-		<h1>Álgebra</h1>
+		<h1>Matemáticas</h1>
+		<h2>Álgebra</h2>
 		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
 		<li><a href="pdf/sucesiones.pdf">Sucesiones y series</a></li>
+
+		<h2>Secundaria</h2>
 		<li><a href="matematicas_secundaria/3eso_01.html">Problemas 3ºESO</a></li>
 		<li><a href="matematicas_secundaria/1bto_01.html">Problemas 1ºBTO</a></li>
-
-		<h1>Geometría</h1>
 		<li><a href="pdf/geometria_recetas.pdf">Recetas de geometría</a></li>
+
 
 		<h1>Programación</h1>
 		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
