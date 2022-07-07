@@ -64,10 +64,6 @@ transmitiendo y guíando a las jóvenes generaciones en el mundo de las matemát
 <p>Soy profesor de secundaria. Me encanta mi trabajo,
 donde procuro transmitir con entusiasmo mis conocimientos sobre Matemáticas, Ciencia y Tecnología.</p>
 
-<h1 style="margin-top: 2rem;">Contacto</h1>
-<p>contacto<img src="img/perm/a.png" alt="#" style="padding: 0.2rem;" width="16" height="16">samuelgomez.es</p>
-
-
 </main>
 
 <?php include('inc/footer.php'); ?>

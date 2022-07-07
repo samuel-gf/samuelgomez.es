@@ -429,3 +429,19 @@ section img{
 	display: block;
 }
 
+
+/***********************************************************/
+footer{
+	color: black;
+	background-color: #eeeeee;
+	margin: 4rem 0 0 0;
+	padding: 2rem;
+}
+
+footer a, footer a:visited{
+	color: black;
+}
+
+footer li{
+	margin: 1rem 0;
+}
