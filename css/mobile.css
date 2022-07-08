@@ -405,6 +405,40 @@ section > ol.problemas ol.apartados li:before{
 	font-weight: bold;
 }
 
+/* PROPIEDADES *********************************************/
+section > ol.propiedades{
+	counter-reset: propiedad;
+}
+
+section > ol.propiedades > li {
+	list-style-type: none;
+	counter-reset: apartado;
+}
+
+section > ol.propiedades > li:before{
+	counter-increment: propiedad;
+	content: "Propiedad " counter(seccion) "." counter(subseccion) "." counter(propiedad) " ";
+	font-weight: bold;
+}
+
+section > ol.propiedades p{
+	margin-left: 2rem;
+}
+
+/* LETRAS **********************************************/
+section > ol.letras{
+	counter-reset: letra;
+	list-style-position: outside;
+}
+section > ol.letras > li{
+	list-style-type: none;
+}
+section > ol.letras > li:before{
+	counter-increment: letra;
+	content: counter(letra, lower-alpha) ") ";
+}
+
+
 /* PROYECTOS **********************************************/
 section.proyecto {
 	counter-increment: proyecto;
@@ -412,7 +446,6 @@ section.proyecto {
 
 section.proyecto h1:before{
 	content: "Proyecto " counter(proyecto) ".- ";
-	font-family: atkinson;
 	font-weight: bold;
 }
 

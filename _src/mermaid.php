@@ -1,4 +1,5 @@
 <?php include('inc/cabecera_html.php'); ?>
+<?php include('inc/lib.php'); ?>
 	<title>Mermaid</title>
 	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 	</head>

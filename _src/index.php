@@ -1,4 +1,5 @@
 	<?php include('inc/cabecera_html.php'); ?>
+	<?php include('inc/lib.php'); ?>
 	<link rel="canonical" href="https://samuelgomez.es">
 	<title>Samuel Gómez</title>
 	</head>
@@ -10,12 +11,12 @@
 <nav id="menu"><ul>
 		<h1>Matemáticas</h1>
 		<h2>Avanzadas</h2>
-		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
+		<li><a href="matematicas-universidad/espacios-vectoriales.html">Espacios vectoriales</a></li>
 		<li><a href="pdf/sucesiones.pdf">Sucesiones y series</a></li>
 
 		<h2>Secundaria</h2>
-		<li><a href="matematicas_secundaria/3eso_01.html">Problemas 3ºESO</a></li>
-		<li><a href="matematicas_secundaria/1bto_01.html">Problemas 1ºBTO</a></li>
+		<li><a href="matematicas-secundaria/3eso_01.html">Problemas 3ºESO</a></li>
+		<li><a href="matematicas-secundaria/1bto_01.html">Problemas 1ºBTO</a></li>
 		<li><a href="pdf/geometria_recetas.pdf">Recetas de geometría</a></li>
 
 

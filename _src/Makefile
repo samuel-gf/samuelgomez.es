@@ -13,14 +13,14 @@ INC = $(shell find inc -name "*.php")
 
 
 # Genera la web estática
-all: $(TARGETS) sitemap
+all: create_target_dirs $(TARGETS) sitemap
 
 $(DIR_TARGET)/%.html: $(DIR_SRC)/%.php $(INC)
 	@# $(a) es el nivel de profundidad de directorios del fichero a construir
 	$(eval a=$(shell echo $(DIR_TARGET)// | sed 's/[^\/]//g' | tr -d \\n | wc -m))
 	@# $(b) es el nivel de profundidad de directorios del directorio objetivo
 	$(eval b=$(shell echo $< | sed 's/[^\/]//g' | tr -d \\n | wc -m))
-	@# $(c) es el nivel de profundidad del objetivo a construir
+	@# $(c) es el nivel de profundidad del objetivo a construir como diferencia $b-$a
 	$(eval c=$(shell expr $b - $a))
 	# Construyendo (nivel  $c) $<
 	@php $< $(c) >$@
@@ -38,7 +38,12 @@ sitemap:
 	@echo $(addprefix $(URL_BASE), $(shell find .. -name "*.html" -not -path "*fortran/*")) \
 		| sed -e 's/\.\.\///g' -e 's/ /\n/g' > ../sitemap.txt
 
-	
+
+create_target_dirs: ../matematicas-universidad ../matematicas-secundaria ../tpr
+	@mkdir -p ../matematicas-universidad 
+	@mkdir -p ../matematicas-secundaria
+	@mkdir -p ../tpr
 
 clean:
 	rm -f $(TARGETS) ../sitemap.txt
+	rm -f ../matematicas-universidad ../matematicas-secundaria ../tpr
