@@ -8,7 +8,9 @@
 <?php include('inc/cabecera_fixed.php'); ?>
 
 
-<nav id="menu"><ul>
+<nav id="menu">
+	<ul>
+		<h1>Tikz</h1>
 		<li><a href="#top">Introducción</a></li>
 		<li><a href="#base">Base</a></li>
 	</ul>
@@ -17,6 +19,7 @@
 <main>
 <header><h1>Apuntes de Tikz</h1></header>
 
+<!-- -------------------------------------------------- -->
 <section>
 <h1><a name="introduccion">Introducción</a></h1>
 
@@ -30,6 +33,7 @@ espectaculares.</p>
 
 
 
+<!-- -------------------------------------------------- -->
 <section>
 <h1><a name="base">Base</a></h1>
 <p>En la cabecera del fichero <b>LaTeX</b> debes usar:</p>

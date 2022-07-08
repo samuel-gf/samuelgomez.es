@@ -192,7 +192,7 @@ nav#menu h2{
 	margin-top: 2rem;
 }
 
-nav#menu h2:first-of-type{
+nav#menu h1 + h2{
 	margin-top: 0;
 }
 
@@ -435,7 +435,7 @@ footer{
 	color: black;
 	background-color: #eeeeee;
 	margin: 4rem 0 0 0;
-	padding: 2rem;
+	padding: 2rem 0;
 }
 
 footer a, footer a:visited{
@@ -443,5 +443,5 @@ footer a, footer a:visited{
 }
 
 footer li{
-	margin: 1rem 0;
+	margin: 1rem 2rem;
 }

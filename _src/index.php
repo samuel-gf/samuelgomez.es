@@ -9,7 +9,7 @@
 
 <nav id="menu"><ul>
 		<h1>Matemáticas</h1>
-		<h2>Álgebra</h2>
+		<h2>Avanzadas</h2>
 		<li><a href="pdf/espacios_vectoriales.pdf">Espacios vectoriales</a></li>
 		<li><a href="pdf/sucesiones.pdf">Sucesiones y series</a></li>
 
@@ -21,15 +21,16 @@
 
 		<h1>Informática</h1>
 
+		<h2>Herramientas</h2>
+		<li><a href="tikz.html">Tikz</a></li>
+		<li><a href="neovim.html">Neo Vim</a></li>
+
 		<h2>Programación</h2>
-		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
-		<li><a href="python.html">Python</a></li>
 		<li><a href="http://fortran.es">Fortran</a></li>
 		<li><a href="javascript.html">Javascript</a></li>
-		<li><a href="tikz.html">Tikz</a></li>
+		<li><a href="python.html">Python</a></li>
+		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
 
-		<h2>Herramientas</h2>
-		<li><a href="neovim.html">Neo Vim</a></li>
 	</ul>
 </nav>
 

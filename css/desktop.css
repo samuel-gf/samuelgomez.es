@@ -51,6 +51,7 @@ nav#menu{
 	scrollbar-width: thin;
 	height: calc(100% - 10rem - 18px - 5rem);
 	display: block;
+	background-color: unset;
 }
 
 
