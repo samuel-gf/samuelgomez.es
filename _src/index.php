@@ -19,12 +19,17 @@
 		<li><a href="pdf/geometria_recetas.pdf">Recetas de geometría</a></li>
 
 
-		<h1>Programación</h1>
+		<h1>Informática</h1>
+
+		<h2>Programación</h2>
 		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
 		<li><a href="python.html">Python</a></li>
 		<li><a href="http://fortran.es">Fortran</a></li>
 		<li><a href="javascript.html">Javascript</a></li>
 		<li><a href="tikz.html">Tikz</a></li>
+
+		<h2>Herramientas</h2>
+		<li><a href="neovim.html">Neo Vim</a></li>
 	</ul>
 </nav>
 
