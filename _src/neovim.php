@@ -30,12 +30,15 @@ execute pathogen#infect()
 "scriptnames
 "Fuentes: https://github.com/mectos/dotfiles/blob/master/vim/vimrc
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'				" Status de git
+Plug 'mhartington/oceanic-next'			" Tema de colores
+Plug 'danilo-augusto/vim-afterglow'		" Tema de colores
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'kabouzeid/nvim-lspinstall'
-Plug 'scrooloose/nerdtree'
 "Plug 'rudrab/vimf90'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "Plug 'kyazdani42/nvim-tree.lua'
 "Plug 'neovim/nvim-lspconfig'
@@ -44,8 +47,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "    \ 'branch': 'next',
 "    \ 'do': 'bash install.sh',
 "    \ }
-Plug 'mhartington/oceanic-next'
-Plug 'danilo-augusto/vim-afterglow'
 call plug#end()
 
 syntax on
