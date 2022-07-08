@@ -1,11 +1,1 @@
-https://samuelgomez.es/matematicas_secundaria/index.html
-https://samuelgomez.es/matematicas_secundaria/1bto_01.html
-https://samuelgomez.es/matematicas_secundaria/3eso_01.html
-https://samuelgomez.es/javascript.html
-https://samuelgomez.es/mermaid.html
-https://samuelgomez.es/index.html
-https://samuelgomez.es/python.html
-https://samuelgomez.es/404.html
-https://samuelgomez.es/tpr/index.html
-https://samuelgomez.es/neovim.html
-https://samuelgomez.es/tikz.html
+https://samuelgomez.es/tikz.htmlnhttps://samuelgomez.es/python.htmlnhttps://samuelgomez.es/index.htmlnhttps://samuelgomez.es/javascript.htmlnhttps://samuelgomez.es/404.htmlnhttps://samuelgomez.es/neovim.htmlnhttps://samuelgomez.es/mermaid.htmlnhttps://samuelgomez.es/tpr/index.htmlnhttps://samuelgomez.es/matematicas_secundaria/3eso_01.htmlnhttps://samuelgomez.es/matematicas_secundaria/index.htmlnhttps://samuelgomez.es/matematicas_secundaria/1bto_01.html

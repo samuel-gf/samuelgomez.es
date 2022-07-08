@@ -24,8 +24,40 @@
 
 <?php
 $c = <<<'END_CODE'
-set termguicolors
+"Pathogen PLUGINS
+execute pathogen#infect()
+
+"scriptnames
+"Fuentes: https://github.com/mectos/dotfiles/blob/master/vim/vimrc
+call plug#begin(stdpath('data') . '/plugged')
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'kabouzeid/nvim-lspinstall'
+Plug 'scrooloose/nerdtree'
+"Plug 'rudrab/vimf90'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'kyazdani42/nvim-web-devicons' " for file icons
+"Plug 'kyazdani42/nvim-tree.lua'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'leanprover/lean.vim'
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
+Plug 'mhartington/oceanic-next'
+Plug 'danilo-augusto/vim-afterglow'
+call plug#end()
+
 syntax on
+syntax enable
+set t_Co=256
+
+if $TERM_PROGRAM != "Apple_Terminal"
+    set termguicolors
+endif
+
+colorscheme OceanicNext
+
 set number background=dark
 set mouse=a
 set title
@@ -38,7 +70,7 @@ set autoindent
 " Dirección en la que se expanden la apertura de nuevas ventanas split
 set splitright
 set splitbelow
-colorscheme oceanicnext
+colorscheme OceanicNext
 filetype plugin indent on
 
 "Búsqueda
@@ -60,15 +92,13 @@ set tabstop=4
 set shiftwidth=4
 set textwidth=100
 
-"Pathogen PLUGINS
-execute pathogen#infect()
 
 "Markdown PLUGIN
 augroup filetype_markdown
 	let g:vim_markdown_folding_disabled = 1
 	let g:vim_markdown_math = 1
 	let g:vim_markdown_frontmatter = 1
-augroup end 
+augroup end
 
 "Atajos LaTeX
 augroup filetype_tex
@@ -132,7 +162,7 @@ highlight Normal ctermfg=46 guifg=#18F018
 highlight PreProc guifg=#ffb533 guibg=none
 highlight Type guifg=#0077ff
 highlight fortranTab guifg=none guibg=none
-highlight fortranUnitHeader guifg=orange gui=bold guibg=none 
+highlight fortranUnitHeader guifg=orange gui=bold guibg=none
 "Colores para GNUPlot
 autocmd BufEnter *.gnuplot :setlocal filetype=gnuplot
 autocmd BufEnter *.gp :setlocal filetype=gnuplot
@@ -174,30 +204,12 @@ set noswapfile
 highlight Cursorline cterm=NONE gui=NONE guibg=NONE
 autocmd InsertEnter * highlight Cursorline cterm=underline gui=underline
 autocmd InsertLeave * highlight Cursorline cterm=NONE gui=NONE
-set guicursor= 
+set guicursor=
 set statusline=%n)\ %m\ %F%=%c\ %l/%L\ %{FugitiveStatusline()}[%{&ff}\ %{&enc}\ %Y]
 set wildmenu " enhanced command line completion
 "set wildmode=list:longest " complete files like a shell
 set scrolloff=3 " Minimum lines to keep above and below cursor
 
-"scriptnames
-"Fuentes: https://github.com/mectos/dotfiles/blob/master/vim/vimrc
-call plug#begin(stdpath('data') . '/plugged')
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'kabouzeid/nvim-lspinstall'
-Plug 'scrooloose/nerdtree'
-"Plug 'rudrab/vimf90'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"Plug 'kyazdani42/nvim-tree.lua'
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'leanprover/lean.vim'
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
-call plug#end()
 
 
 "NERDTree
@@ -216,4 +228,4 @@ colorea($c, "vim");
 
 
 </main>
-<?php include('inc/footer.php'); ?>
+
