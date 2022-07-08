@@ -15,13 +15,18 @@
 
 <main>
 
-<header><h1>Editor de código Neo Vim</h1></header>
+<header>
+	<h1>Editor de código Neo Vim</h1>
+	<img src="img/informatica/neovim-logo.webp" alt="Neo vim logo">
+</header>
 
 <!------------------------------------------------------------------------------------->
 <section>
 <h1><a name="intro">Introducción</a></h1>
 <p>Uno de los mejores editores de texto que han existido. Es programable y configurable en su totalidad y aunque la
 curva de aprendizaje es extremadamente alta, es una herramienta que se ha convertido para mí en imprescindible..</p>
+
+<p>Se puede descargar desde el <a href="https://neovim.io/" target="_blank">sitio oficial de Neo Vim</a>.</p>
 </section>
 
 <!------------------------------------------------------------------------------------->

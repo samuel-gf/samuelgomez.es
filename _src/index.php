@@ -57,7 +57,7 @@ guardo mi iPhone y porto con orgullo mi fiel
 <a href="https://en.wikipedia.org/wiki/Nokia_3310" target="_blank">Nokia 3310</a>. 
 Mis fuentes favoritas son <a href="https://brailleinstitute.org/freefont" target="_blank">Atkinson</a> 
 y <a href="https://sourcefoundry.org/hack/" target="_blank">Hack</a>. Mi editor de texto diario es 
-<a href="https://neovim.io/" target="_blank">Neo Vim</a>.</p>
+<a href="neovim.html">Neo Vim</a>.</p>
 
 <p>Veo cada vez más interesante el movimiento <a href="https://indieweb.org/" target="_blank">Indie Web</a> 
 que es una comunidad de sitios web personales de desarrolladores.</p>
