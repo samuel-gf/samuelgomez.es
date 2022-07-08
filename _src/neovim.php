@@ -7,19 +7,27 @@
 <?php include('inc/cabecera_fixed.php'); ?>
 
 <nav id="menu"><ul>
-		<h1>Temas</h1>
-		<li><a href="#top">.vimrc</a></li>
+		<h1>Neo Vim</h1>
+		<li><a href="#top">Introducción</a></li>
+		<li><a href="#vimrc">.vimrc</a></li>
 	</ul>
 </nav>
 
 <main>
 
-<header><h1><a name="variables">Editor de código Neo Vim</a></h1></header>
+<header><h1>Editor de código Neo Vim</h1></header>
 
 <!------------------------------------------------------------------------------------->
 <section>
-<h1>.vimrc</h1>
-<p>Este es el fichero de configuración a fecha de <time>2022-07-07</time>.</p>
+<h1><a name="intro">Introducción</a></h1>
+<p>Uno de los mejores editores de texto que han existido. Es programable y configurable en su totalidad y aunque la
+curva de aprendizaje es extremadamente alta, es una herramienta que se ha convertido para mí en imprescindible..</p>
+</section>
+
+<!------------------------------------------------------------------------------------->
+<section>
+<h1><a name="vimrc">.vimrc</a></h1>
+<p>Este es mi fichero de configuración personal a fecha de <time>2022-07-07</time>.</p>
 
 
 <?php
@@ -115,7 +123,7 @@ augroup filetype_tex
 	inoremap <C-g>e \epsilon
 	inoremap <C-g>o \omega
 	inoremap <C-g>s \sigma
-"
+
 	"Letras bonitas para conjuntos
 	inoremap <C-b>c \mathbb{C}
 	inoremap <C-b>k \mathbb{K}
