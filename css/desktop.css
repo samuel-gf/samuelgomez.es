@@ -40,7 +40,7 @@ nav#menu{
 	border: unset;
 	border-radius: unset;
 	border-right: 1px solid var(--color_principal);
-	top: 5rem;
+	font-size: 1rem;
 	padding-top: 0;
 	left: 0;
 	width: 320px;
@@ -49,12 +49,12 @@ nav#menu{
 	overflow-y: visible;
 	scrollbar-color: var(--color_principal) black;
 	scrollbar-width: thin;
-	height: calc(100% - 10rem - 18px - 5rem);
+	/*height: calc(100% - 10rem - 18px - 5rem);*/
+	height: 100vh;
 	display: block;
-	background-color: unset;
+	background-color: white;
+	top: 5rem;
 }
-
-
 
 
 

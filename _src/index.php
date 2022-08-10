@@ -32,6 +32,9 @@
 		<li><a href="python.html">Python</a></li>
 		<li><a href="tpr/index.html">Tecnología, programación y robótica</a></li>
 
+		<h1>Otros</h1>
+		<li><a href="links.html">Enlaces</a></li>
+
 	</ul>
 </nav>
 

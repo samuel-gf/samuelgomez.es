@@ -1,5 +1,6 @@
 <?php
 
+# Para código fuente
 function colorea($codigo, $lenguaje){
 	file_put_contents("tmp.txt", $codigo);
 	exec("cat tmp.txt | pygmentize -f html -l $lenguaje", $resultado);
@@ -8,11 +9,13 @@ function colorea($codigo, $lenguaje){
 	unlink("tmp.txt");
 }
 
+# Para incluir subdirectorios
 function profundidad($argv){
 	$profundidad = isset($argv[1])?$argv[1]:0;
 	echo str_repeat('../', $profundidad);
 }
 
+# Para lenguaje matemático
 function matematiza($codigo, $lenguaje = "mathml"){
 	file_put_contents("tmp.txt", $codigo);
 	exec("pandoc tmp.txt --$lenguaje", $resultado);
@@ -21,6 +24,7 @@ function matematiza($codigo, $lenguaje = "mathml"){
 	unlink("tmp.txt");
 }
 
+# Atajo para lenguaje matemático
 function m($codigo, $lenguage = "mathml"){
 	matematiza($codigo, $lenguaje);
 }
