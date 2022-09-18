@@ -39,7 +39,7 @@ sitemap:
 		| sed -e 's/\.\.\///g' -e 's/ /\n/g' > ../sitemap.txt
 
 
-create_target_dirs: ../matematicas-universidad ../matematicas-secundaria ../tpr
+create_target_dirs: 
 	@mkdir -p ../matematicas-universidad 
 	@mkdir -p ../matematicas-secundaria
 	@mkdir -p ../tpr
