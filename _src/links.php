@@ -23,11 +23,12 @@
 
 <ul>
 <li><a href="https://zserge.com" target="_blank">Sergei Zaitsev</a> 
-	desarrollador de software</li>
+	desarrollador de software.</li>
 <li><a href="https://plantuml.com/es/" target="_blank">PlantUML</a> lenguaje específico para 
-	generar diagramas</li>
+	generar diagramas.</li>
 </ul>
-
+<li><a href="https://mermaid-js.github.io/mermaid/#/sequenceDiagram" target="_blank">Mermaid</a>
+	Otro lenguaje específico para generar diagramas.</li>
 </section>
 
 </main>
